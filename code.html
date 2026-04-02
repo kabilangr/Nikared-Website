@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIKA RED PRIVATE LIMITED | Tech</title>
+    <!-- CSS Reset and Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Kinetic Protocol CSS Variables */
+        :root {
+            /* Tonal Architecture */
+            --surface: #0e0e0f;
+            --surface-container-low: #131314;
+            --surface-container-high: #201f21;
+            --surface-container-highest: #262627;
+            
+            /* Signature Texture */
+            --primary: #81ecff;
+            --primary-container: #00e3fd;
+            --primary-gradient: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 100%);
+            
+            /* Secondary & Tertiary */
+            --secondary: #6e9bff;
+            --tertiary: #faf9f9;
+            --error-container: #93000a;
+            --on-error-container: #ffdad6; 
+            
+            /* Typography */
+            --on-surface-variant: #adaaab;
+            --ghost-border: rgba(72, 72, 73, 0.15);
+            --electric-glow: rgba(129, 236, 255, 0.08);
+
+            /* Space constraints */
+            --spacing-px: 1px;
+            --spacing-10: 2.25rem;
+            --spacing-12: 3rem;
+            --spacing-20: 5rem;
+        }
+
+        /* Base Resets */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            border-radius: 0px !important; /* The Rule of Zero Curves */
+        }
+
+        body {
+            background-color: var(--surface);
+            color: var(--on-surface-variant);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Typography - Machine Intelligence */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', sans-serif;
+            color: white;
+            font-weight: 900;
+        }
+
+        .display-lg {
+            font-size: 5rem;
+            line-height: 0.9;
+            letter-spacing: -0.02em;
+            text-transform: none;
+            font-weight: 700;
+            color: white;
+        }
+
+        .label-md {
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.875rem;
+            font-weight: 700;
+        }
+
+        .label-sm {
+            font-family: 'Space Grotesk', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .body-md {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: var(--on-surface-variant);
+        }
+
+        /* Material Symbols */
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        /* Tonal Layers & Glassmorphism */
+        .bg-low { background-color: var(--surface-container-low); }
+        .bg-high { background-color: var(--surface-container-high); }
+        
+        .glass-panel {
+            background-color: rgba(34, 34, 34, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        /* Floating Shadow - Electric Glow */
+        .electric-glow {
+            box-shadow: 0 0 32px var(--electric-glow);
+        }
+
+        /* Ghost Border Fallback */
+        .ghost-border {
+            border: 1px solid var(--ghost-border);
+        }
+
+        /* Technical Components */
+        .btn-primary {
+            background: var(--primary-gradient);
+            color: #000;
+            border: none;
+            padding: 1rem 2rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            position: relative;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 0 0 1px var(--primary); /* Outer glow */
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 1px solid var(--ghost-border);
+            padding: 1rem 2rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+        }
+        
+        .btn-tertiary {
+            background: transparent;
+            border: none;
+            color: var(--primary);
+            cursor: pointer;
+            text-transform: uppercase;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* Cards and Structural elements */
+        .kinetic-card {
+            background-color: var(--surface-container-high);
+            padding: var(--spacing-12);
+            position: relative;
+        }
+        
+        .kinetic-card-low {
+            background-color: var(--surface-container-low);
+            padding: var(--spacing-12);
+            position: relative;
+        }
+
+        .tech-accent {
+            border-top: 2px solid var(--primary);
+        }
+
+        .mounting-bracket {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            width: 4px;
+            height: 4px;
+            border-top: 1px solid var(--tertiary);
+            border-right: 1px solid var(--tertiary);
+            opacity: 0.5;
+        }
+
+        /* Layout specific styles */
+        .grid-asymmetric-left {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: var(--spacing-20);
+            align-items: center;
+        }
+        
+        .grid-asymmetric-right {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: var(--spacing-20);
+            align-items: stretch;
+        }
+        
+        @media (max-width: 900px) {
+            .grid-asymmetric-left, .grid-asymmetric-right {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .container {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-12);
+        }
+
+        /* Header / Nav */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem var(--spacing-12);
+            border-bottom: 2px solid var(--primary);
+        }
+
+        nav {
+            display: flex;
+            gap: var(--spacing-12);
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        /* Interactive Canvas */
+        #interactive-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        #neural-canvas {
+            width: 100%;
+            height: 100%;
+            opacity: 0.4;
+        }
+
+        /* Status Chip */
+        .status-chip {
+            background-color: transparent;
+            border: 1px solid var(--ghost-border);
+            color: var(--primary);
+            padding: 0.25rem 0.5rem;
+            display: inline-flex;
+            margin-bottom: var(--spacing-10);
+        }
+        
+        .status-error {
+            background-color: var(--error-container);
+            color: var(--on-error-container);
+            border: none;
+        }
+
+        /* Inputs */
+        input[type="text"], input[type="email"], textarea {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #767576;
+            color: white;
+            padding: 0.5rem 0;
+            width: 100%;
+            outline: none;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+
+        input:focus, textarea:focus {
+            border-bottom-color: var(--primary);
+            box-shadow: 0 1px 0 var(--primary);
+        }
+
+        /* Utils */
+        .text-primary { color: var(--primary); }
+        .text-secondary { color: var(--secondary); }
+        
+        .mt-8 { margin-top: var(--spacing-10); }
+        .mt-12 { margin-top: var(--spacing-12); }
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-8 { margin-bottom: var(--spacing-10); }
+
+        .align-right { text-align: right; justify-content: flex-end; }
+        .flex { display: flex; }
+        .flex-col { display: flex; flex-direction: column; }
+        .items-center { align-items: center; }
+        .items-start { align-items: flex-start; }
+        .gap-4 { gap: 1rem; }
+        .gap-12 { gap: var(--spacing-12); }
+        
+        .py-20 { padding-top: var(--spacing-20); padding-bottom: var(--spacing-20); }
+        .w-full { width: 100%; }
+
+        /* Links */
+        .tech-link {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: all 0.2s;
+            border-bottom: 1px solid transparent;
+        }
+        
+        .tech-link:hover {
+            color: var(--primary);
+            border-bottom: 1px solid var(--primary);
+        }
+
+        .img-monochrome {
+            filter: grayscale(100%) contrast(1.2);
+            mix-blend-mode: luminosity;
+            opacity: 0.8;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Hardware mounting effect */
+        .light-leak::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(129,236,255,0.2) 0%, transparent 60%);
+            mix-blend-mode: screen;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Interactive Background Canvas -->
+    <div id="interactive-bg">
+        <canvas id="neural-canvas"></canvas>
+    </div>
+
+    <!-- Header -->
+    <header class="glass-panel">
+        <div class="label-md text-primary" style="font-size: 1.2rem">NIKA RED</div>
+        <nav class="label-md hidden-mobile">
+            <a href="#about">About</a>
+            <a href="#services">Enterprise</a>
+            <a href="#services">Next-Gen</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <button class="btn-primary label-md" style="font-size: 0.875rem;">Access Portal</button>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="container py-20 relative" style="min-height: 85vh; display: flex; align-items: center;">
+            <div style="z-index: 10; max-width: 65%;">
+                <div class="status-chip label-md">System Status: Operational</div>
+                
+                <h1 class="display-lg mb-8">Bridging <br/><span class="text-primary italic">Software</span>, Hardware<br/>&amp; Neural Tech.</h1>
+                
+                <p class="body-md mb-8" style="font-size: 1.25rem; max-width: 80%;">
+                    NIKA RED PRIVATE LIMITED: Architecting high-throughput digital-physical ecosystems for the sovereign industrial era.
+                </p>
+                <div class="flex gap-4">
+                    <button class="btn-primary label-md">Initialize</button>
+                    <button class="btn-secondary label-md">Documentation</button>
+                </div>
+            </div>
+            
+            <div class="light-leak" style="position: absolute; right: 0; top: 0; height: 100%; width: 45%; z-index: 1; mask-image: linear-gradient(to right, transparent, black 15%); -webkit-mask-image: linear-gradient(to right, transparent, black 15%);">
+                <img src="hero_neural_mesh_1775043239514.png" alt="Neural Mesh" class="img-monochrome">
+            </div>
+        </section>
+
+        <!-- About Us -->
+        <section id="about" class="container py-20 grid-asymmetric-right">
+            <!-- Left Side Image Box -->
+            <div class="kinetic-card electric-glow p-0" style="padding: 0; position: relative; overflow: hidden; z-index: 1;">
+                <div class="mounting-bracket" style="z-index: 3;"></div>
+                <div class="light-leak" style="width: 100%; height: 100%; position: relative; z-index: 2;">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdmokHR_knUCWMzHMiY8P3Z3E1pyjvBD18Aj3ZdsFjjJA2f2IMCe3ebImiZCUo4zX_RfNJ8AIw1Jz49XZgAmoM3mRi9_LIwbVkc0PrQEiY5piOtfQuSeDg-4Joe2mKXTg7LOa-A1oOKnGX1V39pZSIFJGGrMNbR-HAj1CuvDnWE5SmtxxKBv32Cl6isadYCit_fa96RJi6qqmUKWabGTI1lV4XWd5NAUymvIc8dn6YLAloX6jlBnZVClxrrBWOpkXDWjB34SiU9A" alt="High Tech Hub" class="img-monochrome">
+                    
+                    <div style="position: absolute; bottom: 0; left: 0; background: var(--primary); color: black; padding: 0.5rem 1rem;" class="label-md">
+                        NODE: CHENNAI_HQ
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side Content -->
+            <div class="flex-col items-start align-right" style="text-align: right; position: relative; z-index: 10;">
+                <h2 class="display-lg mb-8" style="font-size: 4.5rem; line-height: 1; text-shadow: 0 0 10px rgba(129,236,255,0.3);">Legacy of <br/><span class="text-primary italic" style="color: #81ecff !important; opacity: 1 !important;">Kinetic Precision</span></h2>
+                
+                <p class="body-md mb-8" style="max-width: 80%; margin-left: auto; color: #ffffff !important; font-weight: 500;">
+                    Based in the heart of Chennai's innovation corridor, NIKA RED represents a convergence of engineering excellence and creative vision. We don't just build software; we architect the infrastructure of tomorrow.
+                </p>
+                <div class="body-md mb-8" style="border-right: 2px solid var(--primary); padding-right: 1rem; font-weight: 500; font-style: italic; max-width: 80%; margin-left: auto; color: #ffffff !important;">
+                    "Form Follows Protocol" — where every line of code serves a singular, powerful purpose.
+                </div>
+                
+                <div class="flex gap-12" style="justify-content: flex-end;">
+                    <span class="label-md flex items-center gap-4" style="color: #ffffff !important;"><span class="material-symbols-outlined text-primary" style="color: #81ecff !important;">analytics</span> R&amp;D Focused</span>
+                    <span class="label-md flex items-center gap-4" style="color: #ffffff !important;"><span class="material-symbols-outlined text-primary" style="color: #81ecff !important;">memory</span> Hardware Native</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section id="services" class="container py-20">
+            <h2 class="display-lg mb-12">Core <span class="text-primary italic">Disciplines</span></h2>
+            
+            <div class="flex-col gap-12">
+                <!-- Service 1 -->
+                <div class="kinetic-card tech-accent electric-glow grid-asymmetric-left">
+                    <div class="mounting-bracket"></div>
+                    <div>
+                        <div class="flex justify-between items-start mb-8">
+                            <span class="material-symbols-outlined text-primary" style="font-size: 3rem;">terminal</span>
+                        </div>
+                        <h3 class="label-md text-primary mb-4" style="font-size: 2rem;">Enterprise Foundry</h3>
+                        <p class="body-md mb-8" style="max-width: 90%;">
+                            Developing robust, industrial-grade custom software and hardware management systems designed for maximum operational throughput.
+                        </p>
+                        <div class="flex gap-4">
+                            <span class="label-sm ghost-border" style="padding: 0.5rem 1rem;">Custom ERP</span>
+                            <span class="label-sm ghost-border" style="padding: 0.5rem 1rem;">IoT Nexus</span>
+                            <span class="label-sm ghost-border" style="padding: 0.5rem 1rem;">Legacy Bridge</span>
+                        </div>
+                    </div>
+                    <div class="label-md" style="font-size: 5rem; color: rgba(255, 255, 255, 0.4); text-align: right; z-index: 5; position: relative;">01</div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="kinetic-card-low grid-asymmetric-right" style="position: relative; z-index: 10;">
+                    <div class="mounting-bracket"></div>
+                    <div class="label-md" style="font-size: 5rem; color: rgba(255, 255, 255, 0.4); z-index: 5; position: relative;">02</div>
+                    <div style="text-align: right; position: relative; z-index: 10;">
+                        <div class="flex justify-between items-start mb-8" style="flex-direction: row-reverse;">
+                            <span class="material-symbols-outlined text-primary" style="font-size: 3rem; color: #81ecff !important; opacity: 1 !important;">psychology</span>
+                        </div>
+                        <h3 class="label-md text-primary mb-4" style="font-size: 2rem; color: #81ecff !important; text-shadow: 0 0 10px rgba(129,236,255,0.3);">AI Core R&amp;D</h3>
+                        <p class="body-md mb-8" style="max-width: 90%; margin-left: auto; color: #ffffff !important; font-weight: 500;">
+                            Proprietary neural architectures optimized for edge deployment and real-time sensor integration.
+                        </p>
+                        <a href="#" class="tech-link label-md" style="color: #81ecff !important; font-weight: 700;">Request Research Data</a>
+                    </div>
+                </div>
+
+                <!-- Service 3 & Vision -->
+                <div class="flex gap-12" style="align-items: stretch; position: relative; z-index: 10;">
+                    <div class="kinetic-card tech-accent flex-col" style="flex: 1; position: relative; z-index: 10;">
+                        <div class="mounting-bracket"></div>
+                        <span class="material-symbols-outlined text-primary" style="font-size: 3rem; margin-bottom: 2rem; color: #81ecff !important; opacity: 1 !important;">view_in_ar</span>
+                        <h3 class="label-md text-primary mb-4" style="font-size: 2rem; color: #81ecff !important; text-shadow: 0 0 10px rgba(129,236,255,0.3);">XR Frontiers</h3>
+                        <p class="body-md" style="color: #ffffff !important; font-weight: 500;">
+                            Extended Reality implementation for industrial simulation, spatial computing, and immersive data command centers.
+                        </p>
+                    </div>
+
+                    <div class="kinetic-card-low flex items-center justify-center p-0" style="flex: 1.5; position: relative; overflow: hidden;">
+                        <div style="z-index: 10; padding: var(--spacing-12);">
+                            <h4 class="label-md text-primary" style="font-size: 1.5rem; line-height: 1.5; font-style: italic;">
+                                "THE FUTURE IS NOT PREDICTED, <br/>IT IS MANUFACTURED."
+                            </h4>
+                        </div>
+                        <div class="light-leak" style="position: absolute; right: 0; bottom: 0; height: 100%; width: 50%;">
+                            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_eFEZuwZBxKA6bKC1wd83YVmSe5YXXajWF2E3QSHynz6Psul2yL6q41oKdGfRkdiaFe_jz8QSeu7n3u2VIoU3TAuRr-rXMfk-tcimvqDT5kd50bfpfTFsLipmLNsWQSajKmnLvog4BwCSaiEWABdIszmcWyTuWoIElxAkOARA3NZA0bL2sLxIsCHHf4DmJGHs1OIYzXr0nhvaDW9kkrp0JvMsYjS7NBijK9WI4g1SNVNHJKWXK4rfIjvy2yf-P-gDUjav7mphGQ" class="img-monochrome" alt="Circuit" style="mask-image: linear-gradient(to right, transparent, black); -webkit-mask-image: linear-gradient(to right, transparent, black);">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="container py-20 bg-low mt-12 grid-asymmetric-left">
+            <div>
+                <h2 class="display-lg mb-8" style="font-size: 4rem;">Establish <br/><span class="text-primary italic">Uplink</span></h2>
+                <p class="body-md mb-12">
+                    Direct communication channel to our engineering foundry in Chennai.
+                </p>
+                
+                <div class="ghost-border p-0 mb-8" style="padding-left: 1rem; border-left: 2px solid var(--primary); border-top: none; border-right: none; border-bottom: none;">
+                    <h4 class="label-md text-primary mb-4 flex items-center gap-4">
+                        <span class="material-symbols-outlined">location_on</span> Physical Node
+                    </h4>
+                    <address class="body-md" style="font-style: normal; line-height: 2;">
+                        No.1/579, 1st Flr, 7th St,<br/>
+                        Veerapathran Nagar, Medavakkam,<br/>
+                        Chennai, Kancheepuram, 600100,<br/>
+                        Tamil Nadu, India
+                    </address>
+                </div>
+
+                <form id="uplink-form" class="flex-col gap-12 mt-12" style="max-width: 80%;">
+                    <div style="position: relative;">
+                        <input id="access-id" type="text" placeholder="Access ID / Name" required>
+                        <span class="label-sm" style="position: absolute; right: 0; top: 0.5rem; opacity: 0.8;">REQ</span>
+                    </div>
+                    <div style="position: relative;">
+                        <input id="secure-frequency" type="email" placeholder="Secure Frequency / Email" required>
+                        <span class="label-sm" style="position: absolute; right: 0; top: 0.5rem; opacity: 0.8;">REQ</span>
+                    </div>
+                    <div>
+                        <button id="uplink-submit" type="submit" class="btn-primary label-md">Transmit Data</button>
+                        <p id="uplink-status" class="label-sm mt-8" style="display: none;"></p>
+                    </div>
+                </form>
+            </div>
+            
+            <div class="kinetic-card electric-glow p-0" style="padding: 0; position: relative;">
+                <div class="mounting-bracket" style="z-index: 20;"></div>
+                <div class="light-leak" style="width: 100%; height: 100%; position: relative;">
+                    <img src="chennai_node_1775043257682.png" alt="Medavakkam Node" class="img-monochrome">
+                    
+                    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); border: 1px solid var(--primary); width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;">
+                        <div style="width: 4px; height: 4px; background: var(--primary);"></div>
+                        <div style="position: absolute; top: -10px; left: 50%; width: 1px; height: 10px; background: var(--primary);"></div>
+                        <div style="position: absolute; bottom: -10px; left: 50%; width: 1px; height: 10px; background: var(--primary);"></div>
+                        <div style="position: absolute; left: -10px; top: 50%; width: 10px; height: 1px; background: var(--primary);"></div>
+                        <div style="position: absolute; right: -10px; top: 50%; width: 10px; height: 1px; background: var(--primary);"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-high" style="border-top: 1px solid var(--ghost-border);">
+        <div class="container py-20 flex" style="justify-content: space-between; align-items: flex-end;">
+            <div class="flex-col gap-4">
+                <div class="label-md text-primary" style="font-size: 1.5rem">NIKA RED</div>
+                <p class="label-sm" style="color: rgba(255, 255, 255, 0.4); max-width: 300px;">
+                    © 2024 NIKA RED PRIVATE LIMITED. SECURITY CLEARANCE REQUIRED.
+                </p>
+            </div>
+            
+            <div class="flex gap-12 label-sm align-right">
+                <a href="#" class="tech-link">Privacy_Protocol</a>
+                <a href="#" class="tech-link">Service_Terms</a>
+                <a href="#" class="tech-link">Neural_Link</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        const canvas = document.getElementById('neural-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let mouse = { x: null, y: null, radius: 150 };
+
+        window.addEventListener('resize', initCanvas);
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.x;
+            mouse.y = e.y;
+        });
+
+        function initCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            particles = [];
+            const numberOfParticles = (canvas.width * canvas.height) / 10000;
+            for (let i = 0; i < numberOfParticles; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 1.5 + 0.5;
+                this.baseX = this.x;
+                this.baseY = this.y;
+                this.density = (Math.random() * 30) + 1;
+                this.color = '#81ecff';
+            }
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.fillRect(this.x, this.y, this.size, this.size);
+            }
+            update() {
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+                let forceDirectionX = dx / distance;
+                let forceDirectionY = dy / distance;
+                let maxDistance = mouse.radius;
+                let force = (maxDistance - distance) / maxDistance;
+                let directionX = forceDirectionX * force * this.density;
+                let directionY = forceDirectionY * force * this.density;
+
+                if (distance < mouse.radius) {
+                    this.x -= directionX;
+                    this.y -= directionY;
+                } else {
+                    if (this.x !== this.baseX) {
+                        let dx = this.x - this.baseX;
+                        this.x -= dx / 15;
+                    }
+                    if (this.y !== this.baseY) {
+                        let dy = this.y - this.baseY;
+                        this.y -= dy / 15;
+                    }
+                }
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].draw();
+                particles[i].update();
+            }
+            connect();
+            requestAnimationFrame(animate);
+        }
+
+        function connect() {
+            for (let a = 0; a < particles.length; a++) {
+                for (let b = a; b < particles.length; b++) {
+                    let dx = particles[a].x - particles[b].x;
+                    let dy = particles[a].y - particles[b].y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 80) {
+                        let opacityValue = 1 - (distance / 80);
+                        ctx.strokeStyle = `rgba(129, 236, 255, ${opacityValue * 0.2})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[a].x, particles[a].y);
+                        // Strict straight lines
+                        ctx.lineTo(particles[b].x, particles[b].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        initCanvas();
+        animate();
+    </script>
+
+    <!-- Firebase Integration -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
+
+        // TODO: REPLACE THIS OBJECT WITH YOUR ACTUAL FIREBASE CONFIGURATION
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "your-project.firebaseapp.com",
+            projectId: "your-project",
+            storageBucket: "your-project.appspot.com",
+            messagingSenderId: "123456789",
+            appId: "1:123456789:web:abcdef"
+        };
+
+        // Initialize Firebase
+        let app, db;
+        try {
+            if (firebaseConfig.apiKey !== "YOUR_API_KEY") {
+                app = initializeApp(firebaseConfig);
+                db = getFirestore(app);
+            }
+        } catch (e) {
+            console.error("Firebase Initialization Error.", e);
+        }
+
+        const uplinkForm = document.getElementById("uplink-form");
+        const uplinkSubmit = document.getElementById("uplink-submit");
+        const uplinkStatus = document.getElementById("uplink-status");
+
+        if(uplinkForm) {
+            uplinkForm.addEventListener("submit", async (e) => {
+                e.preventDefault();
+                
+                const name = document.getElementById("access-id").value;
+                const email = document.getElementById("secure-frequency").value;
+                
+                // Visual feedback
+                uplinkSubmit.disabled = true;
+                uplinkSubmit.innerHTML = "TRANSMITTING...";
+                uplinkStatus.style.display = "block";
+                uplinkStatus.style.color = "var(--secondary)";
+                uplinkStatus.innerHTML = "Establishing secure connection to database...";
+
+                try {
+                    if(!db) {
+                        throw new Error("Missing Firebase Config: Please update the firebaseConfig object in code.html.");
+                    }
+                    
+                    // Push data to Firestore
+                    await addDoc(collection(db, "contacts"), {
+                        name: name,
+                        email: email,
+                        timestamp: new Date().toISOString()
+                    });
+                    
+                    // Success State
+                    uplinkStatus.style.color = "var(--primary)";
+                    uplinkStatus.innerHTML = "DATA UPLINK SUCCESSFUL.";
+                    uplinkSubmit.innerHTML = "TRANSMIT DATA";
+                    uplinkForm.reset();
+                    
+                    // Hide success message after 5 seconds
+                    setTimeout(() => {
+                        uplinkStatus.style.display = "none";
+                    }, 5000);
+                    
+                } catch (error) {
+                    console.error("Data Transmission Error:", error);
+                    uplinkStatus.style.color = "var(--on-error-container)";
+                    uplinkStatus.innerHTML = `TRANSMISSION FAILED: ${error.message}`;
+                    uplinkSubmit.innerHTML = "RETRY TRANSMISSION";
+                } finally {
+                    uplinkSubmit.disabled = false;
+                }
+            });
+        }
+    </script>
+</body>
+</html>

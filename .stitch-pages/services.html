@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary-fixed": "#003e47",
+                        "on-error-container": "#ffa8a3",
+                        "secondary-dim": "#00c3eb",
+                        "tertiary-dim": "#5d9ffc",
+                        "inverse-on-surface": "#565556",
+                        "surface-container-lowest": "#000000",
+                        "on-primary-fixed-variant": "#005d69",
+                        "primary-container": "#3bafc1",
+                        "primary": "#7be7f9",
+                        "secondary": "#00d2fc",
+                        "on-tertiary-container": "#002349",
+                        "on-primary-container": "#00272d",
+                        "inverse-surface": "#fcf8f9",
+                        "surface-bright": "#2c2c2d",
+                        "on-secondary": "#004352",
+                        "on-background": "#ffffff",
+                        "surface": "#0e0e0f",
+                        "surface-container-highest": "#262627",
+                        "primary-dim": "#6cd8eb",
+                        "surface-tint": "#7be7f9",
+                        "error-dim": "#d7383b",
+                        "surface-container-low": "#131314",
+                        "outline-variant": "#484849",
+                        "on-error": "#490006",
+                        "background": "#0e0e0f",
+                        "on-secondary-container": "#eefaff",
+                        "tertiary-container": "#5fa1ff",
+                        "on-tertiary-fixed-variant": "#003971",
+                        "secondary-fixed-dim": "#17d5ff",
+                        "outline": "#767576",
+                        "error-container": "#9f0519",
+                        "surface-variant": "#262627",
+                        "surface-container": "#19191b",
+                        "tertiary-fixed-dim": "#65a4ff",
+                        "surface-container-high": "#1f1f21",
+                        "on-tertiary": "#002e5e",
+                        "error": "#ff716c",
+                        "inverse-primary": "#006976",
+                        "on-surface": "#ffffff",
+                        "tertiary-fixed": "#80b2ff",
+                        "on-tertiary-fixed": "#001835",
+                        "secondary-container": "#00677d",
+                        "primary-fixed": "#7be7f9",
+                        "on-secondary-fixed": "#003a47",
+                        "on-primary": "#00535e",
+                        "on-surface-variant": "#adaaab",
+                        "on-secondary-fixed-variant": "#00586c",
+                        "primary-fixed-dim": "#6cd8eb",
+                        "secondary-fixed": "#79dfff",
+                        "tertiary": "#7bafff",
+                        "surface-dim": "#0e0e0f"
+                    },
+                    fontFamily: {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Inter"],
+                        "label": ["Space Grotesk"]
+                    },
+                    borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .electric-glow {
+            box-shadow: 0 0 40px -10px rgba(123, 231, 249, 0.15);
+        }
+        .electric-glow-strong {
+            box-shadow: 0 0 60px -5px rgba(123, 231, 249, 0.25);
+        }
+        .text-glow {
+            text-shadow: 0 0 12px rgba(123, 231, 249, 0.4);
+        }
+        .grid-mask {
+            background-image: radial-gradient(#484849 0.5px, transparent 0.5px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary-container">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 rounded-none border-none bg-[#131314] backdrop-blur-md bg-opacity-70 flex justify-between items-center px-8 py-4 w-full">
+<div class="text-2xl font-black text-[#81ecff] tracking-[-0.05em] font-headline uppercase">
+            NIKA RED
+        </div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-slate-400 font-medium font-['Inter'] text-[10px] tracking-widest uppercase hover:text-[#81ecff] transition-colors duration-300" href="#">About</a>
+<a class="text-[#81ecff] border-b-2 border-[#81ecff] pb-1 font-['Inter'] text-[10px] tracking-widest uppercase transition-colors duration-300" href="#">Enterprise</a>
+<a class="text-slate-400 font-medium font-['Inter'] text-[10px] tracking-widest uppercase hover:text-[#81ecff] transition-colors duration-300" href="#">Next-Gen</a>
+<a class="text-slate-400 font-medium font-['Inter'] text-[10px] tracking-widest uppercase hover:text-[#81ecff] transition-colors duration-300" href="#">Contact</a>
+</nav>
+<button class="bg-primary text-on-primary px-6 py-2 font-headline font-bold text-xs tracking-widest uppercase transition-transform active:scale-95 duration-100 hover:shadow-[0_0_20px_rgba(123,231,249,0.3)]">
+            LOGIN
+        </button>
+</header>
+<main class="pt-24 min-h-screen">
+<!-- Hero Section / Asymmetric Layout -->
+<section class="relative px-8 py-20 overflow-hidden border-b border-outline-variant/10">
+<div class="absolute inset-0 grid-mask opacity-10 pointer-events-none"></div>
+<div class="max-w-7xl mx-auto grid grid-cols-12 gap-8 items-end">
+<div class="col-span-12 lg:col-span-8">
+<p class="font-headline text-primary uppercase tracking-[0.4em] text-[10px] mb-4 flex items-center gap-3">
+<span class="w-2 h-2 bg-primary"></span>
+                        SYSTEM_CAPABILITIES_OVERVIEW
+                    </p>
+<h1 class="font-headline font-black text-6xl md:text-8xl lg:text-9xl tracking-tighter leading-[0.9] text-white uppercase break-all">
+                        KINETIC <br/> <span class="text-primary text-glow">PROTOCOL</span>
+</h1>
+</div>
+<div class="col-span-12 lg:col-span-4 lg:pb-4">
+<p class="text-on-surface-variant text-sm font-light max-w-sm border-l border-primary/30 pl-6 uppercase tracking-wider leading-relaxed">
+                        Precision-engineered software and hardware solutions for the sovereign industrial architect. Real-time data synthesis across distributed neural architectures.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Services Grid: Asymmetric Bento Style -->
+<section class="px-8 py-24 max-w-7xl mx-auto space-y-32">
+<!-- Enterprise Foundry -->
+<div class="grid grid-cols-12 gap-0 items-stretch border border-outline-variant/20 bg-surface-container-low group">
+<div class="col-span-12 md:col-span-7 p-12 lg:p-20 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-4 mb-12">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">factory</span>
+<span class="font-headline font-black text-primary text-xl tracking-tighter">001</span>
+</div>
+<h2 class="font-headline font-black text-5xl lg:text-7xl tracking-tighter uppercase mb-8 text-white group-hover:text-primary transition-colors">
+                            Enterprise <br/>Foundry
+                        </h2>
+<p class="text-on-surface-variant max-w-md text-sm leading-relaxed mb-12 uppercase tracking-widest">
+                            Industrial-grade custom software and hardware systems. Built for heavy-duty operational resilience and mission-critical reliability.
+                        </p>
+</div>
+<div class="flex flex-wrap gap-4">
+<div class="bg-surface-container-highest px-4 py-2 border-l-2 border-primary">
+<span class="text-[10px] font-headline font-bold uppercase text-primary tracking-tighter">Hard-Coded Stability</span>
+</div>
+<div class="bg-surface-container-highest px-4 py-2 border-l-2 border-primary">
+<span class="text-[10px] font-headline font-bold uppercase text-primary tracking-tighter">Silicon-Native Logic</span>
+</div>
+</div>
+</div>
+<div class="col-span-12 md:col-span-5 relative min-h-[400px] overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700">
+<img alt="Industrial Hardware" class="absolute inset-0 w-full h-full object-cover" data-alt="Close-up of industrial circuitry and robotic assembly lines in a dark, high-tech manufacturing facility with cyan accent lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNrHlhKy3r1_L__y4ulb6Bu2qMA-hUZAS3R-iQqMITs-_sykbl-pUk0TpAdZB-0x7_fnq-4mVvjDRf16n_pf5WIBnMJ1rlMAarMrzPQijHwnV4K8lsMGoEgL3Y0ovaumdwJD2d7nsDktjXe7o3_L822XT43moHVKRr8GtTitmrw-4d_naqs9oF5ZtcZLTbzC5R41MkJ0LyGGPsg2QMl2we9SN-ka2mUmPoFRJH0hX8Ls0Yvdm8hTPvo2O0ERJTNRiSzA2FwBTLLNY"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
+</div>
+</div>
+<!-- AI Core R&D -->
+<div class="grid grid-cols-12 gap-0 items-stretch">
+<div class="col-span-12 md:col-span-5 order-2 md:order-1 relative min-h-[400px] bg-surface-container-high electric-glow overflow-hidden group">
+<img alt="AI Research" class="absolute inset-0 w-full h-full object-cover scale-110 group-hover:scale-100 transition-transform duration-1000" data-alt="Digital representation of a neural network with glowing cyan data nodes connecting in a dark three-dimensional space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMdrdyVQfTr0mMhtNKOf3F2EVDPkQBwaw3EYRU82jmt257iiM0MhX3W37a94EIFnmLhBML6Sq0lVacu9sWVkhlw9fnYeDhEAyTt0iHXSkOoHivI1R9tYx45RVYxA2Fs-rcV1_8mGW_KieZgJJBrMXJMDNR-tJLq7PyFbV_dF8q17CAEqaYwpKCPtwomg1pHpEzvD_dpTrqdSuSf9fMQVfaTmnzlHhVPuzc_OmW6Io4T5Q7LP-MCtcoqcJnVkimaIazElNWXVUhMl0"/>
+<div class="absolute bottom-0 left-0 p-8 bg-surface/80 backdrop-blur-md w-full border-t border-primary/20">
+<span class="font-headline font-black text-xs text-primary tracking-[0.3em] uppercase">STATUS: ACTIVE</span>
+</div>
+</div>
+<div class="col-span-12 md:col-span-7 order-1 md:order-2 p-12 lg:p-20 bg-surface-container-low flex flex-col justify-center border-y border-r border-outline-variant/20">
+<div class="flex items-center gap-4 mb-12">
+<span class="material-symbols-outlined text-primary text-4xl" style="font-variation-settings: 'FILL' 1;">memory</span>
+<span class="font-headline font-black text-primary text-xl tracking-tighter">002</span>
+</div>
+<h2 class="font-headline font-black text-5xl lg:text-7xl tracking-tighter uppercase mb-8 text-white">
+                        AI Core R&amp;D
+                    </h2>
+<p class="text-on-surface-variant max-w-lg text-sm leading-relaxed mb-12 uppercase tracking-widest">
+                        Neural architectures optimized for edge deployment. We engineer sovereign cognitive models that operate without reliance on centralized cloud latency.
+                    </p>
+<div class="space-y-6">
+<div class="flex justify-between items-center border-b border-outline-variant/30 pb-4">
+<span class="text-xs uppercase font-bold tracking-widest">Latency Optimization</span>
+<span class="text-primary font-headline text-lg font-black tracking-tighter">0.002ms</span>
+</div>
+<div class="flex justify-between items-center border-b border-outline-variant/30 pb-4">
+<span class="text-xs uppercase font-bold tracking-widest">Model Quantization</span>
+<span class="text-primary font-headline text-lg font-black tracking-tighter">4-BIT INT</span>
+</div>
+</div>
+</div>
+</div>
+<!-- XR Frontiers -->
+<div class="grid grid-cols-12 gap-8 items-start">
+<div class="col-span-12 lg:col-span-4 bg-primary p-12 electric-glow-strong">
+<div class="flex items-center gap-4 mb-8">
+<span class="material-symbols-outlined text-on-primary text-4xl">visibility</span>
+<span class="font-headline font-black text-on-primary text-xl tracking-tighter">003</span>
+</div>
+<h2 class="font-headline font-black text-4xl lg:text-5xl tracking-tighter uppercase mb-8 text-on-primary leading-none">
+                        XR<br/>FRONTIERS
+                    </h2>
+<button class="w-full py-4 border-2 border-on-primary text-on-primary font-headline font-bold uppercase tracking-widest hover:bg-on-primary hover:text-primary transition-colors">
+                        INITIATE_IMMERSION
+                    </button>
+</div>
+<div class="col-span-12 lg:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-surface-container-high p-8 border border-outline-variant/10">
+<h4 class="font-headline font-black text-white text-xl uppercase mb-4 tracking-tighter">Spatial Computing</h4>
+<p class="text-on-surface-variant text-[10px] leading-relaxed uppercase tracking-widest">Implementing world-scale persistent data layers for industrial maintenance and training protocols.</p>
+</div>
+<div class="bg-surface-container-high p-8 border border-outline-variant/10">
+<h4 class="font-headline font-black text-white text-xl uppercase mb-4 tracking-tighter">Synthetic Environments</h4>
+<p class="text-on-surface-variant text-[10px] leading-relaxed uppercase tracking-widest">High-fidelity digital twins for remote teleoperation of hazardous infrastructure.</p>
+</div>
+<div class="col-span-1 md:col-span-2 relative h-64 bg-surface-container-lowest border border-outline-variant/10 overflow-hidden">
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-full h-[1px] bg-primary/20 absolute top-1/2"></div>
+<div class="h-full w-[1px] bg-primary/20 absolute left-1/2"></div>
+<img alt="XR Visualization" class="w-full h-full object-cover opacity-50" data-alt="Futuristic architectural render viewed through a digital heads-up display with wireframe overlays and cyan telemetry data" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWyP89eGLskASX0zVNYjju7YiNZNYkLvA55D2jec_b2UVHQO8wTSOlJXO8k9937aNyHgNnMaz6Fd29FBZHnKVLyBjDWuLwJP0j7nBKI4AcizkWHLbXv47Y32MSKcL03sybza76XlCqE7V0Atlqzs8zEPnwSHZCC4KuxmwbBWFSciUz0p_EqgnnzSCq-aYAtYIkfgV44CxuIldYUJM4OMY3o13jWKCT8s9PzQzBSbOG_bzvW4d0dyjwTQ8onPnYwgCMNgBPhYX4BPo"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-32 px-8 bg-surface-container-low border-y border-outline-variant/10">
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="font-headline font-black text-4xl md:text-6xl text-white uppercase tracking-tighter mb-12">
+                    READY FOR <span class="text-primary">DEPLOYMENT?</span>
+</h2>
+<div class="flex flex-col md:flex-row gap-6 justify-center">
+<button class="bg-primary text-on-primary px-12 py-5 font-headline font-black tracking-widest uppercase hover:shadow-[0_0_40px_rgba(123,231,249,0.4)] transition-all">
+                        REQUEST_PROPOSAL
+                    </button>
+<button class="border-2 border-outline-variant text-white px-12 py-5 font-headline font-black tracking-widest uppercase hover:border-primary hover:text-primary transition-all">
+                        CONSULT_TECHNICAL_LEAD
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-none rounded-none py-12 bg-[#0e0e0f] flex flex-col items-center gap-4 w-full border-t border-[#484849]/15">
+<div class="text-lg font-black text-[#81ecff] font-headline uppercase tracking-tighter">NIKA RED</div>
+<div class="flex gap-8 mb-4">
+<a class="font-['Inter'] text-[10px] tracking-widest uppercase text-slate-600 hover:text-[#81ecff] transition-colors" href="#">Privacy Protocol</a>
+<a class="font-['Inter'] text-[10px] tracking-widest uppercase text-slate-600 hover:text-[#81ecff] transition-colors" href="#">System Status</a>
+<a class="font-['Inter'] text-[10px] tracking-widest uppercase text-slate-600 hover:text-[#81ecff] transition-colors" href="#">Legal</a>
+</div>
+<div class="font-['Inter'] text-[10px] tracking-widest uppercase text-slate-400">
+            © 2024 NIKA RED PRIVATE LIMITED
+        </div>
+</footer>
+</body></html>

@@ -1,49 +1,343 @@
+/* Kinetic Protocol CSS Variables */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    /* Tonal Architecture */
+    --surface: #0e0e0f;
+    --surface-container-low: #131314;
+    --surface-container-high: #201f21;
+    --surface-container-highest: #262627;
+    
+    /* Signature Texture */
+    --primary: #81ecff;
+    --primary-container: #00e3fd;
+    --primary-gradient: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 100%);
+    
+    /* Secondary & Tertiary */
+    --secondary: #6e9bff;
+    --tertiary: #faf9f9;
+    --error-container: #93000a;
+    --on-error-container: #ffdad6; 
+    
+    /* Typography */
+    --on-surface-variant: #adaaab;
+    --ghost-border: rgba(72, 72, 73, 0.15);
+    --electric-glow: rgba(129, 236, 255, 0.08);
+
+    /* Space constraints */
+    --spacing-px: 1px;
+    --spacing-10: 2.25rem;
+    --spacing-12: 3rem;
+    --spacing-20: 5rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html {
-  height: 100%;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
+/* Base Resets */
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border-radius: 0px !important; /* The Rule of Zero Curves */
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+body {
+    background-color: var(--surface);
+    color: var(--on-surface-variant);
+    font-size: 1rem;
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+    font-family: var(--font-inter), sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+/* Typography - Machine Intelligence */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-space), sans-serif;
+    color: white;
+    font-weight: 900;
+}
+
+.display-lg {
+    font-size: 5rem;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+    text-transform: none;
+    font-weight: 700;
+    color: white;
+}
+
+.label-md {
+    font-family: var(--font-space), sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
+.label-sm {
+    font-family: var(--font-space), sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--secondary);
+}
+
+.body-md {
+    font-family: var(--font-inter), sans-serif;
+    font-size: 1rem;
+    color: var(--on-surface-variant);
+}
+
+/* Material Symbols - Make sure to load the variable icon in layout or page */
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Tonal Layers & Glassmorphism */
+.bg-low { background-color: var(--surface-container-low); }
+.bg-high { background-color: var(--surface-container-high); }
+
+.glass-panel {
+    background-color: rgba(34, 34, 34, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+/* Floating Shadow - Electric Glow */
+.electric-glow {
+    box-shadow: 0 0 32px var(--electric-glow);
+}
+
+/* Ghost Border Fallback */
+.ghost-border {
+    border: 1px solid var(--ghost-border);
+}
+
+/* Technical Components */
+.btn-primary {
+    background: var(--primary-gradient);
+    color: #000;
+    border: none;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 0 0 1px var(--primary); /* Outer glow */
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary);
+    border: 1px solid var(--ghost-border);
+    padding: 1rem 2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+.btn-secondary:hover {
+    border-color: var(--primary);
+}
+
+.btn-tertiary {
+    background: transparent;
+    border: none;
+    color: var(--primary);
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: var(--font-space), sans-serif;
+}
+
+/* Cards and Structural elements */
+.kinetic-card {
+    background-color: var(--surface-container-high);
+    padding: var(--spacing-12);
+    position: relative;
+}
+
+.kinetic-card-low {
+    background-color: var(--surface-container-low);
+    padding: var(--spacing-12);
+    position: relative;
+}
+
+.tech-accent {
+    border-top: 2px solid var(--primary);
+}
+
+.mounting-bracket {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 4px;
+    height: 4px;
+    border-top: 1px solid var(--tertiary);
+    border-right: 1px solid var(--tertiary);
+    opacity: 0.5;
+}
+
+/* Layout specific styles */
+.grid-asymmetric-left {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-20);
+    align-items: center;
+}
+
+.grid-asymmetric-right {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--spacing-20);
+    align-items: stretch;
+}
+
+@media (max-width: 900px) {
+    .grid-asymmetric-left, .grid-asymmetric-right {
+        grid-template-columns: 1fr;
+    }
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-12);
+}
+
+/* Header / Nav */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem var(--spacing-12);
+    border-bottom: 2px solid var(--primary);
+}
+
+nav {
+    display: flex;
+    gap: var(--spacing-12);
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: var(--primary);
+}
+
+/* Interactive Canvas */
+#interactive-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+}
+
+#neural-canvas {
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+}
+
+/* Status Chip */
+.status-chip {
+    background-color: transparent;
+    border: 1px solid var(--ghost-border);
+    color: var(--primary);
+    padding: 0.25rem 0.5rem;
+    display: inline-flex;
+    margin-bottom: var(--spacing-10);
+}
+
+.status-error {
+    background-color: var(--error-container);
+    color: var(--on-error-container);
+    border: none;
+}
+
+/* Inputs */
+input[type="text"], input[type="email"], textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #767576;
+    color: white;
+    padding: 0.5rem 0;
+    width: 100%;
+    outline: none;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+input:focus, textarea:focus {
+    border-bottom-color: var(--primary);
+    box-shadow: 0 1px 0 var(--primary);
+}
+
+/* Utils */
+.text-primary { color: var(--primary); }
+.text-secondary { color: var(--secondary); }
+
+.mt-8 { margin-top: var(--spacing-10); }
+.mt-12 { margin-top: var(--spacing-12); }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-8 { margin-bottom: var(--spacing-10); }
+
+.align-right { text-align: right; justify-content: flex-end; }
+.flex { display: flex; }
+.flex-col { display: flex; flex-direction: column; }
+.items-center { align-items: center; }
+.items-start { align-items: flex-start; }
+.gap-4 { gap: 1rem; }
+.gap-12 { gap: var(--spacing-12); }
+
+.py-20 { padding-top: var(--spacing-20); padding-bottom: var(--spacing-20); }
+.w-full { width: 100%; }
+
+/* Links */
+.tech-link {
+    color: var(--secondary);
+    text-decoration: none;
+    transition: all 0.2s;
+    border-bottom: 1px solid transparent;
+}
+
+.tech-link:hover {
+    color: var(--primary);
+    border-bottom: 1px solid var(--primary);
+}
+
+.img-monochrome {
+    filter: grayscale(100%) contrast(1.2);
+    mix-blend-mode: luminosity;
+    opacity: 0.8;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Hardware mounting effect */
+.light-leak::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(129,236,255,0.2) 0%, transparent 60%);
+    mix-blend-mode: screen;
+    pointer-events: none;
 }
