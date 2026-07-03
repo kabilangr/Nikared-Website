@@ -66,7 +66,7 @@ export default function About() {
           <div className="grid-asymmetric-left" style={{ gap: "1.5rem" }}>
 
             {/* Card 1 — Research-led */}
-            <div className="kinetic-card electric-glow" style={{ minHeight: "400px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+            <div className="kinetic-card hoverable" style={{ minHeight: "400px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
               <div>
                 <div className="flex justify-between items-start mb-12">
                   <h3 className="display-lg" style={{ fontSize: "2.75rem" }}>Research-led</h3>
@@ -89,7 +89,7 @@ export default function About() {
             </div>
 
             {/* Card 2 — Built for hardware */}
-            <div className="kinetic-card electric-glow" style={{ backgroundColor: "var(--primary)", minHeight: "400px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+            <div className="kinetic-card hoverable" style={{ backgroundColor: "var(--primary)", minHeight: "400px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
               <div>
                 <div className="flex justify-between items-start mb-12">
                   <h3 className="display-lg" style={{ fontSize: "2.25rem", color: "var(--surface)", textShadow: "none" }}>Built for hardware</h3>
@@ -107,14 +107,14 @@ export default function About() {
 
           {/* Discipline Overview */}
           <div className="grid-asymmetric-right" style={{ gap: "1.5rem", marginTop: "1.5rem" }}>
-            <div className="kinetic-card-low electric-glow">
+            <div className="kinetic-card-low hoverable">
               <p className="display-lg" style={{ fontSize: "2.5rem", marginBottom: "0.5rem" }}>3</p>
               <p className="label-sm">Core disciplines</p>
               <p className="body-md mt-8" style={{ fontSize: "0.9rem" }}>
                 Engineering Foundry · AI & Machine Learning · XR & Spatial Computing
               </p>
             </div>
-            <div className="kinetic-card-low flex items-center justify-between electric-glow">
+            <div className="kinetic-card-low flex items-center justify-between hoverable">
               <p className="body-md" style={{ maxWidth: "60%" }}>
                 Nika Red works across the full stack — from sensor hardware and edge compute to enterprise interfaces and immersive environments.
               </p>

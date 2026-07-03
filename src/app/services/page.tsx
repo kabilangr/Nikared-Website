@@ -151,7 +151,7 @@ export default function Services() {
                 { n: "03", label: "Build", body: "Iterative delivery with testing protocols tuned to industrial environments." },
                 { n: "04", label: "Support", body: "You keep full operational control after launch — no dependency lock-in." },
               ].map(step => (
-                <div key={step.n} className="kinetic-card-low" style={{ padding: "2rem" }}>
+                <div key={step.n} className="kinetic-card-low hoverable" style={{ padding: "2rem" }}>
                   <p className="label-sm mb-4">{step.n}</p>
                   <h3 className="label-md mb-4" style={{ fontSize: "1.25rem", color: "var(--text-strong)" }}>{step.label}</h3>
                   <p className="body-md" style={{ fontSize: "0.9375rem" }}>{step.body}</p>
@@ -163,7 +163,7 @@ export default function Services() {
 
         {/* CTA */}
         <ScrollReveal>
-          <div className="kinetic-card tech-accent" style={{ textAlign: "center", padding: "var(--spacing-20)" }}>
+          <div className="kinetic-card tech-accent hoverable" style={{ textAlign: "center", padding: "var(--spacing-20)" }}>
             <h2 className="display-lg mb-8" style={{ fontSize: "2.75rem" }}>
               Ready to <span className="text-primary italic">get started</span>?
             </h2>

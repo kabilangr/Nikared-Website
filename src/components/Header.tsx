@@ -44,13 +44,13 @@ export default function Header() {
         <div className="flex items-center gap-4">
           <ThemeToggle />
 
-          <Link
+          {/* <Link
             href="/contact"
             className="btn-primary label-md hidden-mobile"
             style={{ fontSize: "0.8125rem", textDecoration: "none" }}
           >
             Start a project
-          </Link>
+          </Link> */}
 
           <button
             className="hamburger show-mobile"
@@ -96,14 +96,14 @@ export default function Header() {
             </Link>
           ))}
 
-          <Link
+          {/* <Link
             href="/contact"
             className="btn-primary label-md"
             onClick={() => setMenuOpen(false)}
             style={{ textDecoration: "none", marginTop: "2rem", textAlign: "center" }}
           >
             Start a project
-          </Link>
+          </Link> */}
         </div>
       </div>
     </>
