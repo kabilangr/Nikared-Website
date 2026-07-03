@@ -54,7 +54,7 @@ export default function NeuralCanvas() {
         this.baseX = this.x;
         this.baseY = this.y;
         this.density = Math.random() * 30 + 1;
-        this.color = "#81ecff";
+        this.color = Math.random() > 0.5 ? "#4c8dff" : "#ff4433";
       }
 
       draw() {
@@ -95,7 +95,7 @@ export default function NeuralCanvas() {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
       particles = [];
-      const numberOfParticles = (canvas.width * canvas.height) / 10000;
+      const numberOfParticles = (canvas.width * canvas.height) / 16000;
       for (let i = 0; i < numberOfParticles; i++) {
         particles.push(new Particle());
       }
@@ -111,7 +111,7 @@ export default function NeuralCanvas() {
 
           if (distance < 80) {
             const opacityValue = 1 - distance / 80;
-            ctx.strokeStyle = `rgba(129, 236, 255, ${opacityValue * 0.2})`;
+            ctx.strokeStyle = `rgba(140, 160, 190, ${opacityValue * 0.15})`;
             ctx.lineWidth = 0.5;
             ctx.beginPath();
             ctx.moveTo(particles[a].x, particles[a].y);

@@ -24,10 +24,10 @@ try {
 }
 
 const SUBJECTS = [
-  { value: "", label: "Select discipline" },
-  { value: "enterprise", label: "Enterprise Foundry" },
-  { value: "ai", label: "AI Core R&D" },
-  { value: "xr", label: "XR Frontiers" },
+  { value: "", label: "Choose one" },
+  { value: "enterprise", label: "Engineering Foundry" },
+  { value: "ai", label: "AI & Machine Learning" },
+  { value: "xr", label: "XR & Spatial Computing" },
   { value: "other", label: "Other" },
 ];
 
@@ -37,19 +37,19 @@ export default function UplinkForm() {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState("");
-  const [isTransmitting, setIsTransmitting] = useState(false);
-  const [statusColor, setStatusColor] = useState("var(--secondary)");
+  const [isSending, setIsSending] = useState(false);
+  const [statusColor, setStatusColor] = useState("var(--on-surface-variant)");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    setIsTransmitting(true);
-    setStatusColor("var(--secondary)");
-    setStatus("Initializing transmission...");
+    setIsSending(true);
+    setStatusColor("var(--on-surface-variant)");
+    setStatus("Sending...");
 
     try {
       if (!db) {
-        throw new Error("Missing Firebase Config: Please update the firebaseConfig object in UplinkForm.tsx.");
+        throw new Error("Missing Firebase config: please update firebaseConfig in UplinkForm.tsx.");
       }
 
       await addDoc(collection(db, "contacts"), {
@@ -60,8 +60,8 @@ export default function UplinkForm() {
         timestamp: new Date().toISOString(),
       });
 
-      setStatusColor("var(--primary)");
-      setStatus("DATA UPLINK SUCCESSFUL.");
+      setStatusColor("var(--secondary)");
+      setStatus("Message sent — we'll be in touch within 24–48 hours.");
       setName("");
       setEmail("");
       setSubject("");
@@ -70,59 +70,63 @@ export default function UplinkForm() {
       setTimeout(() => setStatus(""), 5000);
     } catch (error: unknown) {
       const msg = error instanceof Error ? error.message : "Unknown error";
-      console.error("Data Transmission Error:", error);
+      console.error("Message send error:", error);
       setStatusColor("var(--on-error-container)");
-      setStatus(`TRANSMISSION FAILED: ${msg}`);
+      setStatus(`Couldn't send that. ${msg}`);
     } finally {
-      setIsTransmitting(false);
+      setIsSending(false);
     }
   };
 
-  const buttonLabel = isTransmitting
-    ? "TRANSMITTING..."
-    : status.includes("FAILED")
-    ? "RETRY TRANSMISSION"
-    : "TRANSMIT DATA";
+  const buttonLabel = isSending
+    ? "Sending..."
+    : status.startsWith("Couldn't")
+    ? "Try again"
+    : "Send message";
 
   return (
     <form id="uplink-form" onSubmit={handleSubmit} className="flex-col gap-12 mt-12" style={{ maxWidth: "80%" }}>
 
-      <div style={{ position: "relative" }}>
+      <div>
+        <label htmlFor="access-id" className="label-sm" style={{ display: "block", marginBottom: "0.5rem" }}>
+          Name *
+        </label>
         <input
           id="access-id"
           type="text"
-          placeholder="Access ID / Name"
+          placeholder="Your name"
           required
           value={name}
           onChange={e => setName(e.target.value)}
-          disabled={isTransmitting}
+          disabled={isSending}
         />
-        <span className="label-sm" style={{ position: "absolute", right: 0, top: "0.5rem", opacity: 0.8 }}>REQ</span>
       </div>
 
-      <div style={{ position: "relative" }}>
+      <div>
+        <label htmlFor="secure-frequency" className="label-sm" style={{ display: "block", marginBottom: "0.5rem" }}>
+          Email *
+        </label>
         <input
           id="secure-frequency"
           type="email"
-          placeholder="Secure Frequency / Email"
+          placeholder="you@company.com"
           required
           value={email}
           onChange={e => setEmail(e.target.value)}
-          disabled={isTransmitting}
+          disabled={isSending}
         />
-        <span className="label-sm" style={{ position: "absolute", right: 0, top: "0.5rem", opacity: 0.8 }}>REQ</span>
       </div>
 
-      <div style={{ position: "relative" }}>
-        <label htmlFor="mission-type" className="label-sm" style={{ display: "block", marginBottom: "0.5rem", color: "var(--secondary)" }}>
-          Mission Type
+      <div>
+        <label htmlFor="mission-type" className="label-sm" style={{ display: "block", marginBottom: "0.5rem" }}>
+          What are you looking to build? *
         </label>
         <select
           id="mission-type"
           required
           value={subject}
           onChange={e => setSubject(e.target.value)}
-          disabled={isTransmitting}
+          disabled={isSending}
         >
           {SUBJECTS.map(s => (
             <option key={s.value} value={s.value} disabled={s.value === ""}>
@@ -130,20 +134,21 @@ export default function UplinkForm() {
             </option>
           ))}
         </select>
-        <span className="label-sm" style={{ position: "absolute", right: 0, bottom: "0.5rem", opacity: 0.8 }}>REQ</span>
       </div>
 
-      <div style={{ position: "relative" }}>
+      <div>
+        <label htmlFor="payload" className="label-sm" style={{ display: "block", marginBottom: "0.5rem" }}>
+          Message *
+        </label>
         <textarea
           id="payload"
-          placeholder="Payload / Message"
+          placeholder="A few lines about what you're building"
           required
           rows={4}
           value={message}
           onChange={e => setMessage(e.target.value)}
-          disabled={isTransmitting}
+          disabled={isSending}
         />
-        <span className="label-sm" style={{ position: "absolute", right: 0, top: "0.5rem", opacity: 0.8 }}>REQ</span>
       </div>
 
       <div>
@@ -151,12 +156,12 @@ export default function UplinkForm() {
           id="uplink-submit"
           type="submit"
           className="btn-primary label-md"
-          disabled={isTransmitting}
+          disabled={isSending}
         >
           {buttonLabel}
         </button>
         {status && (
-          <p id="uplink-status" className="label-sm mt-8" style={{ color: statusColor, display: "block" }}>
+          <p id="uplink-status" className="label-sm mt-8" style={{ color: statusColor, display: "block", textTransform: "none", letterSpacing: 0 }} role="status" aria-live="polite">
             {status}
           </p>
         )}

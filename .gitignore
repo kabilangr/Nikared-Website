@@ -39,3 +39,14 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# agent skills (installed packages; restore with `npx skills experimental_install`)
+/.agents/
+
+# claude code local settings and skill symlinks (machine-specific, not shared)
+.claude/settings.local.json
+.claude/skills/
+
+# editors
+.vscode/
+.idea/

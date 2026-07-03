@@ -1,6 +1,8 @@
-import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Inter, Fraunces } from "next/font/google";
 import "./globals.css";
+
+const THEME_INIT_SCRIPT = `(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`;
 
 const inter = Inter({
   subsets: ["latin"],
@@ -8,36 +10,44 @@ const inter = Inter({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-const spaceGrotesk = Space_Grotesk({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  variable: "--font-space",
-  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-display",
+  style: ["normal", "italic"],
+  axes: ["opsz", "SOFT"],
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://nikared.com"),
   title: {
-    default: "NIKA RED | Industrial Intelligence",
-    template: "%s | NIKA RED",
+    default: "Nika Red | Software, AI, and XR Engineering Studio",
+    template: "%s | Nika Red",
   },
   description:
-    "NIKA RED builds industrial-grade software, AI systems, and XR platforms — engineered for the physical world. Based in Chennai, India.",
-  keywords: ["industrial software", "AI R&D", "XR", "edge computing", "enterprise systems", "Chennai", "India"],
+    "Nika Red is a Chennai-based engineering studio building software, AI systems, and XR for the physical world.",
+  keywords: ["software studio", "AI engineering", "XR development", "product engineering", "Chennai", "India"],
   authors: [{ name: "NIKA RED PRIVATE LIMITED" }],
   openGraph: {
     type: "website",
-    siteName: "NIKA RED",
-    title: "NIKA RED | Industrial Intelligence",
+    siteName: "Nika Red",
+    title: "Nika Red | Software, AI, and XR Engineering Studio",
     description:
-      "Industrial-grade software, AI systems, and XR platforms engineered for the physical world.",
-    images: [{ url: "/hero_neural_mesh_1775043239514.png", width: 1200, height: 630, alt: "NIKA RED" }],
+      "A Chennai-based engineering studio building software, AI systems, and XR for the physical world.",
+    images: [{ url: "/logo.svg", width: 852, height: 503, alt: "Nika Red" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "NIKA RED | Industrial Intelligence",
-    description: "Industrial-grade software, AI systems, and XR platforms engineered for the physical world.",
-    images: ["/hero_neural_mesh_1775043239514.png"],
+    title: "Nika Red | Software, AI, and XR Engineering Studio",
+    description: "A Chennai-based engineering studio building software, AI systems, and XR for the physical world.",
+    images: ["/logo.svg"],
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#ffffff" },
+    { media: "(prefers-color-scheme: dark)", color: "#131417" },
+  ],
 };
 
 export default function RootLayout({
@@ -46,8 +56,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${fraunces.variable}`} suppressHydrationWarning>
       <head>
+        <script suppressHydrationWarning dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
           rel="stylesheet"

@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
   { label: "About", href: "/about" },
@@ -17,9 +18,9 @@ export default function Header() {
   return (
     <>
       <header className="glass-panel">
-        <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "1rem" }}>
-          <img src="/logo.png" alt="NIKA RED Logo" style={{ height: "32px", width: "auto" }} />
-          <span className="label-md text-primary" style={{ fontSize: "1.2rem" }}>NIKA RED</span>
+        <Link href="/" style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "0.75rem" }}>
+          <img src="/logo.svg" alt="Nika Red" style={{ height: "30px", width: "auto" }} />
+          <span className="label-md" style={{ fontSize: "1rem", color: "var(--text-strong)" }}>Nika Red</span>
         </Link>
 
         <nav className="label-md hidden-mobile">
@@ -28,45 +29,51 @@ export default function Header() {
               key={link.label}
               href={link.href}
               style={{
-                color: pathname === link.href ? "var(--primary)" : "white",
+                color: pathname === link.href ? "var(--secondary)" : "var(--text-strong)",
                 textDecoration: "none",
                 transition: "color 0.2s",
               }}
-              onMouseEnter={e => (e.currentTarget.style.color = "var(--primary)")}
-              onMouseLeave={e => (e.currentTarget.style.color = pathname === link.href ? "var(--primary)" : "white")}
+              onMouseEnter={e => (e.currentTarget.style.color = "var(--secondary)")}
+              onMouseLeave={e => (e.currentTarget.style.color = pathname === link.href ? "var(--secondary)" : "var(--text-strong)")}
             >
               {link.label}
             </Link>
           ))}
         </nav>
 
-        <Link
-          href="/contact"
-          className="btn-primary label-md hidden-mobile"
-          style={{ fontSize: "0.875rem", textDecoration: "none" }}
-        >
-          Access Portal
-        </Link>
+        <div className="flex items-center gap-4">
+          <ThemeToggle />
 
-        <button
-          className="hamburger show-mobile"
-          onClick={() => setMenuOpen(true)}
-          aria-label="Open navigation"
-        >
-          <span className="material-symbols-outlined" style={{ fontSize: "1.75rem" }}>menu</span>
-        </button>
+          <Link
+            href="/contact"
+            className="btn-primary label-md hidden-mobile"
+            style={{ fontSize: "0.8125rem", textDecoration: "none" }}
+          >
+            Start a project
+          </Link>
+
+          <button
+            className="hamburger show-mobile"
+            onClick={() => setMenuOpen(true)}
+            aria-label="Open navigation"
+          >
+            <span className="material-symbols-outlined" style={{ fontSize: "1.75rem" }}>menu</span>
+          </button>
+        </div>
       </header>
 
       <div className={`mobile-drawer${menuOpen ? " open" : ""}`} onClick={() => setMenuOpen(false)}>
         <div className="mobile-drawer-inner" onClick={e => e.stopPropagation()}>
-          <button
-            className="hamburger"
-            onClick={() => setMenuOpen(false)}
-            aria-label="Close navigation"
-            style={{ alignSelf: "flex-end", marginBottom: "2rem" }}
-          >
-            <span className="material-symbols-outlined" style={{ fontSize: "1.75rem" }}>close</span>
-          </button>
+          <div className="flex items-center justify-between w-full" style={{ marginBottom: "2rem" }}>
+            <ThemeToggle />
+            <button
+              className="hamburger"
+              onClick={() => setMenuOpen(false)}
+              aria-label="Close navigation"
+            >
+              <span className="material-symbols-outlined" style={{ fontSize: "1.75rem" }}>close</span>
+            </button>
+          </div>
 
           {navLinks.map(link => (
             <Link
@@ -75,12 +82,12 @@ export default function Header() {
               className="label-md"
               onClick={() => setMenuOpen(false)}
               style={{
-                color: pathname === link.href ? "var(--primary)" : "white",
+                color: pathname === link.href ? "var(--secondary)" : "var(--text-strong)",
                 textDecoration: "none",
                 fontSize: "1.5rem",
-                letterSpacing: "0.1em",
+                letterSpacing: "0.04em",
                 paddingBottom: "1rem",
-                borderBottom: "1px solid rgba(72,72,73,0.35)",
+                borderBottom: "1px solid var(--ghost-border)",
                 width: "100%",
                 textAlign: "center",
               }}
@@ -95,7 +102,7 @@ export default function Header() {
             onClick={() => setMenuOpen(false)}
             style={{ textDecoration: "none", marginTop: "2rem", textAlign: "center" }}
           >
-            Access Portal
+            Start a project
           </Link>
         </div>
       </div>
