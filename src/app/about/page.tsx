@@ -25,7 +25,7 @@ export default function About() {
             <span className="text-primary italic">built for the physical world</span>
           </h1>
           <p className="body-md mb-8" style={{ fontSize: "1.25rem", maxWidth: "80%", borderLeft: "4px solid var(--primary)", paddingLeft: "1rem" }}>
-            Nika Red designs and builds the systems that heavy industry, manufacturing, and hardware-driven products depend on — software, AI, and XR, engineered with the same care as the machines they run alongside.
+            Based in Chennai&apos;s thriving industrial and technology corridor, Nika Red designs and builds the robust software systems that heavy industry, logistics, and manufacturing depend on. From Edge AI to legacy SCADA modernization, we engineer software with the same precision as the machines they run alongside.
           </p>
         </div>
 
@@ -96,7 +96,7 @@ export default function About() {
                   <span className="material-symbols-outlined" style={{ fontSize: "3rem", color: "var(--surface)" }}>developer_board</span>
                 </div>
                 <p className="body-md" style={{ color: "var(--surface)", fontWeight: 500 }}>
-                  Direct, silicon-level optimization for mission-critical industrial hardware. No unnecessary abstraction layers between your sensors and your decisions.
+                  Direct, silicon-level optimization for mission-critical industrial hardware. We employ rigorous testing protocols and secure coding practices to ensure there are no unnecessary abstraction layers between your sensors and your operational decisions.
                 </p>
               </div>
               <div className="mt-12" style={{ borderTop: "1px solid rgba(0,0,0,0.2)", paddingTop: "1rem" }}>

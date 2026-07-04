@@ -38,7 +38,7 @@ export default function Services() {
                   </div>
                   <h2 className="label-md text-primary mb-4" style={{ fontSize: "2rem" }}>Engineering Foundry</h2>
                   <p className="body-md mb-4" style={{ fontSize: "1.0625rem" }}>
-                    Industrial software built to outlast the roadmap. We design systems that understand the physical layer — PLCs, SCADA, edge gateways — and connect them to modern interfaces without downtime.
+                    Industrial software built to outlast the roadmap. We design custom ERP, MES, and SCADA integration systems that understand the physical layer — PLCs, sensors, edge gateways — and connect them to modern enterprise interfaces without downtime, reducing operational bottlenecks and improving yield.
                   </p>
                   <p className="label-sm mb-8" style={{ color: "var(--on-surface-variant)", textTransform: "none", letterSpacing: 0 }}>
                     For organizations running industrial operations who need software that speaks the language of the factory floor.
@@ -76,7 +76,7 @@ export default function Services() {
                 </div>
                 <h2 className="label-md text-primary mb-4" style={{ fontSize: "2rem" }}>AI & Machine Learning</h2>
                 <p className="body-md mb-4" style={{ fontSize: "1.0625rem", maxWidth: "65%", marginLeft: "auto" }}>
-                  Neural architectures for the edge, not the cloud. We build on-device intelligence that operates where connectivity can&apos;t be guaranteed and latency can&apos;t be tolerated.
+                  Neural architectures for the edge, not the cloud. We build on-device intelligence, computer vision for quality control, and predictive maintenance algorithms that operate where connectivity can&apos;t be guaranteed and latency can&apos;t be tolerated.
                 </p>
                 <p className="label-sm mb-8" style={{ color: "var(--on-surface-variant)", textTransform: "none", letterSpacing: 0 }}>
                   For manufacturers and infrastructure operators who need AI that works without internet connectivity.
@@ -103,7 +103,7 @@ export default function Services() {
                   </div>
                   <h2 className="label-md text-primary mb-4" style={{ fontSize: "2rem" }}>XR & Spatial Computing</h2>
                   <p className="body-md mb-4" style={{ fontSize: "1.0625rem" }}>
-                    Spatial computing for environments that can&apos;t afford mistakes. We build extended reality systems for industrial contexts — where the stakes are high and the hardware is real.
+                    Spatial computing for environments that can&apos;t afford mistakes. We build extended reality (XR) systems, digital twins, and remote assistance overlays for industrial contexts — where the stakes are high and the hardware is real.
                   </p>
                   <p className="label-sm mb-8" style={{ color: "var(--on-surface-variant)", textTransform: "none", letterSpacing: 0 }}>
                     For heavy industry, logistics, and energy companies who need to train, monitor, or operate in complex physical environments.
@@ -157,6 +157,27 @@ export default function Services() {
                   <p className="body-md" style={{ fontSize: "0.9375rem" }}>{step.body}</p>
                 </div>
               ))}
+            </div>
+          </div>
+        </ScrollReveal>
+
+        {/* Frequently Asked Questions */}
+        <ScrollReveal>
+          <div className="py-20">
+            <h2 className="display-lg mb-12" style={{ fontSize: "2.75rem" }}>Frequently Asked <span className="text-primary italic">Questions</span></h2>
+            <div className="flex-col gap-4">
+              <div className="kinetic-card-low" style={{ padding: "1.5rem 2rem" }}>
+                <h3 className="label-md mb-2" style={{ color: "var(--text-strong)", fontSize: "1.25rem", textTransform: "none" }}>Do you integrate with legacy SCADA systems?</h3>
+                <p className="body-md">Yes. A significant part of our Engineering Foundry work involves legacy system modernization, bridging older SCADA or PLC protocols with modern, secure cloud or edge interfaces without disrupting ongoing operations.</p>
+              </div>
+              <div className="kinetic-card-low" style={{ padding: "1.5rem 2rem" }}>
+                <h3 className="label-md mb-2" style={{ color: "var(--text-strong)", fontSize: "1.25rem", textTransform: "none" }}>How does your Edge AI differ from cloud AI?</h3>
+                <p className="body-md">Edge AI runs inference directly on local hardware (like industrial gateways or smart cameras). This is critical for predictive maintenance and quality control in environments with poor connectivity, as it ensures ultra-low latency and data privacy.</p>
+              </div>
+              <div className="kinetic-card-low" style={{ padding: "1.5rem 2rem" }}>
+                <h3 className="label-md mb-2" style={{ color: "var(--text-strong)", fontSize: "1.25rem", textTransform: "none" }}>What platforms do you support for Spatial Computing?</h3>
+                <p className="body-md">We develop cross-platform digital twins and industrial XR applications supporting Microsoft HoloLens, Meta Quest, Apple Vision Pro, and robust mobile AR for field service technicians.</p>
+              </div>
             </div>
           </div>
         </ScrollReveal>

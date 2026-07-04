@@ -16,11 +16,11 @@ export default function Home() {
         <section className="container py-20 relative" style={{ minHeight: "85vh", display: "flex", alignItems: "center" }}>
           <div className="hero-text" style={{ zIndex: 10, maxWidth: "60%" }}>
             <div className="status-chip label-md">Based in Chennai — building worldwide</div>
-            <h1 className="display-lg mb-8">
-              Software forged for<br /><span className="text-primary italic">the physical world</span>
+            <h1 className="display-lg mb-8" style={{ fontSize: "4rem" }}>
+              Industrial Intelligence,<br /><span className="text-primary italic">Forged in Code</span>
             </h1>
             <p className="body-md mb-8" style={{ fontSize: "1.25rem", maxWidth: "80%" }}>
-              Nika Red is an engineering studio that builds software, AI systems, and XR for machines, factories, and the field — not just the browser tab.
+              We engineer mission-critical AI, edge computing, and spatial interfaces that eliminate downtime and accelerate production. We don&apos;t just write software; we build the brains for your heavy machinery.
             </p>
             <div className="flex gap-4">
               <Link href="/contact" className="btn-primary label-md" style={{ textDecoration: "none" }}>Start a project</Link>
@@ -42,39 +42,43 @@ export default function Home() {
               justifyContent: "center",
             }}
           >
-            <img src="/logo.svg" alt="" className="mark-signature" style={{ width: "85%", height: "auto" }} />
+            <img src="/logo.svg" alt="Nika Red Engineering Studio Logo" className="mark-signature" style={{ width: "85%", height: "auto" }} />
           </div>
         </section>
 
         {/* About Us */}
         <ScrollReveal>
-          <section id="about" className="container py-20 grid-asymmetric-right">
-            <div className="kinetic-card electric-glow" style={{ padding: 0, position: "relative", overflow: "hidden", zIndex: 1 }}>
-              <div className="light-leak" style={{ width: "100%", height: "100%", position: "relative", zIndex: 2 }}>
-                <img src="/chennai_node_1775043257682.png" alt="Chennai" className="img-monochrome" />
-                <div style={{ position: "absolute", bottom: "1rem", left: "1rem", background: "var(--primary)", color: "var(--text-strong)", padding: "0.4rem 1rem", borderRadius: "var(--radius-pill)" }} className="label-md">
-                  Chennai, India
+          <section id="case-study" className="container py-20 grid-asymmetric-right">
+            <div className="kinetic-card electric-glow" style={{ padding: "3rem", position: "relative", overflow: "hidden", zIndex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+              <div style={{ position: "relative", zIndex: 2 }}>
+                <div className="label-sm text-primary mb-4" style={{ letterSpacing: "0.1em" }}>CASE STUDY // AUTOMOTIVE</div>
+                <h3 className="display-lg mb-6" style={{ fontSize: "2.5rem" }}>Zero-Latency <br />Quality Control</h3>
+                <p className="body-md mb-8" style={{ fontSize: "1.1rem" }}>
+                  A tier-1 supplier needed to inspect 400 parts per minute without cloud dependency. We deployed custom Edge AI vision models directly to the factory floor.
+                </p>
+              </div>
+              <div className="flex gap-8" style={{ position: "relative", zIndex: 2, borderTop: "1px solid rgba(255,255,255,0.1)", paddingTop: "1.5rem" }}>
+                <div>
+                  <p className="display-lg" style={{ fontSize: "2rem", color: "var(--primary)" }}>30%</p>
+                  <p className="label-sm">Scrap Reduction</p>
+                </div>
+                <div>
+                  <p className="display-lg" style={{ fontSize: "2rem", color: "var(--primary)" }}>&lt;12ms</p>
+                  <p className="label-sm">Inference Time</p>
                 </div>
               </div>
+              <div className="light-leak" style={{ position: "absolute", top: 0, right: 0, bottom: 0, left: 0, zIndex: 1, opacity: 0.1, background: "radial-gradient(circle at 100% 100%, var(--primary) 0%, transparent 50%)" }} />
             </div>
 
-            <div className="flex-col items-start align-right" style={{ textAlign: "right", position: "relative", zIndex: 10 }}>
+            <div className="flex-col items-start align-right" style={{ textAlign: "right", position: "relative", zIndex: 10, justifyContent: "center" }}>
               <h2 className="display-lg mb-8" style={{ fontSize: "3.5rem", lineHeight: 1.05 }}>
-                Built in Chennai, <br /><span className="text-primary italic">for the physical world</span>
+                Proof of <br /><span className="text-primary italic">Work</span>
               </h2>
               <p className="body-md mb-8" style={{ maxWidth: "80%", marginLeft: "auto", color: "var(--text-strong)", fontWeight: 500 }}>
-                We work from the heart of Chennai&apos;s innovation corridor. Nika Red designs software the way a good workshop builds tools — with care for the material, precision in the joints, and nothing bolted on for show.
+                Theory doesn&apos;t keep a factory running. We measure our success by uptime, yield improvements, and latency reduction in the harshest physical environments.
               </p>
-              <div className="body-md mb-8" style={{ borderRight: "2px solid var(--primary)", paddingRight: "1rem", fontWeight: 500, fontStyle: "italic", maxWidth: "80%", marginLeft: "auto", color: "var(--text-strong)" }}>
-                &ldquo;We build what the work actually needs.&rdquo;
-              </div>
-              <div className="flex gap-12" style={{ justifyContent: "flex-end" }}>
-                <span className="label-md flex items-center gap-4" style={{ color: "var(--text-strong)" }}>
-                  <span className="material-symbols-outlined text-primary">analytics</span> Research-led
-                </span>
-                <span className="label-md flex items-center gap-4" style={{ color: "var(--text-strong)" }}>
-                  <span className="material-symbols-outlined text-primary">memory</span> Built for hardware
-                </span>
+              <div className="flex gap-4" style={{ justifyContent: "flex-end", width: "100%" }}>
+                <Link href="/services" className="btn-secondary label-md" style={{ textDecoration: "none" }}>View all capabilities</Link>
               </div>
             </div>
           </section>
@@ -91,11 +95,11 @@ export default function Home() {
                   <div className="flex justify-between items-start mb-8">
                     <span className="material-symbols-outlined text-primary" style={{ fontSize: "3rem" }}>terminal</span>
                   </div>
-                  <h3 className="label-md text-primary mb-4" style={{ fontSize: "2rem" }}>Engineering Foundry</h3>
+                  <h3 className="label-md text-primary mb-4" style={{ fontSize: "2rem" }}>Unbreakable Operations</h3>
                   <p className="body-md mb-8" style={{ maxWidth: "90%" }}>
-                    Industrial-grade custom software and hardware-management systems, built to run factory floors without downtime.
+                    Eliminate bottlenecks with custom MES/ERP and SCADA integration built for 99.999% uptime.
                   </p>
-                  <Link href="/services" className="tech-link label-md" style={{ textDecoration: "none" }}>Explore the Foundry →</Link>
+                  <Link href="/services" className="tech-link label-md" style={{ textDecoration: "none" }}>Explore Foundry capabilities →</Link>
                 </div>
                 <div className="flex-col gap-4 align-right" style={{ textAlign: "right" }}>
                   <span className="label-sm ghost-border" style={{ padding: "0.5rem 1rem" }}>System architecture</span>
@@ -110,26 +114,26 @@ export default function Home() {
                   <div className="flex justify-between items-start mb-8" style={{ flexDirection: "row-reverse" }}>
                     <span className="material-symbols-outlined text-primary" style={{ fontSize: "3rem" }}>psychology</span>
                   </div>
-                  <h3 className="label-md text-primary mb-4" style={{ fontSize: "2rem" }}>AI & Machine Learning</h3>
+                  <h3 className="label-md text-primary mb-4" style={{ fontSize: "2rem" }}>Predictive Intelligence</h3>
                   <p className="body-md mb-8" style={{ maxWidth: "90%", marginLeft: "auto", color: "var(--text-strong)", fontWeight: 500 }}>
-                    Neural architectures built for the edge, not the cloud — real-time inference where connectivity can&apos;t be guaranteed.
+                    Catch failures before they happen. On-device anomaly detection that saves millions in unplanned downtime.
                   </p>
-                  <Link href="/services" className="tech-link label-md" style={{ textDecoration: "none", color: "var(--secondary)", fontWeight: 700 }}>See our AI work →</Link>
+                  <Link href="/services" className="tech-link label-md" style={{ textDecoration: "none", color: "var(--secondary)", fontWeight: 700 }}>See our Edge AI work →</Link>
                 </div>
               </div>
 
               <div className="flex gap-12" style={{ alignItems: "stretch", position: "relative", zIndex: 10 }}>
                 <div className="kinetic-card tech-accent hoverable flex-col" style={{ flex: 1, position: "relative", zIndex: 10 }}>
                   <span className="material-symbols-outlined text-primary" style={{ fontSize: "3rem", marginBottom: "2rem" }}>view_in_ar</span>
-                  <h3 className="label-md text-primary mb-4" style={{ fontSize: "2rem" }}>XR & Spatial Computing</h3>
+                  <h3 className="label-md text-primary mb-4" style={{ fontSize: "2rem" }}>Augmented Workforce</h3>
                   <p className="body-md" style={{ color: "var(--text-strong)", fontWeight: 500 }}>
-                    Extended reality for industrial simulation, field guidance, and immersive operations command centers.
+                    Cut training time in half. Spatial digital twins and AR overlays that guide your technicians through complex maintenance.
                   </p>
                 </div>
                 <div className="kinetic-card-low flex items-center justify-center" style={{ flex: 1.5, position: "relative", overflow: "hidden", padding: 0 }}>
                   <div style={{ zIndex: 10, padding: "var(--spacing-12)" }}>
                     <h4 className="label-md text-primary" style={{ fontSize: "1.5rem", lineHeight: 1.5, fontStyle: "italic" }}>
-                      &ldquo;The future isn&apos;t predicted. It&apos;s built, one working system at a time.&rdquo;
+                      &ldquo;We don&apos;t just predict the future. We build the systems that secure it.&rdquo;
                     </h4>
                   </div>
                   <div
@@ -146,6 +150,26 @@ export default function Home() {
                 </div>
               </div>
 
+            </div>
+          </section>
+        </ScrollReveal>
+
+        {/* Industries We Transform */}
+        <ScrollReveal>
+          <section className="container py-20">
+            <h2 className="display-lg mb-12" style={{ fontSize: "2.75rem" }}>Industries We <span className="text-primary italic">Transform</span></h2>
+            <div className="work-grid" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
+              {[
+                { icon: "factory", label: "Manufacturing", body: "Custom industrial software and edge AI for quality control, predictive maintenance, and real-time SCADA integration on the factory floor." },
+                { icon: "local_shipping", label: "Logistics & Supply Chain", body: "Spatial computing (XR) and route optimization algorithms for complex supply chain networks and warehousing operations." },
+                { icon: "bolt", label: "Energy & Infrastructure", body: "Robust digital twin development and sensor data fusion for remote monitoring of critical physical infrastructure." },
+              ].map(industry => (
+                <div key={industry.label} className="kinetic-card hoverable" style={{ padding: "2rem" }}>
+                  <span className="material-symbols-outlined text-primary mb-4" style={{ fontSize: "2.5rem" }}>{industry.icon}</span>
+                  <h3 className="label-md mb-4" style={{ fontSize: "1.25rem", color: "var(--text-strong)", textTransform: "none" }}>{industry.label}</h3>
+                  <p className="body-md" style={{ fontSize: "0.9375rem" }}>{industry.body}</p>
+                </div>
+              ))}
             </div>
           </section>
         </ScrollReveal>

@@ -20,25 +20,37 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   metadataBase: new URL("https://nikared.com"),
   title: {
-    default: "Nika Red | Software, AI, and XR Engineering Studio",
+    default: "Nika Red | Industrial Software, Edge AI, and XR Engineering Studio",
     template: "%s | Nika Red",
   },
   description:
-    "Nika Red is a Chennai-based engineering studio building software, AI systems, and XR for the physical world.",
-  keywords: ["software studio", "AI engineering", "XR development", "product engineering", "Chennai", "India"],
+    "Nika Red is a Chennai-based engineering studio building custom industrial software, edge AI systems, and spatial computing (XR) solutions for manufacturing, logistics, and heavy infrastructure.",
+  keywords: [
+    "industrial software studio", 
+    "edge AI engineering", 
+    "XR development for manufacturing", 
+    "SCADA integration",
+    "legacy system modernization",
+    "digital twin development",
+    "predictive maintenance algorithms",
+    "industrial automation software",
+    "product engineering", 
+    "Chennai", 
+    "India"
+  ],
   authors: [{ name: "NIKA RED PRIVATE LIMITED" }],
   openGraph: {
     type: "website",
     siteName: "Nika Red",
-    title: "Nika Red | Software, AI, and XR Engineering Studio",
+    title: "Nika Red | Industrial Software, Edge AI, and XR Engineering Studio",
     description:
-      "A Chennai-based engineering studio building software, AI systems, and XR for the physical world.",
-    images: [{ url: "/logo.svg", width: 852, height: 503, alt: "Nika Red" }],
+      "A Chennai-based engineering studio building custom industrial software, edge AI systems, and spatial computing (XR) solutions for manufacturing, logistics, and heavy infrastructure.",
+    images: [{ url: "/logo.svg", width: 852, height: 503, alt: "Nika Red Logo" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nika Red | Software, AI, and XR Engineering Studio",
-    description: "A Chennai-based engineering studio building software, AI systems, and XR for the physical world.",
+    title: "Nika Red | Industrial Software, Edge AI, and XR Engineering Studio",
+    description: "A Chennai-based engineering studio building custom industrial software, edge AI systems, and spatial computing (XR) solutions for manufacturing, logistics, and heavy infrastructure.",
     images: ["/logo.svg"],
   },
 };
