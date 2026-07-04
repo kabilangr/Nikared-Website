@@ -45,7 +45,7 @@
     --wash-b: rgba(76, 141, 255, 0.2);
     --light-leak-a: rgba(255, 68, 51, 0.2);
     --light-leak-b: rgba(76, 141, 255, 0.14);
-    --canvas-opacity: 0.5;
+    --canvas-opacity: 0.99;
 
     --error-container: #93000a;
     --on-error-container: #ffdad6;
@@ -80,7 +80,7 @@
     --wash-b: rgba(29, 78, 216, 0.12);
     --light-leak-a: rgba(214, 43, 30, 0.14);
     --light-leak-b: rgba(29, 78, 216, 0.1);
-    --canvas-opacity: 0.14;
+    --canvas-opacity: 0.99;
 
     --error-container: #ffdad6;
     --on-error-container: #93000a;
@@ -104,6 +104,15 @@ body {
     position: relative;
     font-family: var(--font-inter), sans-serif;
     transition: background-color 0.2s ease, color 0.2s ease;
+    cursor: none;
+}
+
+/* Keep standard pointer indicators on interactive elements */
+a, button, [role="button"], .theme-toggle {
+    cursor: pointer;
+}
+input, select, textarea {
+    cursor: auto;
 }
 
 /* Typography — warm ink-trap display, quiet grotesk body */
