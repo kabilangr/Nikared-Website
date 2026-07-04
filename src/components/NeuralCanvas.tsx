@@ -6,6 +6,9 @@ export default function NeuralCanvas() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
 
   useEffect(() => {
+    // Hide cursor globally when this component mounts (homepage only)
+    document.body.style.cursor = 'none';
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -256,6 +259,9 @@ export default function NeuralCanvas() {
     window.addEventListener("resize", handleResize);
 
     return () => {
+      // Restore cursor when unmounting
+      document.body.style.cursor = '';
+
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseleave", handleMouseLeave);
       window.removeEventListener("resize", handleResize);
