@@ -643,6 +643,24 @@ input::placeholder, textarea::placeholder {
 }
 
 /* Responsive breakpoints */
+
+/* ---- Tablet (≤ 1024px) ---- */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 2rem;
+    }
+
+    .display-lg {
+        font-size: 3.5rem;
+    }
+
+    .grid-asymmetric-left,
+    .grid-asymmetric-right {
+        gap: 2rem;
+    }
+}
+
+/* ---- Mobile (≤ 900px) ---- */
 @media (max-width: 900px) {
     .hidden-mobile {
         display: none;
@@ -653,12 +671,13 @@ input::placeholder, textarea::placeholder {
     }
 
     .display-lg {
-        font-size: 2.75rem;
+        font-size: 2.5rem;
     }
 
     .grid-asymmetric-left,
     .grid-asymmetric-right {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
     .work-grid {
@@ -672,11 +691,11 @@ input::placeholder, textarea::placeholder {
     }
 
     .hero-image-right {
-        display: none;
+        display: none !important;
     }
 
     .hero-text {
-        max-width: 100%;
+        max-width: 100% !important;
     }
 
     .contact-right-panel {
@@ -687,10 +706,255 @@ input::placeholder, textarea::placeholder {
         border-radius: var(--radius-md);
         font-size: 0.6875rem;
     }
+
+    /* Service cards — stack the flex row */
+    .service-flex-row {
+        flex-direction: column;
+    }
+
+    /* Contact info row — wrap on mobile */
+    .contact-info-row {
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+
+    /* Contact card — reduce padding */
+    .contact-card-outer {
+        padding: 2rem !important;
+    }
+
+    /* Industries grid — inline override fix */
+    .industries-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Form — full width */
+    #uplink-form {
+        max-width: 100% !important;
+    }
+
+    /* Hero section — reduce minimum height */
+    .hero-section {
+        min-height: 65vh !important;
+    }
+
+    /* About hero — reduce top padding */
+    .about-hero {
+        padding-top: 80px !important;
+        min-height: auto !important;
+    }
+
+    /* Service detail — right-aligned text becomes left-aligned */
+    .service-right-align {
+        text-align: left !important;
+    }
+
+    .service-right-align .service-deliverables {
+        align-items: flex-start !important;
+    }
+
+    .service-right-align li {
+        flex-direction: row !important;
+    }
+
+    .service-right-align p {
+        max-width: 100% !important;
+        margin-left: 0 !important;
+    }
+
+    /* Number labels — shrink */
+    .service-number {
+        font-size: 2.5rem !important;
+    }
+
+    /* Card heading sizes */
+    .card-heading-lg {
+        font-size: 1.75rem !important;
+    }
+
+    .card-heading-xl {
+        font-size: 2rem !important;
+    }
+
+    /* Section headings — shrink inline font-size overrides */
+    .section-heading-lg {
+        font-size: 2.25rem !important;
+    }
+
+    /* Hero display — shrink */
+    .hero-display {
+        font-size: 2.5rem !important;
+    }
+
+    /* Proof of Work section - stack properly */
+    .proof-text-right {
+        text-align: left !important;
+    }
+
+    .proof-text-right p {
+        margin-left: 0 !important;
+    }
+
+    .proof-text-right .flex {
+        justify-content: flex-start !important;
+    }
+
+    /* Stat row — wrap */
+    .stat-row {
+        flex-wrap: wrap;
+        gap: 1.5rem !important;
+    }
+
+    /* Mission statement font */
+    .mission-heading {
+        font-size: 2.25rem !important;
+    }
+
+    /* About capability cards — full height auto */
+    .capability-card {
+        min-height: auto !important;
+    }
+
+    /* Header — tighter padding */
+    header {
+        padding: 1rem 1.5rem;
+    }
+
+    /* Footer adjustments */
+    footer .flex.justify-between {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
 }
 
+/* ---- Small mobile (≤ 560px) ---- */
 @media (max-width: 560px) {
+    .container {
+        padding: 0 1.25rem;
+    }
+
+    .display-lg {
+        font-size: 2rem;
+    }
+
     .work-grid {
         grid-template-columns: 1fr;
+    }
+
+    .kinetic-card,
+    .kinetic-card-low {
+        padding: 1.5rem;
+    }
+
+    .py-20 {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+
+    .hero-section {
+        min-height: 55vh !important;
+    }
+
+    .hero-display {
+        font-size: 2rem !important;
+    }
+
+    .section-heading-lg {
+        font-size: 1.75rem !important;
+    }
+
+    .card-heading-lg {
+        font-size: 1.5rem !important;
+    }
+
+    .card-heading-xl {
+        font-size: 1.75rem !important;
+    }
+
+    .mission-heading {
+        font-size: 1.75rem !important;
+    }
+
+    /* Contact card padding */
+    .contact-card-outer {
+        padding: 1.5rem !important;
+    }
+
+    /* CTA card padding */
+    .cta-card {
+        padding: 2.5rem 1.5rem !important;
+    }
+
+    /* Button sizing */
+    .btn-primary,
+    .btn-secondary {
+        padding: 0.875rem 1.5rem;
+        font-size: 0.75rem;
+    }
+
+    /* Body text — slightly smaller */
+    .body-lg-text {
+        font-size: 1.0625rem !important;
+    }
+
+    /* Status chip — even smaller */
+    .status-chip {
+        font-size: 0.625rem;
+        padding: 0.35rem 0.75rem;
+    }
+
+    /* Gap adjustments */
+    .gap-12 {
+        gap: 2rem;
+    }
+
+    .gap-8 {
+        gap: 1.5rem;
+    }
+
+    /* Case study section padding */
+    .case-study-card {
+        padding: 2rem !important;
+    }
+
+    /* Service icon size */
+    .service-icon {
+        font-size: 2.25rem !important;
+    }
+
+    /* Mobile drawer — slightly wider */
+    .mobile-drawer-inner {
+        width: 90%;
+    }
+
+    /* About hero */
+    .about-hero {
+        padding-top: 60px !important;
+    }
+
+    /* Body text with border-left */
+    .hero-intro-text {
+        font-size: 1.0625rem !important;
+        max-width: 100% !important;
+    }
+}
+
+/* ---- Tiny (≤ 400px) ---- */
+@media (max-width: 400px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .display-lg {
+        font-size: 1.75rem;
+    }
+
+    .hero-display {
+        font-size: 1.75rem !important;
+    }
+
+    header {
+        padding: 0.875rem 1rem;
     }
 }

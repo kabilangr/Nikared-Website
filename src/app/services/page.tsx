@@ -69,10 +69,10 @@ export default function Services() {
               <div className="grid-asymmetric-left" style={{ alignItems: "start" }}>
                 <div>
                   <div className="flex items-center gap-4 mb-8">
-                    <span className="material-symbols-outlined text-primary" style={{ fontSize: "3rem" }}>terminal</span>
-                    <span className="label-md" style={{ fontSize: "4rem", color: "var(--ghost-number)", lineHeight: 1 }}>01</span>
+                    <span className="material-symbols-outlined text-primary service-icon" style={{ fontSize: "3rem" }}>terminal</span>
+                    <span className="label-md service-number" style={{ fontSize: "4rem", color: "var(--ghost-number)", lineHeight: 1 }}>01</span>
                   </div>
-                  <h2 className="label-md text-primary mb-4" style={{ fontSize: "2rem" }}>Engineering Foundry</h2>
+                  <h2 className="label-md text-primary mb-4 card-heading-lg" style={{ fontSize: "2rem" }}>Engineering Foundry</h2>
                   <p className="body-md mb-4" style={{ fontSize: "1.0625rem" }}>
                     Industrial software built to outlast the roadmap. We design custom ERP, MES, and SCADA integration systems that understand the physical layer — PLCs, sensors, edge gateways — and connect them to modern enterprise interfaces without downtime, reducing operational bottlenecks and improving yield.
                   </p>
@@ -105,12 +105,12 @@ export default function Services() {
           {/* 02 — AI & Machine Learning */}
           <ScrollReveal delay={100}>
             <div className="kinetic-card-low hoverable" style={{ position: "relative", zIndex: 10 }}>
-              <div style={{ textAlign: "right" }}>
+              <div className="service-right-align" style={{ textAlign: "right" }}>
                 <div className="flex items-center gap-4 mb-8" style={{ flexDirection: "row-reverse" }}>
-                  <span className="material-symbols-outlined text-primary" style={{ fontSize: "3rem" }}>psychology</span>
-                  <span className="label-md" style={{ fontSize: "4rem", color: "var(--ghost-number)", lineHeight: 1 }}>02</span>
+                  <span className="material-symbols-outlined text-primary service-icon" style={{ fontSize: "3rem" }}>psychology</span>
+                  <span className="label-md service-number" style={{ fontSize: "4rem", color: "var(--ghost-number)", lineHeight: 1 }}>02</span>
                 </div>
-                <h2 className="label-md text-primary mb-4" style={{ fontSize: "2rem" }}>AI & Machine Learning</h2>
+                <h2 className="label-md text-primary mb-4 card-heading-lg" style={{ fontSize: "2rem" }}>AI & Machine Learning</h2>
                 <p className="body-md mb-4" style={{ fontSize: "1.0625rem", maxWidth: "65%", marginLeft: "auto" }}>
                   Neural architectures for the edge, not the cloud. We build on-device intelligence, computer vision for quality control, and predictive maintenance algorithms that operate where connectivity can&apos;t be guaranteed and latency can&apos;t be tolerated.
                 </p>
@@ -134,10 +134,10 @@ export default function Services() {
               <div className="grid-asymmetric-left" style={{ alignItems: "start" }}>
                 <div>
                   <div className="flex items-center gap-4 mb-8">
-                    <span className="material-symbols-outlined text-primary" style={{ fontSize: "3rem" }}>view_in_ar</span>
-                    <span className="label-md" style={{ fontSize: "4rem", color: "var(--ghost-number)", lineHeight: 1 }}>03</span>
+                    <span className="material-symbols-outlined text-primary service-icon" style={{ fontSize: "3rem" }}>view_in_ar</span>
+                    <span className="label-md service-number" style={{ fontSize: "4rem", color: "var(--ghost-number)", lineHeight: 1 }}>03</span>
                   </div>
-                  <h2 className="label-md text-primary mb-4" style={{ fontSize: "2rem" }}>XR & Spatial Computing</h2>
+                  <h2 className="label-md text-primary mb-4 card-heading-lg" style={{ fontSize: "2rem" }}>XR & Spatial Computing</h2>
                   <p className="body-md mb-4" style={{ fontSize: "1.0625rem" }}>
                     Spatial computing for environments that can&apos;t afford mistakes. We build extended reality (XR) systems, digital twins, and remote assistance overlays for industrial contexts — where the stakes are high and the hardware is real.
                   </p>
@@ -179,7 +179,7 @@ export default function Services() {
         {/* How We Work */}
         <ScrollReveal>
           <div className="py-20">
-            <h2 className="display-lg mb-12" style={{ fontSize: "2.75rem" }}>How we <span className="text-primary italic">work</span></h2>
+            <h2 className="display-lg mb-12 section-heading-lg" style={{ fontSize: "2.75rem" }}>How we <span className="text-primary italic">work</span></h2>
             <div className="work-grid">
               {[
                 { n: "01", label: "Discovery", body: "Understand the physical environment, existing infrastructure, and integration constraints." },
@@ -200,7 +200,7 @@ export default function Services() {
         {/* Frequently Asked Questions */}
         <ScrollReveal>
           <div className="py-20">
-            <h2 className="display-lg mb-12" style={{ fontSize: "2.75rem" }}>Frequently Asked <span className="text-primary italic">Questions</span></h2>
+            <h2 className="display-lg mb-12 section-heading-lg" style={{ fontSize: "2.75rem" }}>Frequently Asked <span className="text-primary italic">Questions</span></h2>
             <div className="flex-col gap-4">
               {FAQS.map((faq) => (
                 <div key={faq.question} className="kinetic-card-low" style={{ padding: "1.5rem 2rem" }}>
@@ -214,8 +214,8 @@ export default function Services() {
 
         {/* CTA */}
         <ScrollReveal>
-          <div className="kinetic-card tech-accent hoverable" style={{ textAlign: "center", padding: "var(--spacing-20)" }}>
-            <h2 className="display-lg mb-8" style={{ fontSize: "2.75rem" }}>
+          <div className="kinetic-card tech-accent hoverable cta-card" style={{ textAlign: "center", padding: "var(--spacing-20)" }}>
+            <h2 className="display-lg mb-8 section-heading-lg" style={{ fontSize: "2.75rem" }}>
               Ready to <span className="text-primary italic">get started</span>?
             </h2>
             <p className="body-md mb-12" style={{ maxWidth: "500px", margin: "0 auto var(--spacing-12)" }}>

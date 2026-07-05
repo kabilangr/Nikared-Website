@@ -39,13 +39,13 @@ export default function Home() {
 
       <main>
         {/* Hero Section */}
-        <section className="container py-20 relative" style={{ minHeight: "85vh", display: "flex", alignItems: "center" }}>
+        <section className="container py-20 relative hero-section" style={{ minHeight: "85vh", display: "flex", alignItems: "center" }}>
           <div className="hero-text" style={{ zIndex: 10, maxWidth: "60%" }}>
             <div className="status-chip label-md">Based in Chennai — building worldwide</div>
-            <h1 className="display-lg mb-8" style={{ fontSize: "4rem" }}>
+            <h1 className="display-lg mb-8 hero-display" style={{ fontSize: "4rem" }}>
               Industrial Intelligence,<br /><span className="text-primary italic">Forged in Code</span>
             </h1>
-            <p className="body-md mb-8" style={{ fontSize: "1.25rem", maxWidth: "80%" }}>
+            <p className="body-md mb-8 body-lg-text" style={{ fontSize: "1.25rem", maxWidth: "80%" }}>
               We engineer mission-critical AI, edge computing, and spatial interfaces that eliminate downtime and accelerate production. We don&apos;t just write software; we build the brains for your heavy machinery.
             </p>
             <div className="flex gap-4">
@@ -75,15 +75,15 @@ export default function Home() {
         {/* About Us */}
         <ScrollReveal>
           <section id="case-study" className="container py-20 grid-asymmetric-right">
-            <div className="kinetic-card electric-glow" style={{ padding: "3rem", position: "relative", overflow: "hidden", zIndex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+            <div className="kinetic-card electric-glow case-study-card" style={{ padding: "3rem", position: "relative", overflow: "hidden", zIndex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
               <div style={{ position: "relative", zIndex: 2 }}>
                 <div className="label-sm text-primary mb-4" style={{ letterSpacing: "0.1em" }}>CASE STUDY // AUTOMOTIVE</div>
-                <h3 className="display-lg mb-6" style={{ fontSize: "2.5rem" }}>Zero-Latency <br />Quality Control</h3>
+                <h3 className="display-lg mb-6 card-heading-xl" style={{ fontSize: "2.5rem" }}>Zero-Latency <br />Quality Control</h3>
                 <p className="body-md mb-8" style={{ fontSize: "1.1rem" }}>
                   A tier-1 supplier needed to inspect 400 parts per minute without cloud dependency. We deployed custom Edge AI vision models directly to the factory floor.
                 </p>
               </div>
-              <div className="flex gap-8" style={{ position: "relative", zIndex: 2, borderTop: "1px solid rgba(255,255,255,0.1)", paddingTop: "1.5rem" }}>
+              <div className="flex gap-8 stat-row" style={{ position: "relative", zIndex: 2, borderTop: "1px solid rgba(255,255,255,0.1)", paddingTop: "1.5rem" }}>
                 <div>
                   <p className="display-lg" style={{ fontSize: "2rem", color: "var(--primary)" }}>30%</p>
                   <p className="label-sm">Scrap Reduction</p>
@@ -96,8 +96,8 @@ export default function Home() {
               <div className="light-leak" style={{ position: "absolute", top: 0, right: 0, bottom: 0, left: 0, zIndex: 1, opacity: 0.1, background: "radial-gradient(circle at 100% 100%, var(--primary) 0%, transparent 50%)" }} />
             </div>
 
-            <div className="flex-col items-start align-right" style={{ textAlign: "right", position: "relative", zIndex: 10, justifyContent: "center" }}>
-              <h2 className="display-lg mb-8" style={{ fontSize: "3.5rem", lineHeight: 1.05 }}>
+            <div className="flex-col items-start align-right proof-text-right" style={{ textAlign: "right", position: "relative", zIndex: 10, justifyContent: "center" }}>
+              <h2 className="display-lg mb-8 section-heading-lg" style={{ fontSize: "3.5rem", lineHeight: 1.05 }}>
                 Proof of <br /><span className="text-primary italic">Work</span>
               </h2>
               <p className="body-md mb-8" style={{ maxWidth: "80%", marginLeft: "auto", color: "var(--text-strong)", fontWeight: 500 }}>
@@ -121,7 +121,7 @@ export default function Home() {
                   <div className="flex justify-between items-start mb-8">
                     <span className="material-symbols-outlined text-primary" style={{ fontSize: "3rem" }}>terminal</span>
                   </div>
-                  <h3 className="label-md text-primary mb-4" style={{ fontSize: "2rem" }}>Unbreakable Operations</h3>
+                  <h3 className="label-md text-primary mb-4 card-heading-lg" style={{ fontSize: "2rem" }}>Unbreakable Operations</h3>
                   <p className="body-md mb-8" style={{ maxWidth: "90%" }}>
                     Eliminate bottlenecks with custom MES/ERP and SCADA integration built for 99.999% uptime.
                   </p>
@@ -131,16 +131,16 @@ export default function Home() {
                   <span className="label-sm ghost-border" style={{ padding: "0.5rem 1rem" }}>System architecture</span>
                   <span className="label-sm ghost-border" style={{ padding: "0.5rem 1rem" }}>Legacy modernization</span>
                 </div>
-                <div className="label-md" style={{ fontSize: "4rem", color: "var(--ghost-number)", textAlign: "right", zIndex: 5, position: "relative" }}>01</div>
+                <div className="label-md service-number" style={{ fontSize: "4rem", color: "var(--ghost-number)", textAlign: "right", zIndex: 5, position: "relative" }}>01</div>
               </div>
 
               <div className="kinetic-card-low hoverable grid-asymmetric-right" style={{ position: "relative", zIndex: 10 }}>
-                <div className="label-md" style={{ fontSize: "4rem", color: "var(--ghost-number)", zIndex: 5, position: "relative" }}>02</div>
+                <div className="label-md service-number" style={{ fontSize: "4rem", color: "var(--ghost-number)", zIndex: 5, position: "relative" }}>02</div>
                 <div style={{ textAlign: "right", position: "relative", zIndex: 10 }}>
                   <div className="flex justify-between items-start mb-8" style={{ flexDirection: "row-reverse" }}>
                     <span className="material-symbols-outlined text-primary" style={{ fontSize: "3rem" }}>psychology</span>
                   </div>
-                  <h3 className="label-md text-primary mb-4" style={{ fontSize: "2rem" }}>Predictive Intelligence</h3>
+                  <h3 className="label-md text-primary mb-4 card-heading-lg" style={{ fontSize: "2rem" }}>Predictive Intelligence</h3>
                   <p className="body-md mb-8" style={{ maxWidth: "90%", marginLeft: "auto", color: "var(--text-strong)", fontWeight: 500 }}>
                     Catch failures before they happen. On-device anomaly detection that saves millions in unplanned downtime.
                   </p>
@@ -148,10 +148,10 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="flex gap-12" style={{ alignItems: "stretch", position: "relative", zIndex: 10 }}>
+              <div className="flex gap-12 service-flex-row" style={{ alignItems: "stretch", position: "relative", zIndex: 10 }}>
                 <div className="kinetic-card tech-accent hoverable flex-col" style={{ flex: 1, position: "relative", zIndex: 10 }}>
                   <span className="material-symbols-outlined text-primary" style={{ fontSize: "3rem", marginBottom: "2rem" }}>view_in_ar</span>
-                  <h3 className="label-md text-primary mb-4" style={{ fontSize: "2rem" }}>Augmented Workforce</h3>
+                  <h3 className="label-md text-primary mb-4 card-heading-lg" style={{ fontSize: "2rem" }}>Augmented Workforce</h3>
                   <p className="body-md" style={{ color: "var(--text-strong)", fontWeight: 500 }}>
                     Cut training time in half. Spatial digital twins and AR overlays that guide your technicians through complex maintenance.
                   </p>
@@ -183,8 +183,8 @@ export default function Home() {
         {/* Industries We Transform */}
         <ScrollReveal>
           <section className="container py-20">
-            <h2 className="display-lg mb-12" style={{ fontSize: "2.75rem" }}>Industries We <span className="text-primary italic">Transform</span></h2>
-            <div className="work-grid" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
+            <h2 className="display-lg mb-12 section-heading-lg" style={{ fontSize: "2.75rem" }}>Industries We <span className="text-primary italic">Transform</span></h2>
+            <div className="work-grid industries-grid" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
               {[
                 { icon: "factory", label: "Manufacturing", body: "Custom industrial software and edge AI for quality control, predictive maintenance, and real-time SCADA integration on the factory floor." },
                 { icon: "local_shipping", label: "Logistics & Supply Chain", body: "Spatial computing (XR) and route optimization algorithms for complex supply chain networks and warehousing operations." },
@@ -206,7 +206,7 @@ export default function Home() {
             <div className="grid-asymmetric-left" style={{ gap: "3rem", alignItems: "start" }}>
               <div>
                 <div className="label-sm text-primary mb-4" style={{ letterSpacing: "0.1em" }}>WHO WE ARE</div>
-                <h2 className="display-lg mb-8" style={{ fontSize: "2.75rem", lineHeight: 1.1 }}>
+                <h2 className="display-lg mb-8 section-heading-lg" style={{ fontSize: "2.75rem", lineHeight: 1.1 }}>
                   An industrial software studio for the <span className="text-primary italic">physical world</span>
                 </h2>
                 <p className="body-md mb-4" style={{ fontSize: "1.0625rem" }}>
@@ -240,7 +240,7 @@ export default function Home() {
         {/* FAQ */}
         <ScrollReveal>
           <section className="container py-20">
-            <h2 className="display-lg mb-12" style={{ fontSize: "2.75rem" }}>Common <span className="text-primary italic">questions</span></h2>
+            <h2 className="display-lg mb-12 section-heading-lg" style={{ fontSize: "2.75rem" }}>Common <span className="text-primary italic">questions</span></h2>
             <div className="flex-col gap-4">
               {HOME_FAQS.map((faq) => (
                 <div key={faq.question} className="kinetic-card-low" style={{ padding: "1.5rem 2rem" }}>
@@ -255,13 +255,13 @@ export default function Home() {
         {/* Contact */}
         <ScrollReveal>
           <section id="contact" className="container py-20">
-            <div className="kinetic-card tech-accent grid-asymmetric-left" style={{ padding: "var(--spacing-20)" }}>
+            <div className="kinetic-card tech-accent grid-asymmetric-left contact-card-outer" style={{ padding: "var(--spacing-20)" }}>
               <div>
-                <h2 className="display-lg mb-4" style={{ fontSize: "3.5rem" }}>Let&apos;s <span className="text-primary italic">talk</span></h2>
+                <h2 className="display-lg mb-4 section-heading-lg" style={{ fontSize: "3.5rem" }}>Let&apos;s <span className="text-primary italic">talk</span></h2>
                 <p className="body-md" style={{ maxWidth: "80%" }}>
                   Tell us what you&apos;re building. A Nika Red engineer will get back to you.
                 </p>
-                <div className="flex gap-12 mt-12">
+                <div className="flex gap-12 mt-12 contact-info-row">
                   <address className="body-md" style={{ fontStyle: "normal" }}>
                     <span className="label-sm block mb-2">Location</span>
                     Chennai<br />

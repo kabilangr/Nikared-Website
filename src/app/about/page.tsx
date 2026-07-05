@@ -25,7 +25,7 @@ export default function About() {
       <Header />
 
       {/* Hero Section */}
-      <section className="container relative" style={{ paddingTop: "120px", minHeight: "60vh", display: "flex", alignItems: "center" }}>
+      <section className="container relative about-hero" style={{ paddingTop: "120px", minHeight: "60vh", display: "flex", alignItems: "center" }}>
         <div className="hero-text" style={{ zIndex: 10, maxWidth: "60%" }}>
           <div className="flex gap-4 mb-8 items-center">
             <div className="line-accent"></div>
@@ -35,7 +35,7 @@ export default function About() {
             An engineering studio<br />
             <span className="text-primary italic">built for the physical world</span>
           </h1>
-          <p className="body-md mb-8" style={{ fontSize: "1.25rem", maxWidth: "80%", borderLeft: "4px solid var(--primary)", paddingLeft: "1rem" }}>
+          <p className="body-md mb-8 hero-intro-text" style={{ fontSize: "1.25rem", maxWidth: "80%", borderLeft: "4px solid var(--primary)", paddingLeft: "1rem" }}>
             Based in Chennai&apos;s thriving industrial and technology corridor, Nika Red designs and builds the robust software systems that heavy industry, logistics, and manufacturing depend on. From Edge AI to legacy SCADA modernization, we engineer software with the same precision as the machines they run alongside.
           </p>
         </div>
@@ -62,7 +62,7 @@ export default function About() {
         <section className="container py-20" style={{ marginTop: "5rem", background: "var(--surface-container-low)", maxWidth: "100%" }}>
           <div className="container" style={{ maxWidth: "1000px" }}>
             <div className="label-sm text-primary mb-8" style={{ letterSpacing: "0.2em", fontWeight: 700 }}>Our mission</div>
-            <h2 className="display-lg" style={{ fontSize: "3.5rem", lineHeight: 1.15 }}>
+            <h2 className="display-lg mission-heading" style={{ fontSize: "3.5rem", lineHeight: 1.15 }}>
               We don&apos;t just write software; <br />
               <span style={{ WebkitTextStroke: "1px var(--primary)", color: "transparent" }}>we build</span>{" "}
               the systems the physical world runs on.
@@ -77,10 +77,10 @@ export default function About() {
           <div className="grid-asymmetric-left" style={{ gap: "1.5rem" }}>
 
             {/* Card 1 — Research-led */}
-            <div className="kinetic-card hoverable" style={{ minHeight: "400px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+            <div className="kinetic-card hoverable capability-card" style={{ minHeight: "400px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
               <div>
                 <div className="flex justify-between items-start mb-12">
-                  <h3 className="display-lg" style={{ fontSize: "2.75rem" }}>Research-led</h3>
+                  <h3 className="display-lg section-heading-lg" style={{ fontSize: "2.75rem" }}>Research-led</h3>
                   <span className="material-symbols-outlined text-primary" style={{ fontSize: "3rem" }}>neurology</span>
                 </div>
                 <p className="body-md">
@@ -100,7 +100,7 @@ export default function About() {
             </div>
 
             {/* Card 2 — Built for hardware */}
-            <div className="kinetic-card hoverable" style={{ backgroundColor: "var(--primary)", minHeight: "400px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+            <div className="kinetic-card hoverable capability-card" style={{ backgroundColor: "var(--primary)", minHeight: "400px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
               <div>
                 <div className="flex justify-between items-start mb-12">
                   <h3 className="display-lg" style={{ fontSize: "2.25rem", color: "var(--surface)", textShadow: "none" }}>Built for hardware</h3>
@@ -140,7 +140,7 @@ export default function About() {
         <section className="container py-20">
           <div className="mb-12">
             <div className="label-sm text-primary mb-4" style={{ letterSpacing: "0.1em" }}>HOW WE THINK</div>
-            <h2 className="display-lg" style={{ fontSize: "2.75rem", lineHeight: 1.1 }}>
+            <h2 className="display-lg section-heading-lg" style={{ fontSize: "2.75rem", lineHeight: 1.1 }}>
               Principles that <span className="text-primary italic">hold up</span> on the factory floor
             </h2>
           </div>
@@ -175,7 +175,7 @@ export default function About() {
               </ul>
             </div>
             <div>
-              <h2 className="display-lg mb-8" style={{ fontSize: "2.5rem", lineHeight: 1.1 }}>
+              <h2 className="display-lg mb-8 section-heading-lg" style={{ fontSize: "2.5rem", lineHeight: 1.1 }}>
                 Based in Chennai, <span className="text-primary italic">building worldwide</span>
               </h2>
               <p className="body-md mb-4" style={{ fontSize: "1.0625rem" }}>

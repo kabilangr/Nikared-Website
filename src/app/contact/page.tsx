@@ -32,13 +32,13 @@ export default function Contact() {
           </div>
           <h1 className="display-lg mb-12">Let&apos;s <span className="text-primary italic">talk</span></h1>
 
-          <div className="kinetic-card tech-accent grid-asymmetric-left" style={{ padding: "var(--spacing-20)", minHeight: "60vh" }}>
+          <div className="kinetic-card tech-accent grid-asymmetric-left contact-card-outer" style={{ padding: "var(--spacing-20)", minHeight: "60vh" }}>
             <div>
               <p className="body-md mb-12" style={{ maxWidth: "80%", fontSize: "1.0625rem" }}>
                 Tell us what you&apos;re building and a Nika Red engineer will respond within 24–48 hours.
               </p>
 
-              <div className="flex gap-12 mb-12">
+              <div className="flex gap-12 mb-12 contact-info-row">
                 <address className="body-md" style={{ fontStyle: "normal" }}>
                   <span className="label-sm block mb-2">Location</span>
                   Chennai<br />
