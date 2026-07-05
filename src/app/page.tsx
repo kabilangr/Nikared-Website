@@ -103,7 +103,7 @@ export default function Home() {
               <p className="body-md mb-8" style={{ maxWidth: "80%", marginLeft: "auto", color: "var(--text-strong)", fontWeight: 500 }}>
                 Theory doesn&apos;t keep a factory running. We measure our success by uptime, yield improvements, and latency reduction in the harshest physical environments.
               </p>
-              <div className="flex gap-4" style={{ justifyContent: "flex-end", width: "100%" }}>
+              <div className="flex gap-4 mb-4" style={{ justifyContent: "flex-end", width: "100%" }}>
                 <Link href="/services" className="btn-secondary label-md" style={{ textDecoration: "none" }}>View all capabilities</Link>
               </div>
             </div>
@@ -205,7 +205,7 @@ export default function Home() {
           <section className="container py-20">
             <div className="grid-asymmetric-left" style={{ gap: "3rem", alignItems: "start" }}>
               <div>
-                <div className="label-sm text-primary mb-4" style={{ letterSpacing: "0.1em" }}>WHO WE ARE</div>
+                <div className="who-label text-primary" style={{ letterSpacing: "0.1em" }}>WHO WE ARE</div>
                 <h2 className="display-lg mb-8 section-heading-lg" style={{ fontSize: "2.75rem", lineHeight: 1.1 }}>
                   An industrial software studio for the <span className="text-primary italic">physical world</span>
                 </h2>
