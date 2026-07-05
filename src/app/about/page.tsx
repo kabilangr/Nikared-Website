@@ -1,16 +1,27 @@
-import type { Metadata } from "next";
+import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import JsonLd from "@/components/JsonLd";
+import { pageMetadata } from "@/lib/metadata";
+import { breadcrumbSchema } from "@/lib/structured-data";
 
-export const metadata: Metadata = {
-  title: "About — Nika Red",
-  description: "Based in Chennai's innovation corridor, Nika Red builds industrial-grade software, AI systems, and XR platforms for the physical world.",
-};
+export const metadata = pageMetadata({
+  title: "About",
+  description:
+    "Based in Chennai's innovation corridor, Nika Red builds industrial-grade software, edge AI systems, and XR platforms for manufacturing, logistics, and heavy infrastructure.",
+  path: "/about",
+});
 
 export default function About() {
   return (
     <main style={{ paddingBottom: "100px" }}>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "About", path: "/about" },
+        ])}
+      />
       <Header />
 
       {/* Hero Section */}
@@ -119,6 +130,61 @@ export default function About() {
                 Nika Red works across the full stack — from sensor hardware and edge compute to enterprise interfaces and immersive environments.
               </p>
               <span className="material-symbols-outlined" style={{ fontSize: "4rem", color: "var(--ghost-icon)" }}>grid_view</span>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* How we approach the work */}
+      <ScrollReveal>
+        <section className="container py-20">
+          <div className="mb-12">
+            <div className="label-sm text-primary mb-4" style={{ letterSpacing: "0.1em" }}>HOW WE THINK</div>
+            <h2 className="display-lg" style={{ fontSize: "2.75rem", lineHeight: 1.1 }}>
+              Principles that <span className="text-primary italic">hold up</span> on the factory floor
+            </h2>
+          </div>
+          <div className="work-grid">
+            {[
+              { icon: "memory", label: "Edge over cloud", body: "We default to on-device execution so your operations stay resilient when connectivity drops — and your data never has to leave the plant." },
+              { icon: "engineering", label: "Hardware-aware", body: "Software is designed around the real physical layer: PLCs, sensors, and gateways, with sensor drift and network gaps treated as first-class constraints." },
+              { icon: "lock_open", label: "No dependency lock-in", body: "You keep full operational control after launch. We build systems your own team can run, extend, and maintain without us." },
+              { icon: "verified", label: "Tested for the real world", body: "Rigorous testing and secure coding practices tuned to industrial environments, not the demo happy-path." },
+            ].map((p) => (
+              <div key={p.label} className="kinetic-card-low hoverable" style={{ padding: "2rem" }}>
+                <span className="material-symbols-outlined text-primary mb-4" style={{ fontSize: "2.5rem" }}>{p.icon}</span>
+                <h3 className="label-md mb-4" style={{ fontSize: "1.25rem", color: "var(--text-strong)", textTransform: "none" }}>{p.label}</h3>
+                <p className="body-md" style={{ fontSize: "0.9375rem" }}>{p.body}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* Who we serve */}
+      <ScrollReveal>
+        <section className="container py-20">
+          <div className="grid-asymmetric-right" style={{ gap: "3rem", alignItems: "center" }}>
+            <div className="kinetic-card tech-accent" style={{ padding: "2.5rem" }}>
+              <h3 className="label-md text-primary mb-6" style={{ fontSize: "1.5rem" }}>Industries we serve</h3>
+              <ul className="service-deliverables">
+                <li>Manufacturing — quality control, predictive maintenance, and MES/ERP integration</li>
+                <li>Logistics &amp; supply chain — route optimization and warehouse spatial computing</li>
+                <li>Energy &amp; infrastructure — digital twins and remote sensor monitoring</li>
+                <li>Heavy machinery — edge intelligence embedded directly in the equipment</li>
+              </ul>
+            </div>
+            <div>
+              <h2 className="display-lg mb-8" style={{ fontSize: "2.5rem", lineHeight: 1.1 }}>
+                Based in Chennai, <span className="text-primary italic">building worldwide</span>
+              </h2>
+              <p className="body-md mb-4" style={{ fontSize: "1.0625rem" }}>
+                From our home in Chennai&apos;s industrial and technology corridor, Nika Red works with clients across India and internationally. Our disciplines span the full stack — sensor hardware and edge compute, enterprise interfaces, and immersive spatial environments.
+              </p>
+              <p className="body-md">
+                Whether you are modernizing a decades-old SCADA deployment or standing up an entirely new edge AI pipeline, we bring the same engineering rigor to every project.
+              </p>
+              <Link href="/contact" className="tech-link label-md" style={{ textDecoration: "none", display: "inline-block", marginTop: "2rem" }}>Start a conversation →</Link>
             </div>
           </div>
         </section>

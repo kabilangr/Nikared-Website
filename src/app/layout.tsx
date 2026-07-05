@@ -1,6 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Fraunces } from "next/font/google";
 import "./globals.css";
+import JsonLd from "@/components/JsonLd";
+import { SITE, SITE_URL } from "@/lib/site";
+import { organizationSchema, websiteSchema } from "@/lib/structured-data";
 
 const THEME_INIT_SCRIPT = `(function(){try{var t=localStorage.getItem('theme');if(t!=='light'&&t!=='dark'){t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`;
 
@@ -17,41 +20,80 @@ const fraunces = Fraunces({
   axes: ["opsz", "SOFT"],
 });
 
+const OG_IMAGE = {
+  url: "/logo.png",
+  width: 1776,
+  height: 1049,
+  alt: "Nika Red — Industrial Software, Edge AI, and XR Engineering Studio",
+};
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nikared.com"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Nika Red | Industrial Software, Edge AI, and XR Engineering Studio",
     template: "%s | Nika Red",
   },
-  description:
-    "Nika Red is a Chennai-based engineering studio building custom industrial software, edge AI systems, and spatial computing (XR) solutions for manufacturing, logistics, and heavy infrastructure.",
+  description: SITE.description,
+  applicationName: SITE.name,
   keywords: [
-    "industrial software studio", 
-    "edge AI engineering", 
-    "XR development for manufacturing", 
+    "industrial software studio",
+    "edge AI engineering",
+    "XR development for manufacturing",
     "SCADA integration",
     "legacy system modernization",
     "digital twin development",
     "predictive maintenance algorithms",
     "industrial automation software",
-    "product engineering", 
-    "Chennai", 
-    "India"
+    "computer vision quality control",
+    "spatial computing",
+    "MES ERP integration",
+    "product engineering",
+    "Chennai",
+    "India",
   ],
-  authors: [{ name: "NIKA RED PRIVATE LIMITED" }],
+  authors: [{ name: SITE.legalName, url: SITE_URL }],
+  creator: SITE.legalName,
+  publisher: SITE.legalName,
+  category: "technology",
+  alternates: {
+    canonical: "/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  icons: {
+    icon: "/icon.png",
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
+  manifest: "/manifest.webmanifest",
+  formatDetection: {
+    email: false,
+    telephone: false,
+    address: false,
+  },
   openGraph: {
     type: "website",
-    siteName: "Nika Red",
+    siteName: SITE.name,
+    locale: "en_US",
+    url: SITE_URL,
     title: "Nika Red | Industrial Software, Edge AI, and XR Engineering Studio",
-    description:
-      "A Chennai-based engineering studio building custom industrial software, edge AI systems, and spatial computing (XR) solutions for manufacturing, logistics, and heavy infrastructure.",
-    images: [{ url: "/logo.svg", width: 852, height: 503, alt: "Nika Red Logo" }],
+    description: SITE.description,
+    images: [OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
     title: "Nika Red | Industrial Software, Edge AI, and XR Engineering Studio",
-    description: "A Chennai-based engineering studio building custom industrial software, edge AI systems, and spatial computing (XR) solutions for manufacturing, logistics, and heavy infrastructure.",
-    images: ["/logo.svg"],
+    description: SITE.description,
+    images: [OG_IMAGE.url],
   },
 };
 
@@ -77,6 +119,7 @@ export default function RootLayout({
         />
       </head>
       <body suppressHydrationWarning>
+        <JsonLd data={[organizationSchema(), websiteSchema()]} />
         {children}
       </body>
     </html>

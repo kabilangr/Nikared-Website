@@ -1,17 +1,27 @@
-import type { Metadata } from "next";
 import UplinkForm from "@/components/UplinkForm";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import JsonLd from "@/components/JsonLd";
+import { pageMetadata } from "@/lib/metadata";
+import { breadcrumbSchema } from "@/lib/structured-data";
 
-export const metadata: Metadata = {
-  title: "Contact — Nika Red",
-  description: "Tell us what you're building. Nika Red is based in Chennai, India.",
-};
+export const metadata = pageMetadata({
+  title: "Contact",
+  description:
+    "Start a project with Nika Red. Tell us about your industrial software, edge AI, or XR challenge — a Chennai-based engineer will respond within 24–48 hours.",
+  path: "/contact",
+});
 
 export default function Contact() {
   return (
     <main style={{ paddingBottom: "100px", minHeight: "100vh" }}>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Contact", path: "/contact" },
+        ])}
+      />
       <Header />
 
       <ScrollReveal>

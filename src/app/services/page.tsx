@@ -1,17 +1,53 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import JsonLd from "@/components/JsonLd";
+import { pageMetadata } from "@/lib/metadata";
+import {
+  breadcrumbSchema,
+  faqSchema,
+  professionalServiceSchema,
+} from "@/lib/structured-data";
 
-export const metadata: Metadata = {
-  title: "Services — Nika Red",
-  description: "Engineering Foundry, AI & Machine Learning, and XR & Spatial Computing — three disciplines engineered for the physical world.",
-};
+export const metadata = pageMetadata({
+  title: "Services",
+  description:
+    "Engineering Foundry, Edge AI & Machine Learning, and XR & Spatial Computing — three disciplines engineered for manufacturing, logistics, energy, and heavy infrastructure.",
+  path: "/services",
+});
+
+const FAQS = [
+  {
+    question: "Do you integrate with legacy SCADA systems?",
+    answer:
+      "Yes. A significant part of our Engineering Foundry work involves legacy system modernization, bridging older SCADA or PLC protocols with modern, secure cloud or edge interfaces without disrupting ongoing operations.",
+  },
+  {
+    question: "How does your Edge AI differ from cloud AI?",
+    answer:
+      "Edge AI runs inference directly on local hardware (like industrial gateways or smart cameras). This is critical for predictive maintenance and quality control in environments with poor connectivity, as it ensures ultra-low latency and data privacy.",
+  },
+  {
+    question: "What platforms do you support for Spatial Computing?",
+    answer:
+      "We develop cross-platform digital twins and industrial XR applications supporting Microsoft HoloLens, Meta Quest, Apple Vision Pro, and robust mobile AR for field service technicians.",
+  },
+];
 
 export default function Services() {
   return (
     <main style={{ paddingBottom: "100px" }}>
+      <JsonLd
+        data={[
+          professionalServiceSchema(),
+          faqSchema(FAQS),
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "Services", path: "/services" },
+          ]),
+        ]}
+      />
       <Header />
 
       <section className="container" style={{ paddingTop: "120px" }}>
@@ -166,18 +202,12 @@ export default function Services() {
           <div className="py-20">
             <h2 className="display-lg mb-12" style={{ fontSize: "2.75rem" }}>Frequently Asked <span className="text-primary italic">Questions</span></h2>
             <div className="flex-col gap-4">
-              <div className="kinetic-card-low" style={{ padding: "1.5rem 2rem" }}>
-                <h3 className="label-md mb-2" style={{ color: "var(--text-strong)", fontSize: "1.25rem", textTransform: "none" }}>Do you integrate with legacy SCADA systems?</h3>
-                <p className="body-md">Yes. A significant part of our Engineering Foundry work involves legacy system modernization, bridging older SCADA or PLC protocols with modern, secure cloud or edge interfaces without disrupting ongoing operations.</p>
-              </div>
-              <div className="kinetic-card-low" style={{ padding: "1.5rem 2rem" }}>
-                <h3 className="label-md mb-2" style={{ color: "var(--text-strong)", fontSize: "1.25rem", textTransform: "none" }}>How does your Edge AI differ from cloud AI?</h3>
-                <p className="body-md">Edge AI runs inference directly on local hardware (like industrial gateways or smart cameras). This is critical for predictive maintenance and quality control in environments with poor connectivity, as it ensures ultra-low latency and data privacy.</p>
-              </div>
-              <div className="kinetic-card-low" style={{ padding: "1.5rem 2rem" }}>
-                <h3 className="label-md mb-2" style={{ color: "var(--text-strong)", fontSize: "1.25rem", textTransform: "none" }}>What platforms do you support for Spatial Computing?</h3>
-                <p className="body-md">We develop cross-platform digital twins and industrial XR applications supporting Microsoft HoloLens, Meta Quest, Apple Vision Pro, and robust mobile AR for field service technicians.</p>
-              </div>
+              {FAQS.map((faq) => (
+                <div key={faq.question} className="kinetic-card-low" style={{ padding: "1.5rem 2rem" }}>
+                  <h3 className="label-md mb-2" style={{ color: "var(--text-strong)", fontSize: "1.25rem", textTransform: "none" }}>{faq.question}</h3>
+                  <p className="body-md">{faq.answer}</p>
+                </div>
+              ))}
             </div>
           </div>
         </ScrollReveal>

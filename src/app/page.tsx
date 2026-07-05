@@ -4,10 +4,36 @@ import UplinkForm from "@/components/UplinkForm";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
+import JsonLd from "@/components/JsonLd";
+import { faqSchema } from "@/lib/structured-data";
+
+const HOME_FAQS = [
+  {
+    question: "What does Nika Red build?",
+    answer:
+      "Nika Red is an engineering studio that builds custom industrial software, edge AI systems, and spatial computing (XR) solutions. We specialize in software for the physical world — factory floors, logistics networks, and critical infrastructure — where uptime, latency, and reliability are non-negotiable.",
+  },
+  {
+    question: "Where is Nika Red located and who do you work with?",
+    answer:
+      "We are based in Chennai, India, and work with manufacturers, logistics operators, and energy and infrastructure companies worldwide. Engagements typically start with a discovery call to understand your operational environment and integration constraints.",
+  },
+  {
+    question: "Do you build on-premise and edge solutions, not just cloud?",
+    answer:
+      "Yes. We design for cloud, on-premise, and edge deployment. Much of our AI work runs on-device so that quality control and predictive maintenance keep working even when connectivity is unreliable, and your operational data stays under your control.",
+  },
+  {
+    question: "How quickly will you respond to a project inquiry?",
+    answer:
+      "A Nika Red engineer typically responds to new project inquiries within 24–48 hours. Reach us at contact@nikared.com or through the contact form.",
+  },
+];
 
 export default function Home() {
   return (
     <>
+      <JsonLd data={faqSchema(HOME_FAQS)} />
       <NeuralCanvas />
       <Header />
 
@@ -168,6 +194,58 @@ export default function Home() {
                   <span className="material-symbols-outlined text-primary mb-4" style={{ fontSize: "2.5rem" }}>{industry.icon}</span>
                   <h3 className="label-md mb-4" style={{ fontSize: "1.25rem", color: "var(--text-strong)", textTransform: "none" }}>{industry.label}</h3>
                   <p className="body-md" style={{ fontSize: "0.9375rem" }}>{industry.body}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        </ScrollReveal>
+
+        {/* Overview — SEO-rich narrative */}
+        <ScrollReveal>
+          <section className="container py-20">
+            <div className="grid-asymmetric-left" style={{ gap: "3rem", alignItems: "start" }}>
+              <div>
+                <div className="label-sm text-primary mb-4" style={{ letterSpacing: "0.1em" }}>WHO WE ARE</div>
+                <h2 className="display-lg mb-8" style={{ fontSize: "2.75rem", lineHeight: 1.1 }}>
+                  An industrial software studio for the <span className="text-primary italic">physical world</span>
+                </h2>
+                <p className="body-md mb-4" style={{ fontSize: "1.0625rem" }}>
+                  Nika Red is a Chennai-based engineering studio building the software that heavy industry runs on. We partner with manufacturers, logistics operators, and energy and infrastructure companies to design custom industrial software, deploy edge AI where the cloud can&apos;t reach, and bring spatial computing to the factory floor.
+                </p>
+                <p className="body-md" style={{ fontSize: "1.0625rem" }}>
+                  Unlike generalist agencies, every system we ship is built for the constraints of real hardware — PLCs and sensors, intermittent connectivity, and environments where a few milliseconds of latency decides whether a line keeps moving. From legacy SCADA modernization to on-device computer vision for quality control, we engineer software with the same precision as the machines it runs alongside.
+                </p>
+              </div>
+              <div className="flex-col gap-4">
+                <div className="kinetic-card-low hoverable" style={{ padding: "1.75rem" }}>
+                  <span className="material-symbols-outlined text-primary mb-4" style={{ fontSize: "2rem" }}>precision_manufacturing</span>
+                  <h3 className="label-md mb-2" style={{ color: "var(--text-strong)", fontSize: "1.0625rem", textTransform: "none" }}>Built for uptime</h3>
+                  <p className="body-md" style={{ fontSize: "0.9375rem" }}>Mission-critical systems engineered for 99.999% availability in the harshest physical environments.</p>
+                </div>
+                <div className="kinetic-card-low hoverable" style={{ padding: "1.75rem" }}>
+                  <span className="material-symbols-outlined text-primary mb-4" style={{ fontSize: "2rem" }}>hub</span>
+                  <h3 className="label-md mb-2" style={{ color: "var(--text-strong)", fontSize: "1.0625rem", textTransform: "none" }}>Edge-first AI</h3>
+                  <p className="body-md" style={{ fontSize: "0.9375rem" }}>On-device inference for predictive maintenance and quality control — no cloud dependency, full data control.</p>
+                </div>
+                <div className="kinetic-card-low hoverable" style={{ padding: "1.75rem" }}>
+                  <span className="material-symbols-outlined text-primary mb-4" style={{ fontSize: "2rem" }}>handshake</span>
+                  <h3 className="label-md mb-2" style={{ color: "var(--text-strong)", fontSize: "1.0625rem", textTransform: "none" }}>No lock-in</h3>
+                  <p className="body-md" style={{ fontSize: "0.9375rem" }}>You keep full operational control after launch — we build systems your team can own and run.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </ScrollReveal>
+
+        {/* FAQ */}
+        <ScrollReveal>
+          <section className="container py-20">
+            <h2 className="display-lg mb-12" style={{ fontSize: "2.75rem" }}>Common <span className="text-primary italic">questions</span></h2>
+            <div className="flex-col gap-4">
+              {HOME_FAQS.map((faq) => (
+                <div key={faq.question} className="kinetic-card-low" style={{ padding: "1.5rem 2rem" }}>
+                  <h3 className="label-md mb-2" style={{ color: "var(--text-strong)", fontSize: "1.25rem", textTransform: "none" }}>{faq.question}</h3>
+                  <p className="body-md">{faq.answer}</p>
                 </div>
               ))}
             </div>
