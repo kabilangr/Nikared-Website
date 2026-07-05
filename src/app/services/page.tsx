@@ -50,7 +50,7 @@ export default function Services() {
       />
       <Header />
 
-      <section className="container" style={{ paddingTop: "120px" }}>
+      <section className="container subpage-hero">
         <ScrollReveal>
           <div className="mb-12">
             <div className="flex gap-4 mb-8 items-center">

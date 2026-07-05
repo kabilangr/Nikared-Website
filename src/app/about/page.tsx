@@ -25,7 +25,7 @@ export default function About() {
       <Header />
 
       {/* Hero Section */}
-      <section className="container relative about-hero" style={{ paddingTop: "120px", minHeight: "60vh", display: "flex", alignItems: "center" }}>
+      <section className="container relative about-hero subpage-hero" style={{ minHeight: "60vh", display: "flex", alignItems: "center" }}>
         <div className="hero-text" style={{ zIndex: 10, maxWidth: "60%" }}>
           <div className="flex gap-4 mb-8 items-center">
             <div className="line-accent"></div>

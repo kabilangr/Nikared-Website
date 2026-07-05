@@ -25,7 +25,7 @@ export default function Privacy() {
       />
       <Header />
 
-      <section className="container" style={{ paddingTop: "120px", maxWidth: "820px" }}>
+      <section className="container subpage-hero" style={{ maxWidth: "820px" }}>
         <div className="flex gap-4 mb-8 items-center">
           <div className="line-accent"></div>
           <div className="label-sm text-primary">Legal</div>

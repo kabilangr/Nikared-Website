@@ -25,7 +25,7 @@ export default function Contact() {
       <Header />
 
       <ScrollReveal>
-        <section className="container" style={{ paddingTop: "120px", paddingBottom: "5rem" }}>
+        <section className="container subpage-hero" style={{ paddingBottom: "5rem" }}>
           <div className="flex gap-4 mb-8 items-center">
             <div className="line-accent"></div>
             <div className="label-sm text-primary">Get in touch</div>

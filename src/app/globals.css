@@ -300,6 +300,11 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 var(--spacing-12);
 }
 
+.subpage-hero {
+    padding-top: 120px;
+}
+
+
 .work-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -746,9 +751,12 @@ input::placeholder, textarea::placeholder {
         min-height: 65vh !important;
     }
 
+    .subpage-hero {
+        padding-top: 80px;
+    }
+
     /* About hero — reduce top padding */
     .about-hero {
-        padding-top: 80px !important;
         min-height: auto !important;
     }
 
@@ -949,9 +957,8 @@ input::placeholder, textarea::placeholder {
         width: 90%;
     }
 
-    /* About hero */
-    .about-hero {
-        padding-top: 60px !important;
+    .subpage-hero {
+        padding-top: 20px !important;
     }
 
     /* Body text with border-left */
