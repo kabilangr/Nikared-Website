@@ -28,8 +28,31 @@ export default function NeuralCanvas() {
 
     let lastMouseX = -1000;
     let lastMouseY = -1000;
+    let isOverCard = false;
+
+    // Selectors for elements where the normal cursor should appear
+    const cardSelector = '.kinetic-card, .kinetic-card-low, .contact-meta, a, button, [role="button"], .theme-toggle, input, select, textarea, .status-chip, .ghost-border, .btn-primary, .btn-secondary, .tech-link';
 
     const handleMouseMove = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      const overCard = !!target.closest(cardSelector);
+
+      if (overCard && !isOverCard) {
+        // Entering a card — hide black hole, show normal cursor
+        isOverCard = true;
+        document.body.style.cursor = '';
+        mouse.x = -1000;
+        mouse.y = -1000;
+        mouse.speed = 0;
+        return;
+      } else if (!overCard && isOverCard) {
+        // Leaving a card — restore black hole cursor
+        isOverCard = false;
+        document.body.style.cursor = 'none';
+      }
+
+      if (isOverCard) return;
+
       if (lastMouseX !== -1000) {
         const dx = event.x - lastMouseX;
         const dy = event.y - lastMouseY;
@@ -48,6 +71,7 @@ export default function NeuralCanvas() {
       lastMouseX = -1000;
       lastMouseY = -1000;
       mouse.speed = 0;
+      isOverCard = false;
     };
 
     window.addEventListener("mousemove", handleMouseMove);
