@@ -1,5 +1,14 @@
 import type { Metadata } from "next";
-import { SITE } from "./site";
+import { SITE, absUrl, routePath } from "./site";
+
+/** Default social image. Next replaces (not merges) nested openGraph objects,
+ *  so every page must carry its own images or it ships without og:image. */
+export const OG_IMAGE = {
+  url: "/logo.png",
+  width: 1776,
+  height: 1049,
+  alt: "Nika Red: Industrial Software, Edge AI, and XR Engineering Studio",
+};
 
 /**
  * Builds per-page Metadata with a self-referencing canonical URL and page-level
@@ -10,28 +19,54 @@ export function pageMetadata({
   title,
   description,
   path,
+  keywords,
+  article,
 }: {
   title: string;
   description: string;
   path: string;
+  keywords?: string[];
+  article?: { publishedTime: string; modifiedTime?: string; tags?: string[]; section?: string };
 }): Metadata {
+  const url = absUrl(path);
+  const fullTitle = `${title} | ${SITE.name}`;
+
   return {
     title,
     description,
+    ...(keywords ? { keywords } : {}),
     alternates: {
-      canonical: path,
+      canonical: routePath(path),
     },
-    openGraph: {
-      type: "website",
-      siteName: SITE.name,
-      url: `${SITE.url}${path === "/" ? "" : path}`,
-      title: `${title} | ${SITE.name}`,
-      description,
-    },
+    openGraph: article
+      ? {
+          type: "article",
+          siteName: SITE.name,
+          locale: "en_US",
+          url,
+          title: fullTitle,
+          description,
+          images: [OG_IMAGE],
+          publishedTime: article.publishedTime,
+          modifiedTime: article.modifiedTime ?? article.publishedTime,
+          authors: [SITE.name],
+          section: article.section,
+          tags: article.tags,
+        }
+      : {
+          type: "website",
+          siteName: SITE.name,
+          locale: "en_US",
+          url,
+          title: fullTitle,
+          description,
+          images: [OG_IMAGE],
+        },
     twitter: {
       card: "summary_large_image",
-      title: `${title} | ${SITE.name}`,
+      title: fullTitle,
       description,
+      images: [OG_IMAGE.url],
     },
   };
 }

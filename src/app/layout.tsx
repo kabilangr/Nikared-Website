@@ -24,7 +24,7 @@ const OG_IMAGE = {
   url: "/logo.png",
   width: 1776,
   height: 1049,
-  alt: "Nika Red — Industrial Software, Edge AI, and XR Engineering Studio",
+  alt: "Nika Red: Industrial Software, Edge AI, and XR Engineering Studio",
 };
 
 export const metadata: Metadata = {
@@ -69,11 +69,7 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  icons: {
-    icon: "/icon.png",
-    shortcut: "/icon.png",
-    apple: "/icon.png",
-  },
+  // Icons come from the file conventions in src/app: favicon.ico, icon.png, apple-icon.png.
   manifest: "/manifest.webmanifest",
   formatDetection: {
     email: false,
@@ -84,7 +80,7 @@ export const metadata: Metadata = {
     type: "website",
     siteName: SITE.name,
     locale: "en_US",
-    url: SITE_URL,
+    url: `${SITE_URL}/`,
     title: "Nika Red | Industrial Software, Edge AI, and XR Engineering Studio",
     description: SITE.description,
     images: [OG_IMAGE],

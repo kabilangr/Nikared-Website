@@ -61,7 +61,7 @@ export default function UplinkForm() {
       });
 
       setStatusColor("var(--secondary)");
-      setStatus("Message sent — we'll be in touch within 24–48 hours.");
+      setStatus("Message sent. We'll be in touch within 24 to 48 hours.");
       setName("");
       setEmail("");
       setSubject("");

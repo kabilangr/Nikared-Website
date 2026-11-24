@@ -6,12 +6,16 @@ import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import JsonLd from "@/components/JsonLd";
 import { faqSchema } from "@/lib/structured-data";
+import { PostCard } from "@/components/PageBits";
+import { getAllPosts } from "@/lib/content/blog";
+import { ProductMark } from "@/components/ProductBits";
+import { PRODUCTS } from "@/lib/content/products";
 
 const HOME_FAQS = [
   {
     question: "What does Nika Red build?",
     answer:
-      "Nika Red is an engineering studio that builds custom industrial software, edge AI systems, and spatial computing (XR) solutions. We specialize in software for the physical world — factory floors, logistics networks, and critical infrastructure — where uptime, latency, and reliability are non-negotiable.",
+      "Nika Red is an engineering studio that builds custom industrial software, edge AI systems, and spatial computing (XR) solutions. We specialize in software for the physical world: factory floors, logistics networks, and critical infrastructure, where uptime, latency, and reliability are non-negotiable.",
   },
   {
     question: "Where is Nika Red located and who do you work with?",
@@ -26,7 +30,7 @@ const HOME_FAQS = [
   {
     question: "How quickly will you respond to a project inquiry?",
     answer:
-      "A Nika Red engineer typically responds to new project inquiries within 24–48 hours. Reach us at contact@nikared.com or through the contact form.",
+      "A Nika Red engineer typically responds to new project inquiries within 24 to 48 hours. Reach us at contact@nikared.com or through the contact form.",
   },
 ];
 
@@ -41,7 +45,7 @@ export default function Home() {
         {/* Hero Section */}
         <section className="container py-20 relative hero-section" style={{ minHeight: "85vh", display: "flex", alignItems: "center" }}>
           <div className="hero-text" style={{ zIndex: 10, maxWidth: "60%" }}>
-            <div className="status-chip label-md">Based in Chennai — building worldwide</div>
+            <div className="status-chip label-md">Based in Chennai, building worldwide</div>
             <h1 className="display-lg mb-8 hero-display" style={{ fontSize: "4rem" }}>
               Industrial Intelligence,<br /><span className="text-primary italic">Forged in Code</span>
             </h1>
@@ -50,7 +54,7 @@ export default function Home() {
             </p>
             <div className="flex gap-4">
               <Link href="/contact" className="btn-primary label-md" style={{ textDecoration: "none" }}>Start a project</Link>
-              <Link href="/services" className="btn-secondary label-md" style={{ textDecoration: "none" }}>See our work</Link>
+              <Link href="/services" className="btn-secondary label-md" style={{ textDecoration: "none" }}>Explore services</Link>
             </div>
           </div>
 
@@ -72,40 +76,22 @@ export default function Home() {
           </div>
         </section>
 
-        {/* About Us */}
+        {/* Products */}
         <ScrollReveal>
-          <section id="case-study" className="container py-20 grid-asymmetric-right">
-            <div className="kinetic-card electric-glow case-study-card" style={{ padding: "3rem", position: "relative", overflow: "hidden", zIndex: 1, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
-              <div style={{ position: "relative", zIndex: 2 }}>
-                <div className="label-sm text-primary mb-4" style={{ letterSpacing: "0.1em" }}>CASE STUDY // AUTOMOTIVE</div>
-                <h3 className="display-lg mb-6 card-heading-xl" style={{ fontSize: "2.5rem" }}>Zero-Latency <br />Quality Control</h3>
-                <p className="body-md mb-8" style={{ fontSize: "1.1rem" }}>
-                  A tier-1 supplier needed to inspect 400 parts per minute without cloud dependency. We deployed custom Edge AI vision models directly to the factory floor.
-                </p>
-              </div>
-              <div className="flex gap-8 stat-row" style={{ position: "relative", zIndex: 2, borderTop: "1px solid rgba(255,255,255,0.1)", paddingTop: "1.5rem" }}>
-                <div>
-                  <p className="display-lg" style={{ fontSize: "2rem", color: "var(--primary)" }}>30%</p>
-                  <p className="label-sm">Scrap Reduction</p>
-                </div>
-                <div>
-                  <p className="display-lg" style={{ fontSize: "2rem", color: "var(--primary)" }}>&lt;12ms</p>
-                  <p className="label-sm">Inference Time</p>
-                </div>
-              </div>
-              <div className="light-leak" style={{ position: "absolute", top: 0, right: 0, bottom: 0, left: 0, zIndex: 1, opacity: 0.1, background: "radial-gradient(circle at 100% 100%, var(--primary) 0%, transparent 50%)" }} />
+          <section className="container py-20" aria-labelledby="our-products">
+            <div className="flex justify-between items-center flex-wrap gap-4 mb-12">
+              <h2 id="our-products" className="display-lg section-heading-lg" style={{ fontSize: "2.75rem" }}>Proof of work: products we <span className="text-primary italic">build and run</span></h2>
+              <Link href="/products" className="tech-link label-md">All products →</Link>
             </div>
-
-            <div className="flex-col items-start align-right proof-text-right" style={{ textAlign: "right", position: "relative", zIndex: 10, justifyContent: "center" }}>
-              <h2 className="display-lg mb-8 section-heading-lg" style={{ fontSize: "3.5rem", lineHeight: 1.05 }}>
-                Proof of <br /><span className="text-primary italic">Work</span>
-              </h2>
-              <p className="body-md mb-8" style={{ maxWidth: "80%", marginLeft: "auto", color: "var(--text-strong)", fontWeight: 500 }}>
-                Theory doesn&apos;t keep a factory running. We measure our success by uptime, yield improvements, and latency reduction in the harshest physical environments.
-              </p>
-              <div className="flex gap-4 mb-4" style={{ justifyContent: "flex-end", width: "100%" }}>
-                <Link href="/services" className="btn-secondary label-md" style={{ textDecoration: "none" }}>View all capabilities</Link>
-              </div>
+            <div className="card-grid-2">
+              {PRODUCTS.map((p) => (
+                <Link key={p.slug} href={`/products/${p.slug}`} className="kinetic-card-low hoverable link-card">
+                  <ProductMark product={p} size={52} />
+                  <p className="body-md" style={{ marginTop: "1.25rem", color: "var(--text-strong)", fontWeight: 500 }}>{p.tagline}</p>
+                  <p className="body-md" style={{ marginTop: "0.5rem", fontSize: "0.9375rem" }}>{p.summary}</p>
+                  <span className="tech-link label-md">About {p.name} →</span>
+                </Link>
+              ))}
             </div>
           </section>
         </ScrollReveal>
@@ -123,9 +109,9 @@ export default function Home() {
                   </div>
                   <h3 className="label-md text-primary mb-4 card-heading-lg" style={{ fontSize: "2rem" }}>Unbreakable Operations</h3>
                   <p className="body-md mb-8" style={{ maxWidth: "90%" }}>
-                    Eliminate bottlenecks with custom MES/ERP and SCADA integration built for 99.999% uptime.
+                    Eliminate bottlenecks with custom MES/ERP and SCADA integration designed for continuous, round-the-clock operation.
                   </p>
-                  <Link href="/services" className="tech-link label-md" style={{ textDecoration: "none" }}>Explore Foundry capabilities →</Link>
+                  <Link href="/services/industrial-software" className="tech-link label-md" style={{ textDecoration: "none" }}>Explore Foundry capabilities →</Link>
                 </div>
                 <div className="flex-col gap-4 align-right" style={{ textAlign: "right" }}>
                   <span className="label-sm ghost-border" style={{ padding: "0.5rem 1rem" }}>System architecture</span>
@@ -142,9 +128,9 @@ export default function Home() {
                   </div>
                   <h3 className="label-md text-primary mb-4 card-heading-lg" style={{ fontSize: "2rem" }}>Predictive Intelligence</h3>
                   <p className="body-md mb-8" style={{ maxWidth: "90%", marginLeft: "auto", color: "var(--text-strong)", fontWeight: 500 }}>
-                    Catch failures before they happen. On-device anomaly detection that saves millions in unplanned downtime.
+                    Catch failures before they happen. On-device anomaly detection that flags degrading equipment before it stops your line.
                   </p>
-                  <Link href="/services" className="tech-link label-md" style={{ textDecoration: "none", color: "var(--secondary)", fontWeight: 700 }}>See our Edge AI work →</Link>
+                  <Link href="/services/edge-ai" className="tech-link label-md" style={{ textDecoration: "none", color: "var(--secondary)", fontWeight: 700 }}>See our Edge AI work →</Link>
                 </div>
               </div>
 
@@ -153,8 +139,9 @@ export default function Home() {
                   <span className="material-symbols-outlined text-primary" style={{ fontSize: "3rem", marginBottom: "2rem" }}>view_in_ar</span>
                   <h3 className="label-md text-primary mb-4 card-heading-lg" style={{ fontSize: "2rem" }}>Augmented Workforce</h3>
                   <p className="body-md" style={{ color: "var(--text-strong)", fontWeight: 500 }}>
-                    Cut training time in half. Spatial digital twins and AR overlays that guide your technicians through complex maintenance.
+                    Train faster and safer. Spatial digital twins and AR overlays that guide your technicians through complex maintenance.
                   </p>
+                  <Link href="/services/xr-spatial-computing" className="tech-link label-md" style={{ textDecoration: "none", marginTop: "1.5rem" }}>Explore XR &amp; spatial →</Link>
                 </div>
                 <div className="kinetic-card-low flex items-center justify-center" style={{ flex: 1.5, position: "relative", overflow: "hidden", padding: 0 }}>
                   <div style={{ zIndex: 10, padding: "var(--spacing-12)" }}>
@@ -186,21 +173,22 @@ export default function Home() {
             <h2 className="display-lg mb-12 section-heading-lg" style={{ fontSize: "2.75rem" }}>Industries We <span className="text-primary italic">Transform</span></h2>
             <div className="work-grid industries-grid" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
               {[
-                { icon: "factory", label: "Manufacturing", body: "Custom industrial software and edge AI for quality control, predictive maintenance, and real-time SCADA integration on the factory floor." },
-                { icon: "local_shipping", label: "Logistics & Supply Chain", body: "Spatial computing (XR) and route optimization algorithms for complex supply chain networks and warehousing operations." },
-                { icon: "bolt", label: "Energy & Infrastructure", body: "Robust digital twin development and sensor data fusion for remote monitoring of critical physical infrastructure." },
+                { icon: "factory", href: "/industries/manufacturing", label: "Manufacturing", body: "Custom industrial software and edge AI for quality control, predictive maintenance, and real-time SCADA integration on the factory floor." },
+                { icon: "local_shipping", href: "/industries/logistics", label: "Logistics & Supply Chain", body: "Spatial computing (XR) and route optimization algorithms for complex supply chain networks and warehousing operations." },
+                { icon: "bolt", href: "/industries/energy-infrastructure", label: "Energy & Infrastructure", body: "Robust digital twin development and sensor data fusion for remote monitoring of critical physical infrastructure." },
               ].map(industry => (
-                <div key={industry.label} className="kinetic-card hoverable" style={{ padding: "2rem" }}>
+                <Link key={industry.label} href={industry.href} className="kinetic-card hoverable link-card" style={{ padding: "2rem" }}>
                   <span className="material-symbols-outlined text-primary mb-4" style={{ fontSize: "2.5rem" }}>{industry.icon}</span>
                   <h3 className="label-md mb-4" style={{ fontSize: "1.25rem", color: "var(--text-strong)", textTransform: "none" }}>{industry.label}</h3>
                   <p className="body-md" style={{ fontSize: "0.9375rem" }}>{industry.body}</p>
-                </div>
+                </Link>
               ))}
             </div>
+            <Link href="/industries" className="tech-link label-md" style={{ display: "inline-block", marginTop: "2rem" }}>All industries →</Link>
           </section>
         </ScrollReveal>
 
-        {/* Overview — SEO-rich narrative */}
+        {/* Overview: SEO-rich narrative */}
         <ScrollReveal>
           <section className="container py-20">
             <div className="grid-asymmetric-left" style={{ gap: "3rem", alignItems: "start" }}>
@@ -213,26 +201,39 @@ export default function Home() {
                   Nika Red is a Chennai-based engineering studio building the software that heavy industry runs on. We partner with manufacturers, logistics operators, and energy and infrastructure companies to design custom industrial software, deploy edge AI where the cloud can&apos;t reach, and bring spatial computing to the factory floor.
                 </p>
                 <p className="body-md" style={{ fontSize: "1.0625rem" }}>
-                  Unlike generalist agencies, every system we ship is built for the constraints of real hardware — PLCs and sensors, intermittent connectivity, and environments where a few milliseconds of latency decides whether a line keeps moving. From legacy SCADA modernization to on-device computer vision for quality control, we engineer software with the same precision as the machines it runs alongside.
+                  Unlike generalist agencies, every system we ship is built for the constraints of real hardware: PLCs and sensors, intermittent connectivity, and environments where a few milliseconds of latency decides whether a line keeps moving. From legacy SCADA modernization to on-device computer vision for quality control, we engineer software with the same precision as the machines it runs alongside.
                 </p>
               </div>
               <div className="flex-col gap-4">
                 <div className="kinetic-card-low hoverable" style={{ padding: "1.75rem" }}>
                   <span className="material-symbols-outlined text-primary mb-4" style={{ fontSize: "2rem" }}>precision_manufacturing</span>
                   <h3 className="label-md mb-2" style={{ color: "var(--text-strong)", fontSize: "1.0625rem", textTransform: "none" }}>Built for uptime</h3>
-                  <p className="body-md" style={{ fontSize: "0.9375rem" }}>Mission-critical systems engineered for 99.999% availability in the harshest physical environments.</p>
+                  <p className="body-md" style={{ fontSize: "0.9375rem" }}>Mission-critical systems engineered for high availability in harsh physical environments, with no single point of failure.</p>
                 </div>
                 <div className="kinetic-card-low hoverable" style={{ padding: "1.75rem" }}>
                   <span className="material-symbols-outlined text-primary mb-4" style={{ fontSize: "2rem" }}>hub</span>
                   <h3 className="label-md mb-2" style={{ color: "var(--text-strong)", fontSize: "1.0625rem", textTransform: "none" }}>Edge-first AI</h3>
-                  <p className="body-md" style={{ fontSize: "0.9375rem" }}>On-device inference for predictive maintenance and quality control — no cloud dependency, full data control.</p>
+                  <p className="body-md" style={{ fontSize: "0.9375rem" }}>On-device inference for predictive maintenance and quality control, with no cloud dependency and full data control.</p>
                 </div>
                 <div className="kinetic-card-low hoverable" style={{ padding: "1.75rem" }}>
                   <span className="material-symbols-outlined text-primary mb-4" style={{ fontSize: "2rem" }}>handshake</span>
                   <h3 className="label-md mb-2" style={{ color: "var(--text-strong)", fontSize: "1.0625rem", textTransform: "none" }}>No lock-in</h3>
-                  <p className="body-md" style={{ fontSize: "0.9375rem" }}>You keep full operational control after launch — we build systems your team can own and run.</p>
+                  <p className="body-md" style={{ fontSize: "0.9375rem" }}>You keep full operational control after launch. We build systems your team can own and run.</p>
                 </div>
               </div>
+            </div>
+          </section>
+        </ScrollReveal>
+
+        {/* Latest from the blog */}
+        <ScrollReveal>
+          <section className="container py-20" aria-labelledby="latest-posts">
+            <div className="flex justify-between items-center flex-wrap gap-4 mb-12">
+              <h2 id="latest-posts" className="display-lg section-heading-lg" style={{ fontSize: "2.75rem" }}>From the <span className="text-primary italic">blog</span></h2>
+              <Link href="/blog" className="tech-link label-md">All articles →</Link>
+            </div>
+            <div className="card-grid-3">
+              {getAllPosts().slice(0, 3).map((p) => <PostCard key={p.slug} post={p} />)}
             </div>
           </section>
         </ScrollReveal>
@@ -279,11 +280,11 @@ export default function Home() {
               <div className="contact-right-panel contact-meta" style={{ position: "relative" }}>
                 <div className="contact-meta-item">
                   <p className="label-sm mb-2">Response time</p>
-                  <p className="label-md" style={{ color: "var(--text-strong)" }}>24–48 hours</p>
+                  <p className="label-md" style={{ color: "var(--text-strong)" }}>24 to 48 hours</p>
                 </div>
                 <div className="contact-meta-item">
                   <p className="label-sm mb-2">Timezone</p>
-                  <p className="label-md" style={{ color: "var(--text-strong)" }}>IST — UTC+5:30</p>
+                  <p className="label-md" style={{ color: "var(--text-strong)" }}>IST (UTC+5:30)</p>
                 </div>
                 <div className="contact-meta-item">
                   <p className="label-sm mb-2">Preferred channel</p>

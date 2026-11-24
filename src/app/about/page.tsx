@@ -76,7 +76,7 @@ export default function About() {
         <section className="container py-20">
           <div className="grid-asymmetric-left" style={{ gap: "1.5rem" }}>
 
-            {/* Card 1 — Research-led */}
+            {/* Card 1: Research-led */}
             <div className="kinetic-card hoverable capability-card" style={{ minHeight: "400px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
               <div>
                 <div className="flex justify-between items-start mb-12">
@@ -84,7 +84,7 @@ export default function About() {
                   <span className="material-symbols-outlined text-primary" style={{ fontSize: "3rem" }}>neurology</span>
                 </div>
                 <p className="body-md">
-                  We fold neural computing into industrial automation as it matures — favoring on-device execution over cloud dependency, so your operations stay resilient and yours to run.
+                  We fold neural computing into industrial automation as it matures, favoring on-device execution over cloud dependency, so your operations stay resilient and yours to run.
                 </p>
               </div>
               <div className="flex gap-12 mt-12">
@@ -99,7 +99,7 @@ export default function About() {
               </div>
             </div>
 
-            {/* Card 2 — Built for hardware */}
+            {/* Card 2: Built for hardware */}
             <div className="kinetic-card hoverable capability-card" style={{ backgroundColor: "var(--primary)", minHeight: "400px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
               <div>
                 <div className="flex justify-between items-start mb-12">
@@ -127,7 +127,7 @@ export default function About() {
             </div>
             <div className="kinetic-card-low flex items-center justify-between hoverable">
               <p className="body-md" style={{ maxWidth: "60%" }}>
-                Nika Red works across the full stack — from sensor hardware and edge compute to enterprise interfaces and immersive environments.
+                Nika Red works across the full stack, from sensor hardware and edge compute to enterprise interfaces and immersive environments.
               </p>
               <span className="material-symbols-outlined" style={{ fontSize: "4rem", color: "var(--ghost-icon)" }}>grid_view</span>
             </div>
@@ -146,7 +146,7 @@ export default function About() {
           </div>
           <div className="work-grid">
             {[
-              { icon: "memory", label: "Edge over cloud", body: "We default to on-device execution so your operations stay resilient when connectivity drops — and your data never has to leave the plant." },
+              { icon: "memory", label: "Edge over cloud", body: "We default to on-device execution so your operations stay resilient when connectivity drops, and your data never has to leave the plant." },
               { icon: "engineering", label: "Hardware-aware", body: "Software is designed around the real physical layer: PLCs, sensors, and gateways, with sensor drift and network gaps treated as first-class constraints." },
               { icon: "lock_open", label: "No dependency lock-in", body: "You keep full operational control after launch. We build systems your own team can run, extend, and maintain without us." },
               { icon: "verified", label: "Tested for the real world", body: "Rigorous testing and secure coding practices tuned to industrial environments, not the demo happy-path." },
@@ -168,10 +168,10 @@ export default function About() {
             <div className="kinetic-card tech-accent" style={{ padding: "2.5rem" }}>
               <h3 className="label-md text-primary mb-6" style={{ fontSize: "1.5rem" }}>Industries we serve</h3>
               <ul className="service-deliverables">
-                <li>Manufacturing — quality control, predictive maintenance, and MES/ERP integration</li>
-                <li>Logistics &amp; supply chain — route optimization and warehouse spatial computing</li>
-                <li>Energy &amp; infrastructure — digital twins and remote sensor monitoring</li>
-                <li>Heavy machinery — edge intelligence embedded directly in the equipment</li>
+                <li>Manufacturing: quality control, predictive maintenance, and MES/ERP integration</li>
+                <li>Logistics &amp; supply chain: route optimization and warehouse spatial computing</li>
+                <li>Energy &amp; infrastructure: digital twins and remote sensor monitoring</li>
+                <li>Heavy machinery: edge intelligence embedded directly in the equipment</li>
               </ul>
             </div>
             <div>
@@ -179,7 +179,7 @@ export default function About() {
                 Based in Chennai, <span className="text-primary italic">building worldwide</span>
               </h2>
               <p className="body-md mb-4" style={{ fontSize: "1.0625rem" }}>
-                From our home in Chennai&apos;s industrial and technology corridor, Nika Red works with clients across India and internationally. Our disciplines span the full stack — sensor hardware and edge compute, enterprise interfaces, and immersive spatial environments.
+                From our home in Chennai&apos;s industrial and technology corridor, Nika Red works with clients across India and internationally. Our disciplines span the full stack: sensor hardware and edge compute, enterprise interfaces, and immersive spatial environments.
               </p>
               <p className="body-md">
                 Whether you are modernizing a decades-old SCADA deployment or standing up an entirely new edge AI pipeline, we bring the same engineering rigor to every project.

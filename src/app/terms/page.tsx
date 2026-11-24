@@ -51,7 +51,7 @@ export default function Terms() {
           <div>
             <h2 className="label-md mb-4" style={{ color: "var(--text-strong)", fontSize: "1.375rem", textTransform: "none" }}>Intellectual property</h2>
             <p>
-              All content on this Site — including text, graphics, logos, and the Nika Red name and mark — is the property
+              All content on this Site, including text, graphics, logos, and the Nika Red name and mark, is the property
               of {SITE.legalName} unless otherwise stated, and is protected by applicable intellectual property laws. You
               may not reproduce or redistribute it without prior written permission.
             </p>

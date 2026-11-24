@@ -6,14 +6,18 @@ import { usePathname } from "next/navigation";
 import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
-  { label: "About", href: "/about" },
   { label: "Services", href: "/services" },
+  { label: "Products", href: "/products" },
+  { label: "Industries", href: "/industries" },
+  { label: "Blog", href: "/blog" },
+  { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const pathname = usePathname();
+  const rawPath = usePathname() ?? "/";
+  const pathname = rawPath.length > 1 ? rawPath.replace(/\/$/, "") : rawPath;
 
   return (
     <>
@@ -29,12 +33,12 @@ export default function Header() {
               key={link.label}
               href={link.href}
               style={{
-                color: pathname === link.href ? "var(--secondary)" : "var(--text-strong)",
+                color: (pathname === link.href || pathname.startsWith(link.href + "/")) ? "var(--secondary)" : "var(--text-strong)",
                 textDecoration: "none",
                 transition: "color 0.2s",
               }}
               onMouseEnter={e => (e.currentTarget.style.color = "var(--secondary)")}
-              onMouseLeave={e => (e.currentTarget.style.color = pathname === link.href ? "var(--secondary)" : "var(--text-strong)")}
+              onMouseLeave={e => (e.currentTarget.style.color = (pathname === link.href || pathname.startsWith(link.href + "/")) ? "var(--secondary)" : "var(--text-strong)")}
             >
               {link.label}
             </Link>
@@ -82,7 +86,7 @@ export default function Header() {
               className="label-md"
               onClick={() => setMenuOpen(false)}
               style={{
-                color: pathname === link.href ? "var(--secondary)" : "var(--text-strong)",
+                color: (pathname === link.href || pathname.startsWith(link.href + "/")) ? "var(--secondary)" : "var(--text-strong)",
                 textDecoration: "none",
                 fontSize: "1.5rem",
                 letterSpacing: "0.04em",

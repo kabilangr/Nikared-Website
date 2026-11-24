@@ -7,7 +7,7 @@ export const dynamic = "force-static";
 // With `output: "export"` this is prerendered to /manifest.webmanifest at build time.
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: `${SITE.name} — ${SITE.tagline}`,
+    name: `${SITE.name} | ${SITE.tagline}`,
     short_name: SITE.name,
     description: SITE.description,
     start_url: "/",
@@ -17,18 +17,9 @@ export default function manifest(): MetadataRoute.Manifest {
     lang: "en",
     categories: ["business", "technology", "productivity"],
     icons: [
-      {
-        src: "/icon.png",
-        sizes: "1024x1024",
-        type: "image/png",
-        purpose: "any",
-      },
-      {
-        src: "/logo.png",
-        sizes: "1776x1049",
-        type: "image/png",
-        purpose: "maskable",
-      },
+      { src: "/icon-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
+      { src: "/icon-512.png", sizes: "512x512", type: "image/png", purpose: "any" },
+      { src: "/icon-maskable-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
     ],
   };
 }

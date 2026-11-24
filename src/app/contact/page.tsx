@@ -9,7 +9,7 @@ import { breadcrumbSchema } from "@/lib/structured-data";
 export const metadata = pageMetadata({
   title: "Contact",
   description:
-    "Start a project with Nika Red. Tell us about your industrial software, edge AI, or XR challenge — a Chennai-based engineer will respond within 24–48 hours.",
+    "Start a project with Nika Red. Tell us about your industrial software, edge AI, or XR challenge, and a Chennai-based engineer will respond within 24 to 48 hours.",
   path: "/contact",
 });
 
@@ -35,7 +35,7 @@ export default function Contact() {
           <div className="kinetic-card tech-accent grid-asymmetric-left contact-card-outer" style={{ padding: "var(--spacing-20)", minHeight: "60vh" }}>
             <div>
               <p className="body-md mb-12" style={{ maxWidth: "80%", fontSize: "1.0625rem" }}>
-                Tell us what you&apos;re building and a Nika Red engineer will respond within 24–48 hours.
+                Tell us what you&apos;re building and a Nika Red engineer will respond within 24 to 48 hours.
               </p>
 
               <div className="flex gap-12 mb-12 contact-info-row">
@@ -50,7 +50,7 @@ export default function Contact() {
                 </div>
                 <div className="body-md">
                   <span className="label-sm block mb-2">Timezone</span>
-                  IST — UTC+5:30
+                  IST (UTC+5:30)
                 </div>
               </div>
 
@@ -60,7 +60,7 @@ export default function Contact() {
             <div className="contact-right-panel contact-meta" style={{ position: "relative" }}>
               <div className="contact-meta-item">
                 <p className="label-sm mb-2">Response time</p>
-                <p className="label-md" style={{ color: "var(--text-strong)" }}>24–48 hours</p>
+                <p className="label-md" style={{ color: "var(--text-strong)" }}>24 to 48 hours</p>
               </div>
               <div className="contact-meta-item">
                 <p className="label-sm mb-2">Disciplines</p>

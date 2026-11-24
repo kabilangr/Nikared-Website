@@ -38,7 +38,7 @@ export default function NeuralCanvas() {
       const overCard = !!target.closest(cardSelector);
 
       if (overCard && !isOverCard) {
-        // Entering a card — hide black hole, show normal cursor
+        // Entering a card: hide black hole, show normal cursor
         isOverCard = true;
         document.body.style.cursor = '';
         mouse.x = -1000;
@@ -46,7 +46,7 @@ export default function NeuralCanvas() {
         mouse.speed = 0;
         return;
       } else if (!overCard && isOverCard) {
-        // Leaving a card — restore black hole cursor
+        // Leaving a card: restore black hole cursor
         isOverCard = false;
         document.body.style.cursor = 'none';
       }

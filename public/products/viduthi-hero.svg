@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 760" role="img" aria-labelledby="t"><title id="t">A hostel on a Tamil Nadu street in the evening, with two residents arriving and a verified-hostel badge</title>
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd9bd"/><stop offset=".55" stop-color="#ffe9d6"/><stop offset="1" stop-color="#fff6ec"/></linearGradient>
+<linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffaf4"/><stop offset="1" stop-color="#f9e7d6"/></linearGradient>
+<radialGradient id="sun" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffb37a"/><stop offset="1" stop-color="#ffb37a" stop-opacity="0"/></radialGradient>
+<clipPath id="card"><rect width="960" height="760" rx="36"/></clipPath>
+</defs>
+<g clip-path="url(#card)">
+<rect width="960" height="760" fill="url(#sky)"/>
+<circle cx="760" cy="170" r="190" fill="url(#sun)"/><circle cx="760" cy="170" r="62" fill="#ff9a56"/>
+<g fill="#fff" opacity=".75"><ellipse cx="170" cy="150" rx="86" ry="22"/><ellipse cx="230" cy="136" rx="52" ry="20"/><ellipse cx="610" cy="96" rx="70" ry="16"/></g>
+<!-- far skyline -->
+<g fill="#f3cfb2"><rect x="20" y="430" width="90" height="190"/><rect x="118" y="400" width="70" height="220"/><rect x="760" y="420" width="100" height="200"/><rect x="868" y="450" width="80" height="170"/></g>
+<!-- coconut palms -->
+<g stroke="#7a4a2b" stroke-width="10" stroke-linecap="round" fill="none"><path d="M96 640 C 100 560 92 500 104 440"/><path d="M880 640 C 876 570 884 520 872 470"/></g>
+<g fill="#2f7d4f"><path d="M104 440 C 60 420 40 440 24 470 C 60 448 84 446 104 448Z"/><path d="M104 440 C 140 410 170 420 190 446 C 156 430 128 436 104 448Z"/><path d="M104 440 C 96 396 120 380 150 380 C 128 396 116 414 108 448Z"/><path d="M104 440 C 84 400 60 396 40 404 C 62 414 84 428 100 448Z"/>
+<path d="M872 470 C 836 450 818 468 804 494 C 832 476 852 474 872 478Z"/><path d="M872 470 C 906 442 932 452 948 478 C 918 462 896 466 872 478Z"/><path d="M872 470 C 868 430 888 416 914 418 C 896 432 884 446 876 478Z"/></g>
+<!-- hostel building -->
+<rect x="190" y="210" width="580" height="420" rx="14" fill="url(#wall)"/>
+<rect x="190" y="210" width="580" height="46" rx="14" fill="#e8601c"/><rect x="190" y="240" width="580" height="16" fill="#c2500f"/>
+<!-- windows 2 floors x 5 -->
+<g>
+<g fill="#ffcf8a"><rect x="226" y="290" width="70" height="86" rx="8"/><rect x="326" y="290" width="70" height="86" rx="8"/><rect x="426" y="290" width="70" height="86" rx="8" fill="#b9d3e8"/><rect x="526" y="290" width="70" height="86" rx="8"/><rect x="626" y="290" width="70" height="86" rx="8" fill="#b9d3e8"/>
+<rect x="226" y="410" width="70" height="86" rx="8" fill="#b9d3e8"/><rect x="326" y="410" width="70" height="86" rx="8"/><rect x="426" y="410" width="70" height="86" rx="8"/><rect x="526" y="410" width="70" height="86" rx="8" fill="#b9d3e8"/><rect x="626" y="410" width="70" height="86" rx="8"/></g>
+<g stroke="#1d2433" stroke-opacity=".18" stroke-width="3" fill="none"><path d="M261 290v86M226 333h70M361 290v86M326 333h70M461 290v86M426 333h70M561 290v86M526 333h70M661 290v86M626 333h70M261 410v86M226 453h70M361 410v86M326 453h70M461 410v86M426 453h70M561 410v86M526 453h70M661 410v86M626 453h70"/></g>
+<g fill="#1d2433" opacity=".12"><rect x="222" y="376" width="78" height="8" rx="4"/><rect x="322" y="376" width="78" height="8" rx="4"/><rect x="422" y="376" width="78" height="8" rx="4"/><rect x="522" y="376" width="78" height="8" rx="4"/><rect x="622" y="376" width="78" height="8" rx="4"/></g>
+<!-- bed silhouettes in two lit windows -->
+<g fill="#e8601c" opacity=".55"><rect x="334" y="345" width="54" height="16" rx="4"/><rect x="334" y="338" width="14" height="14" rx="4"/><rect x="534" y="465" width="54" height="16" rx="4"/><rect x="534" y="458" width="14" height="14" rx="4"/></g>
+</g>
+<!-- door + signboard -->
+<rect x="440" y="520" width="80" height="110" rx="10" fill="#1d2433"/><rect x="452" y="534" width="56" height="96" rx="6" fill="#2d3750"/><circle cx="496" cy="590" r="4" fill="#ffcf8a"/>
+<rect x="352" y="168" width="256" height="66" rx="16" fill="#1d2433"/>
+<g transform="translate(378 184)" fill="#ffcf8a"><rect x="0" y="22" width="40" height="10" rx="3"/><rect x="0" y="8" width="10" height="24" rx="3"/><rect x="4" y="10" width="14" height="10" rx="4" fill="#fff"/></g>
+<g fill="#fff"><rect x="438" y="188" width="136" height="12" rx="6"/></g><g fill="#ffcf8a"><rect x="438" y="208" width="92" height="9" rx="4.5"/></g>
+<!-- ground -->
+<rect x="0" y="624" width="960" height="136" fill="#f0c9a6"/><rect x="0" y="624" width="960" height="14" fill="#e3b48c"/>
+<g fill="#fff" opacity=".5"><rect x="60" y="690" width="120" height="8" rx="4"/><rect x="300" y="712" width="160" height="8" rx="4"/><rect x="610" y="694" width="140" height="8" rx="4"/></g>
+<!-- people -->
+<g transform="translate(205 526) scale(1.3)">
+<ellipse cx="38" cy="124" rx="52" ry="9" fill="#1d2433" opacity=".12"/>
+<rect x="6" y="52" width="64" height="74" rx="24" fill="#e8601c"/><rect x="20" y="108" width="14" height="26" rx="6" fill="#1d2433"/><rect x="42" y="108" width="14" height="26" rx="6" fill="#1d2433"/>
+<rect x="-12" y="58" width="26" height="48" rx="12" fill="#1d2433"/>
+<circle cx="38" cy="30" r="24" fill="#a8683f"/><path d="M14 26 C 16 4 60 4 62 26 C 52 14 26 14 14 26Z" fill="#1d2433"/>
+</g>
+<g transform="translate(345 541) scale(1.3)">
+<ellipse cx="34" cy="112" rx="46" ry="8" fill="#1d2433" opacity=".12"/>
+<rect x="4" y="46" width="60" height="68" rx="22" fill="#1d7a4f"/><rect x="17" y="98" width="13" height="24" rx="6" fill="#2d3750"/><rect x="38" y="98" width="13" height="24" rx="6" fill="#2d3750"/>
+<circle cx="34" cy="26" r="22" fill="#c98b5f"/><path d="M12 22 C 12 0 58 0 58 24 L58 50 C 50 40 50 24 34 24 C 20 24 18 38 12 50Z" fill="#1d2433"/>
+<rect x="56" y="64" width="24" height="34" rx="8" fill="#1d2433"/><rect x="60" y="68" width="16" height="22" rx="4" fill="#ffcf8a"/>
+</g>
+<!-- verified badge + price chip -->
+<g transform="translate(626 502)"><rect width="250" height="86" rx="22" fill="#fff"/><rect width="250" height="86" rx="22" fill="none" stroke="#1d2433" stroke-opacity=".08" stroke-width="2"/>
+<circle cx="46" cy="43" r="26" fill="#e3f3ea"/><path d="M33 44l9 9 18-20" stroke="#1d7a4f" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<rect x="88" y="26" width="120" height="13" rx="6.5" fill="#1d2433"/><rect x="88" y="48" width="86" height="11" rx="5.5" fill="#1d2433" opacity=".35"/><rect x="188" y="46" width="42" height="16" rx="8" fill="#fdebdd"/></g>
+<g transform="translate(702 640)"><rect width="168" height="50" rx="25" fill="#1d2433"/><circle cx="26" cy="25" r="9" fill="#ffcf8a"/><rect x="46" y="17" width="100" height="16" rx="8" fill="#fff"/></g>
+</g></svg>
