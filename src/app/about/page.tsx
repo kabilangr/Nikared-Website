@@ -9,7 +9,7 @@ import { breadcrumbSchema } from "@/lib/structured-data";
 export const metadata = pageMetadata({
   title: "About",
   description:
-    "Based in Chennai's innovation corridor, Nika Red builds industrial-grade software, edge AI systems, and XR platforms for manufacturing, logistics, and heavy infrastructure.",
+    "Nika Red is a Chennai engineering studio building industrial software, edge AI, XR, and mobile products, and the team behind our own apps, Valam and Viduthi.",
   path: "/about",
 });
 
@@ -36,7 +36,7 @@ export default function About() {
             <span className="text-primary italic">built for the physical world</span>
           </h1>
           <p className="body-md mb-8 hero-intro-text" style={{ fontSize: "1.25rem", maxWidth: "80%", borderLeft: "4px solid var(--primary)", paddingLeft: "1rem" }}>
-            Based in Chennai&apos;s thriving industrial and technology corridor, Nika Red designs and builds the robust software systems that heavy industry, logistics, and manufacturing depend on. From Edge AI to legacy SCADA modernization, we engineer software with the same precision as the machines they run alongside.
+            Based in Chennai, one of India&apos;s largest manufacturing and technology hubs, Nika Red designs and builds the software that manufacturing, logistics, and infrastructure depend on, and the products we run ourselves. From legacy SCADA modernization to on-device AI, we engineer software with the same precision as the machines it runs alongside.
           </p>
         </div>
 
@@ -80,11 +80,11 @@ export default function About() {
             <div className="kinetic-card hoverable capability-card" style={{ minHeight: "400px", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
               <div>
                 <div className="flex justify-between items-start mb-12">
-                  <h3 className="display-lg section-heading-lg" style={{ fontSize: "2.75rem" }}>Research-led</h3>
+                  <h3 className="display-lg section-heading-lg" style={{ fontSize: "2.75rem" }}>Engineering-led</h3>
                   <span className="material-symbols-outlined text-primary" style={{ fontSize: "3rem" }}>neurology</span>
                 </div>
                 <p className="body-md">
-                  We fold neural computing into industrial automation as it matures, favoring on-device execution over cloud dependency, so your operations stay resilient and yours to run.
+                  Nika Red is run by engineers. We adopt new technology, from on-device AI to spatial computing, only when it is ready for real operations, and we prefer systems that run on site over ones that depend on the cloud, so your operations stay resilient and yours to run.
                 </p>
               </div>
               <div className="flex gap-12 mt-12">
@@ -107,11 +107,11 @@ export default function About() {
                   <span className="material-symbols-outlined" style={{ fontSize: "3rem", color: "var(--surface)" }}>developer_board</span>
                 </div>
                 <p className="body-md" style={{ color: "var(--surface)", fontWeight: 500 }}>
-                  Direct, silicon-level optimization for mission-critical industrial hardware. We employ rigorous testing protocols and secure coding practices to ensure there are no unnecessary abstraction layers between your sensors and your operational decisions.
+                  We design around the real physical layer: PLCs, sensors, gateways, cameras, and phones. Every system is tested where it will actually run, with network drops, sensor drift, and device limits treated as normal conditions, not edge cases.
                 </p>
               </div>
               <div className="mt-12" style={{ borderTop: "1px solid rgba(0,0,0,0.2)", paddingTop: "1rem" }}>
-                <p className="label-sm italic" style={{ color: "var(--surface)" }}>&ldquo;The hardware is the frontier that matters&rdquo;</p>
+                <p className="label-sm" style={{ color: "var(--surface)" }}>Factory floors · Field sites · Phones in people&apos;s pockets</p>
               </div>
             </div>
           </div>
@@ -119,15 +119,15 @@ export default function About() {
           {/* Discipline Overview */}
           <div className="grid-asymmetric-right" style={{ gap: "1.5rem", marginTop: "1.5rem" }}>
             <div className="kinetic-card-low hoverable">
-              <p className="display-lg" style={{ fontSize: "2.5rem", marginBottom: "0.5rem" }}>3</p>
+              <p className="display-lg" style={{ fontSize: "2.5rem", marginBottom: "0.5rem" }}>4</p>
               <p className="label-sm">Core disciplines</p>
               <p className="body-md mt-8" style={{ fontSize: "0.9rem" }}>
-                Engineering Foundry · AI & Machine Learning · XR & Spatial Computing
+                <Link href="/services/industrial-software" className="tech-link">Industrial software</Link> · <Link href="/services/edge-ai" className="tech-link">Edge AI</Link> · <Link href="/services/xr-spatial-computing" className="tech-link">XR and spatial</Link> · <Link href="/services/product-engineering" className="tech-link">Product engineering</Link>
               </p>
             </div>
             <div className="kinetic-card-low flex items-center justify-between hoverable">
               <p className="body-md" style={{ maxWidth: "60%" }}>
-                Nika Red works across the full stack, from sensor hardware and edge compute to enterprise interfaces and immersive environments.
+                Nika Red works across the full stack, from sensor hardware and edge compute to enterprise systems, mobile apps, and immersive environments. We also build and run our own products, <Link href="/products/valam" className="tech-link">Valam</Link> and <Link href="/products/viduthi" className="tech-link">Viduthi</Link>.
               </p>
               <span className="material-symbols-outlined" style={{ fontSize: "4rem", color: "var(--ghost-icon)" }}>grid_view</span>
             </div>
@@ -149,7 +149,7 @@ export default function About() {
               { icon: "memory", label: "Edge over cloud", body: "We default to on-device execution so your operations stay resilient when connectivity drops, and your data never has to leave the plant." },
               { icon: "engineering", label: "Hardware-aware", body: "Software is designed around the real physical layer: PLCs, sensors, and gateways, with sensor drift and network gaps treated as first-class constraints." },
               { icon: "lock_open", label: "No dependency lock-in", body: "You keep full operational control after launch. We build systems your own team can run, extend, and maintain without us." },
-              { icon: "verified", label: "Tested for the real world", body: "Rigorous testing and secure coding practices tuned to industrial environments, not the demo happy-path." },
+              { icon: "verified", label: "Privacy by design", body: "We collect only what a system needs, keep sensitive data on site or on the device where possible, and design for India's DPDP Act from the start." },
             ].map((p) => (
               <div key={p.label} className="kinetic-card-low hoverable" style={{ padding: "2rem" }}>
                 <span className="material-symbols-outlined text-primary mb-4" style={{ fontSize: "2.5rem" }}>{p.icon}</span>
@@ -168,10 +168,10 @@ export default function About() {
             <div className="kinetic-card tech-accent" style={{ padding: "2.5rem" }}>
               <h3 className="label-md text-primary mb-6" style={{ fontSize: "1.5rem" }}>Industries we serve</h3>
               <ul className="service-deliverables">
-                <li>Manufacturing: quality control, predictive maintenance, and MES/ERP integration</li>
-                <li>Logistics &amp; supply chain: route optimization and warehouse spatial computing</li>
-                <li>Energy &amp; infrastructure: digital twins and remote sensor monitoring</li>
-                <li>Heavy machinery: edge intelligence embedded directly in the equipment</li>
+                <li><Link href="/industries/manufacturing" className="tech-link">Manufacturing</Link>: quality control, predictive maintenance, and MES/ERP integration</li>
+                <li><Link href="/industries/logistics" className="tech-link">Logistics and supply chain</Link>: equipment integration, vision at the dock, and warehouse digital twins</li>
+                <li><Link href="/industries/energy-infrastructure" className="tech-link">Energy and infrastructure</Link>: remote monitoring, anomaly detection, and digital twins</li>
+                <li><Link href="/industries/heavy-machinery" className="tech-link">Heavy machinery and OEMs</Link>: connected equipment and on-machine diagnostics</li>
               </ul>
             </div>
             <div>
@@ -182,7 +182,7 @@ export default function About() {
                 From our home in Chennai&apos;s industrial and technology corridor, Nika Red works with clients across India and internationally. Our disciplines span the full stack: sensor hardware and edge compute, enterprise interfaces, and immersive spatial environments.
               </p>
               <p className="body-md">
-                Whether you are modernizing a decades-old SCADA deployment or standing up an entirely new edge AI pipeline, we bring the same engineering rigor to every project.
+                Whether you are modernizing a decades-old SCADA deployment, putting a vision model on a production line, or launching a new app, we bring the same engineering discipline to every project.
               </p>
               <Link href="/contact" className="tech-link label-md" style={{ textDecoration: "none", display: "inline-block", marginTop: "2rem" }}>Start a conversation →</Link>
             </div>

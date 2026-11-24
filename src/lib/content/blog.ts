@@ -277,7 +277,7 @@ const RAW_POSTS: PostInput[] = [
     slug: "ar-work-instructions-for-maintenance",
     title: "Designing AR Work Instructions for Maintenance Teams",
     description:
-      "What makes augmented reality work instructions useful on the shop floor: choosing the right procedure, device, and anchoring, and designing for gloves, noise, and time pressure.",
+      "How to make AR work instructions useful on the shop floor: picking the procedure, device, and anchoring, and designing for gloves, noise, and time pressure.",
     date: "2026-11-24",
     category: "XR & Spatial",
     service: "xr-spatial-computing",

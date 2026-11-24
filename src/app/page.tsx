@@ -15,7 +15,7 @@ const HOME_FAQS = [
   {
     question: "What does Nika Red build?",
     answer:
-      "Nika Red is an engineering studio that builds custom industrial software, edge AI systems, and spatial computing (XR) solutions. We specialize in software for the physical world: factory floors, logistics networks, and critical infrastructure, where uptime, latency, and reliability are non-negotiable.",
+      "Nika Red is a Chennai engineering studio with four disciplines: industrial software and integration, edge AI and machine learning, XR and spatial computing, and product engineering for mobile apps and SaaS. We also build and run our own products, Valam and Viduthi.",
   },
   {
     question: "Where is Nika Red located and who do you work with?",
@@ -26,6 +26,11 @@ const HOME_FAQS = [
     question: "Do you build on-premise and edge solutions, not just cloud?",
     answer:
       "Yes. We design for cloud, on-premise, and edge deployment. Much of our AI work runs on-device so that quality control and predictive maintenance keep working even when connectivity is unreliable, and your operational data stays under your control.",
+  },
+  {
+    question: "What products has Nika Red built?",
+    answer:
+      "Valam is a private personal finance app for Android with an AI coach that runs on the phone. Viduthi is a platform for finding verified hostels and PGs in India, with management software for hostel owners. Both are designed, built, and operated by Nika Red.",
   },
   {
     question: "How quickly will you respond to a project inquiry?",
@@ -50,7 +55,7 @@ export default function Home() {
               Industrial Intelligence,<br /><span className="text-primary italic">Forged in Code</span>
             </h1>
             <p className="body-md mb-8 body-lg-text" style={{ fontSize: "1.25rem", maxWidth: "80%" }}>
-              We engineer mission-critical AI, edge computing, and spatial interfaces that eliminate downtime and accelerate production. We don&apos;t just write software; we build the brains for your heavy machinery.
+              Nika Red is a Chennai engineering studio. We connect factory floors to the business, put AI on the machines that need it, and give technicians spatial tools for complex equipment. We also design, ship, and run our own products.
             </p>
             <div className="flex gap-4">
               <Link href="/contact" className="btn-primary label-md" style={{ textDecoration: "none" }}>Start a project</Link>
@@ -107,11 +112,11 @@ export default function Home() {
                   <div className="flex justify-between items-start mb-8">
                     <span className="material-symbols-outlined text-primary" style={{ fontSize: "3rem" }}>terminal</span>
                   </div>
-                  <h3 className="label-md text-primary mb-4 card-heading-lg" style={{ fontSize: "2rem" }}>Unbreakable Operations</h3>
+                  <h3 className="label-md text-primary mb-4 card-heading-lg" style={{ fontSize: "2rem" }}>Connected operations</h3>
                   <p className="body-md mb-8" style={{ maxWidth: "90%" }}>
-                    Eliminate bottlenecks with custom MES/ERP and SCADA integration designed for continuous, round-the-clock operation.
+                    MES, ERP, and SCADA integration that gets live machine data to the people planning the work, added alongside the systems you already run without stopping production.
                   </p>
-                  <Link href="/services/industrial-software" className="tech-link label-md" style={{ textDecoration: "none" }}>Explore Foundry capabilities →</Link>
+                  <Link href="/services/industrial-software" className="tech-link label-md" style={{ textDecoration: "none" }}>Industrial software engineering →</Link>
                 </div>
                 <div className="flex-col gap-4 align-right" style={{ textAlign: "right" }}>
                   <span className="label-sm ghost-border" style={{ padding: "0.5rem 1rem" }}>System architecture</span>
@@ -126,28 +131,31 @@ export default function Home() {
                   <div className="flex justify-between items-start mb-8" style={{ flexDirection: "row-reverse" }}>
                     <span className="material-symbols-outlined text-primary" style={{ fontSize: "3rem" }}>psychology</span>
                   </div>
-                  <h3 className="label-md text-primary mb-4 card-heading-lg" style={{ fontSize: "2rem" }}>Predictive Intelligence</h3>
+                  <h3 className="label-md text-primary mb-4 card-heading-lg" style={{ fontSize: "2rem" }}>Edge intelligence</h3>
                   <p className="body-md mb-8" style={{ maxWidth: "90%", marginLeft: "auto", color: "var(--text-strong)", fontWeight: 500 }}>
-                    Catch failures before they happen. On-device anomaly detection that flags degrading equipment before it stops your line.
+                    Vision inspection at line speed and anomaly detection that flags degrading equipment before it stops the line, running on hardware next to the machine.
                   </p>
-                  <Link href="/services/edge-ai" className="tech-link label-md" style={{ textDecoration: "none", color: "var(--secondary)", fontWeight: 700 }}>See our Edge AI work →</Link>
+                  <Link href="/services/edge-ai" className="tech-link label-md" style={{ textDecoration: "none", color: "var(--secondary)", fontWeight: 700 }}>Edge AI and machine learning →</Link>
                 </div>
               </div>
 
               <div className="flex gap-12 service-flex-row" style={{ alignItems: "stretch", position: "relative", zIndex: 10 }}>
                 <div className="kinetic-card tech-accent hoverable flex-col" style={{ flex: 1, position: "relative", zIndex: 10 }}>
                   <span className="material-symbols-outlined text-primary" style={{ fontSize: "3rem", marginBottom: "2rem" }}>view_in_ar</span>
-                  <h3 className="label-md text-primary mb-4 card-heading-lg" style={{ fontSize: "2rem" }}>Augmented Workforce</h3>
+                  <h3 className="label-md text-primary mb-4 card-heading-lg" style={{ fontSize: "2rem" }}>Augmented workforce</h3>
                   <p className="body-md" style={{ color: "var(--text-strong)", fontWeight: 500 }}>
-                    Train faster and safer. Spatial digital twins and AR overlays that guide your technicians through complex maintenance.
+                    AR work instructions, digital twins, and VR training that help technicians learn and service complex equipment safely.
                   </p>
-                  <Link href="/services/xr-spatial-computing" className="tech-link label-md" style={{ textDecoration: "none", marginTop: "1.5rem" }}>Explore XR &amp; spatial →</Link>
+                  <Link href="/services/xr-spatial-computing" className="tech-link label-md" style={{ textDecoration: "none", marginTop: "1.5rem" }}>XR and spatial computing →</Link>
                 </div>
-                <div className="kinetic-card-low flex items-center justify-center" style={{ flex: 1.5, position: "relative", overflow: "hidden", padding: 0 }}>
-                  <div style={{ zIndex: 10, padding: "var(--spacing-12)" }}>
-                    <h4 className="label-md text-primary" style={{ fontSize: "1.5rem", lineHeight: 1.5, fontStyle: "italic" }}>
-                      &ldquo;We don&apos;t just predict the future. We build the systems that secure it.&rdquo;
-                    </h4>
+                <div className="kinetic-card-low hoverable flex-col" style={{ flex: 1.5, position: "relative", overflow: "hidden" }}>
+                  <div style={{ zIndex: 10, position: "relative" }}>
+                    <span className="material-symbols-outlined text-primary" style={{ fontSize: "3rem", marginBottom: "2rem", display: "block" }}>rocket_launch</span>
+                    <h3 className="label-md text-primary mb-4 card-heading-lg" style={{ fontSize: "2rem" }}>Product engineering</h3>
+                    <p className="body-md" style={{ color: "var(--text-strong)", fontWeight: 500 }}>
+                      Mobile apps and SaaS platforms from idea to launch, built by the team that ships and runs Valam and Viduthi.
+                    </p>
+                    <Link href="/services/product-engineering" className="tech-link label-md" style={{ textDecoration: "none", marginTop: "1.5rem", display: "inline-block" }}>Product engineering →</Link>
                   </div>
                   <div
                     aria-hidden
@@ -170,12 +178,12 @@ export default function Home() {
         {/* Industries We Transform */}
         <ScrollReveal>
           <section className="container py-20">
-            <h2 className="display-lg mb-12 section-heading-lg" style={{ fontSize: "2.75rem" }}>Industries We <span className="text-primary italic">Transform</span></h2>
+            <h2 className="display-lg mb-12 section-heading-lg" style={{ fontSize: "2.75rem" }}>Industries we <span className="text-primary italic">serve</span></h2>
             <div className="work-grid industries-grid" style={{ gridTemplateColumns: "repeat(3, 1fr)" }}>
               {[
                 { icon: "factory", href: "/industries/manufacturing", label: "Manufacturing", body: "Custom industrial software and edge AI for quality control, predictive maintenance, and real-time SCADA integration on the factory floor." },
-                { icon: "local_shipping", href: "/industries/logistics", label: "Logistics & Supply Chain", body: "Spatial computing (XR) and route optimization algorithms for complex supply chain networks and warehousing operations." },
-                { icon: "bolt", href: "/industries/energy-infrastructure", label: "Energy & Infrastructure", body: "Robust digital twin development and sensor data fusion for remote monitoring of critical physical infrastructure." },
+                { icon: "local_shipping", href: "/industries/logistics", label: "Logistics & Supply Chain", body: "Equipment-to-WMS integration, vision at the dock, and warehouse digital twins for distribution and supply chain operations." },
+                { icon: "bolt", href: "/industries/energy-infrastructure", label: "Energy & Infrastructure", body: "Remote monitoring that survives weak links, anomaly detection on telemetry, and digital twins for distributed critical assets." },
               ].map(industry => (
                 <Link key={industry.label} href={industry.href} className="kinetic-card hoverable link-card" style={{ padding: "2rem" }}>
                   <span className="material-symbols-outlined text-primary mb-4" style={{ fontSize: "2.5rem" }}>{industry.icon}</span>
@@ -195,10 +203,10 @@ export default function Home() {
               <div>
                 <div className="who-label text-primary" style={{ letterSpacing: "0.1em" }}>WHO WE ARE</div>
                 <h2 className="display-lg mb-8 section-heading-lg" style={{ fontSize: "2.75rem", lineHeight: 1.1 }}>
-                  An industrial software studio for the <span className="text-primary italic">physical world</span>
+                  A software studio for the <span className="text-primary italic">physical world</span>
                 </h2>
                 <p className="body-md mb-4" style={{ fontSize: "1.0625rem" }}>
-                  Nika Red is a Chennai-based engineering studio building the software that heavy industry runs on. We partner with manufacturers, logistics operators, and energy and infrastructure companies to design custom industrial software, deploy edge AI where the cloud can&apos;t reach, and bring spatial computing to the factory floor.
+                  Nika Red is a Chennai-based engineering studio building the software that heavy industry runs on. We partner with manufacturers, logistics operators, and energy and infrastructure companies to design custom industrial software, deploy edge AI where the cloud can&apos;t reach, and bring spatial computing to the factory floor. We apply the same discipline to our own products, Valam and Viduthi, which we design, ship, and operate ourselves.
                 </p>
                 <p className="body-md" style={{ fontSize: "1.0625rem" }}>
                   Unlike generalist agencies, every system we ship is built for the constraints of real hardware: PLCs and sensors, intermittent connectivity, and environments where a few milliseconds of latency decides whether a line keeps moving. From legacy SCADA modernization to on-device computer vision for quality control, we engineer software with the same precision as the machines it runs alongside.
@@ -208,7 +216,7 @@ export default function Home() {
                 <div className="kinetic-card-low hoverable" style={{ padding: "1.75rem" }}>
                   <span className="material-symbols-outlined text-primary mb-4" style={{ fontSize: "2rem" }}>precision_manufacturing</span>
                   <h3 className="label-md mb-2" style={{ color: "var(--text-strong)", fontSize: "1.0625rem", textTransform: "none" }}>Built for uptime</h3>
-                  <p className="body-md" style={{ fontSize: "0.9375rem" }}>Mission-critical systems engineered for high availability in harsh physical environments, with no single point of failure.</p>
+                  <p className="body-md" style={{ fontSize: "0.9375rem" }}>Store-and-forward at the edge, read-only rollouts beside live systems, and a rollback plan for every change, so a dropped network costs latency, not data.</p>
                 </div>
                 <div className="kinetic-card-low hoverable" style={{ padding: "1.75rem" }}>
                   <span className="material-symbols-outlined text-primary mb-4" style={{ fontSize: "2rem" }}>hub</span>

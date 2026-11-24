@@ -31,7 +31,7 @@ export const SITE = {
   countryCode: "IN",
   tagline: "Industrial Software, Edge AI, and XR Engineering Studio",
   description:
-    "Nika Red is a Chennai-based engineering studio building custom industrial software, edge AI systems, and spatial computing (XR) solutions for manufacturing, logistics, and heavy infrastructure.",
+    "Nika Red is a Chennai engineering studio building industrial software, edge AI, and XR for manufacturing and infrastructure, and the maker of Valam and Viduthi.",
 } as const;
 
 /** Canonical routes, reused by the sitemap and breadcrumb builders. */

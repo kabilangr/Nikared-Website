@@ -64,7 +64,7 @@ export default function Contact() {
               </div>
               <div className="contact-meta-item">
                 <p className="label-sm mb-2">Disciplines</p>
-                <p className="label-md" style={{ color: "var(--text-strong)" }}>Software · AI · XR</p>
+                <p className="label-md" style={{ color: "var(--text-strong)" }}>Software · AI · XR · Apps</p>
               </div>
               <div className="contact-meta-item">
                 <p className="label-sm mb-2">Deployment model</p>

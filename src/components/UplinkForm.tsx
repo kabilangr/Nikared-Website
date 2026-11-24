@@ -25,10 +25,11 @@ try {
 
 const SUBJECTS = [
   { value: "", label: "Choose one" },
-  { value: "enterprise", label: "Engineering Foundry" },
-  { value: "ai", label: "AI & Machine Learning" },
-  { value: "xr", label: "XR & Spatial Computing" },
-  { value: "other", label: "Other" },
+  { value: "enterprise", label: "Industrial software and integration" },
+  { value: "ai", label: "Edge AI and machine learning" },
+  { value: "xr", label: "XR, AR, or digital twins" },
+  { value: "product", label: "A mobile app or SaaS product" },
+  { value: "other", label: "Something else" },
 ];
 
 export default function UplinkForm() {
@@ -49,7 +50,13 @@ export default function UplinkForm() {
 
     try {
       if (!db) {
-        throw new Error("Missing Firebase config: please update firebaseConfig in UplinkForm.tsx.");
+        // No form backend configured for this build: hand the message to the visitor's email app instead.
+        const topic = SUBJECTS.find((s) => s.value === subject)?.label ?? "Project inquiry";
+        const body = `${message}\n\nName: ${name}\nEmail: ${email}`;
+        window.location.href = `mailto:contact@nikared.com?subject=${encodeURIComponent(`Project inquiry: ${topic}`)}&body=${encodeURIComponent(body)}`;
+        setStatusColor("var(--secondary)");
+        setStatus("Opening your email app with your message. If nothing opens, write to contact@nikared.com.");
+        return;
       }
 
       await addDoc(collection(db, "contacts"), {

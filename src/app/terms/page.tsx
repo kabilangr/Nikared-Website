@@ -12,7 +12,7 @@ export const metadata = pageMetadata({
   path: "/terms",
 });
 
-const LAST_UPDATED = "5 July 2026";
+const LAST_UPDATED = "24 November 2026";
 
 export default function Terms() {
   return (
@@ -42,9 +42,19 @@ export default function Terms() {
           <div>
             <h2 className="label-md mb-4" style={{ color: "var(--text-strong)", fontSize: "1.375rem", textTransform: "none" }}>Use of the site</h2>
             <p>
-              The Site is provided for general information about Nika Red&apos;s engineering services. You agree to use it
+              The Site is provided for general information about Nika Red&apos;s engineering services and products. You agree to use it
               lawfully and not to attempt to disrupt, reverse-engineer, or gain unauthorized access to any part of the
               Site or its underlying systems.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="label-md mb-4" style={{ color: "var(--text-strong)", fontSize: "1.375rem", textTransform: "none" }}>Our products</h2>
+            <p>
+              Valam and Viduthi are governed by their own terms, which apply when you use them:{" "}
+              <a className="tech-link" href="https://valam.io/terms-and-conditions" target="_blank" rel="noopener">Valam terms</a>{" "}
+              and <a className="tech-link" href="https://viduthi.in/legal/terms" target="_blank" rel="noopener">Viduthi terms</a>.
+              Product descriptions and prices on this Site are summaries; the product&apos;s own site is authoritative.
             </p>
           </div>
 

@@ -12,7 +12,7 @@ export const metadata = pageMetadata({
   path: "/privacy",
 });
 
-const LAST_UPDATED = "5 July 2026";
+const LAST_UPDATED = "24 November 2026";
 
 export default function Privacy() {
   return (
@@ -44,8 +44,10 @@ export default function Privacy() {
             <h2 className="label-md mb-4" style={{ color: "var(--text-strong)", fontSize: "1.375rem", textTransform: "none" }}>Information we collect</h2>
             <p>
               We only collect the information you choose to give us. When you submit a project inquiry through our contact
-              form, we receive the name, email address, and message details you provide. We do not sell personal
-              information, and we do not use third-party advertising trackers on this site.
+              form, we receive the name, email address, and message details you provide. Depending on how the form is set
+              up, your inquiry is stored in Google Firebase (Cloud Firestore) or sent to us as an email from your own email
+              app. We do not sell personal information, and we do not use analytics or third-party advertising trackers on
+              this site.
             </p>
           </div>
 
@@ -72,7 +74,17 @@ export default function Privacy() {
             <p>
               You may request access to, correction of, or deletion of the personal information you have shared with us
               at any time by emailing <a className="tech-link" href={`mailto:${SITE.email}`}>{SITE.email}</a>. We will respond
-              to reasonable requests in line with applicable data protection law.
+              to reasonable requests in line with applicable data protection law, including India&apos;s Digital Personal
+              Data Protection Act, 2023.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="label-md mb-4" style={{ color: "var(--text-strong)", fontSize: "1.375rem", textTransform: "none" }}>Our products</h2>
+            <p>
+              This policy covers this website only. Our products have their own privacy policies, which explain how they
+              handle your data: <a className="tech-link" href="https://valam.io/privacy" target="_blank" rel="noopener">Valam</a>{" "}
+              and <a className="tech-link" href="https://app.viduthi.in/privacy" target="_blank" rel="noopener">Viduthi</a>.
             </p>
           </div>
 
