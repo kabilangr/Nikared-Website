@@ -178,7 +178,7 @@ type PostLike = {
 };
 
 /** Article markup for /blog/<slug>. */
-export function blogPostingSchema(p: PostLike & { wordCount?: number }) {
+export function blogPostingSchema(p: PostLike & { wordCount?: number; image?: string }) {
   const url = absUrl(`/blog/${p.slug}`);
   return {
     "@context": "https://schema.org",
@@ -188,7 +188,7 @@ export function blogPostingSchema(p: PostLike & { wordCount?: number }) {
     url,
     headline: p.title,
     description: p.description,
-    image: SITE.ogImage,
+    image: p.image ? `${SITE_URL}${p.image}` : SITE.ogImage,
     datePublished: p.date,
     dateModified: p.updated ?? p.date,
     articleSection: p.category,

@@ -11,7 +11,7 @@ import { INDUSTRIES } from "@/lib/content/industries";
 export const metadata = pageMetadata({
   title: "Industries",
   description:
-    "Nika Red builds industrial software, edge AI, and XR for manufacturing, logistics and supply chain, energy and infrastructure, and heavy machinery OEMs.",
+    "Nika Red builds industrial software, edge AI, XR, and field apps for manufacturing, logistics and supply chain, energy and infrastructure, and heavy machinery OEMs.",
   path: "/industries",
 });
 
@@ -37,7 +37,7 @@ export default function Industries() {
           title="Industries we"
           accent="serve"
           crumbs={crumbs}
-          intro="Our work is shaped by the constraints of physical operations: machines that cannot stop, sites with poor connectivity, and teams that need tools they can trust on a busy shift. These are the sectors where those constraints matter most."
+          intro="Our work is shaped by the constraints of physical operations: machines that cannot stop, sites with weak connectivity, data locked inside equipment, and people who need tools they can trust on a busy shift. These are the sectors where those constraints matter most, and where software that respects them pays for itself."
         />
 
         <div className="card-grid-2">
@@ -56,7 +56,28 @@ export default function Industries() {
           ))}
         </div>
 
-        <CtaCard title="Don't see your" accent="industry" body="If your operation depends on machines, sensors, or people working in complex physical spaces, we would like to hear about it." label="Tell us about it" />
+        <ScrollReveal>
+          <div className="py-20">
+            <h2 className="display-lg mb-12 section-heading-lg" style={{ fontSize: "2.75rem" }}>
+              The same rules, <span className="text-primary italic">every sector</span>
+            </h2>
+            <div className="card-grid-3">
+              {[
+                { icon: "visibility", title: "Read before we write", body: "We connect read-only to existing machines and systems first. Production carries on unchanged while we learn how the operation really behaves." },
+                { icon: "monitoring", title: "Baseline before we build", body: "We agree the numbers that matter, such as downtime, accuracy, or time to repair, and record them before anything changes, so results are measured rather than claimed." },
+                { icon: "key", title: "Yours when we leave", body: "Code, infrastructure, and documentation live in your accounts. Your team or another partner can run and extend everything we build." },
+              ].map((r) => (
+                <div key={r.title} className="kinetic-card-low" style={{ padding: "2rem" }}>
+                  <span className="material-symbols-outlined text-primary mb-4" style={{ fontSize: "2.25rem" }}>{r.icon}</span>
+                  <h3 className="card-title">{r.title}</h3>
+                  <p className="body-md" style={{ fontSize: "0.9375rem" }}>{r.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </ScrollReveal>
+
+        <CtaCard title="Don't see your" accent="industry" body="If your operation depends on machines, sensors, or people working in complex physical spaces, the same approach applies. Tell us what you run and what is getting in the way." label="Tell us about it" />
       </section>
 
       <Footer />

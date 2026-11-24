@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<defs>
+  <pattern id="dots" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="#ffffff" fill-opacity="0.07"/></pattern>
+  <radialGradient id="gr"><stop offset="0" stop-color="#ff4433" stop-opacity="0.28"/><stop offset="1" stop-color="#ff4433" stop-opacity="0"/></radialGradient>
+  <radialGradient id="gb"><stop offset="0" stop-color="#4c8dff" stop-opacity="0.22"/><stop offset="1" stop-color="#4c8dff" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1200" height="630" fill="#131417"/>
+<rect width="1200" height="630" fill="url(#dots)"/>
+<circle cx="620" cy="260" r="420" fill="url(#gr)"/>
+<circle cx="1050" cy="120" r="420" fill="url(#gb)"/>
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<!-- conveyor -->
+<path d="M140 420H880M140 462H880" stroke="#3a3c42" stroke-width="3"/>
+<circle cx="140" cy="441" r="21" stroke="#3a3c42" stroke-width="3"/><circle cx="880" cy="441" r="21" stroke="#3a3c42" stroke-width="3"/>
+<circle cx="240" cy="441" r="6" stroke="#3a3c42" stroke-width="2"/><circle cx="340" cy="441" r="6" stroke="#3a3c42" stroke-width="2"/><circle cx="440" cy="441" r="6" stroke="#3a3c42" stroke-width="2"/><circle cx="540" cy="441" r="6" stroke="#3a3c42" stroke-width="2"/><circle cx="640" cy="441" r="6" stroke="#3a3c42" stroke-width="2"/><circle cx="740" cy="441" r="6" stroke="#3a3c42" stroke-width="2"/>
+<rect x="190" y="372" width="56" height="48" rx="6" stroke="#a4a9b1" stroke-width="2.5" fill="#a4a9b1" fill-opacity="0.06"/><rect x="320" y="372" width="56" height="48" rx="6" stroke="#a4a9b1" stroke-width="2.5" fill="#a4a9b1" fill-opacity="0.06"/><rect x="450" y="372" width="56" height="48" rx="6" stroke="#a4a9b1" stroke-width="2.5" fill="#a4a9b1" fill-opacity="0.06"/><rect x="580" y="372" width="56" height="48" rx="6" stroke="#ff4433" stroke-width="2.5" fill="#ff4433" fill-opacity="0.14"/><path d="M594 380l10 12-6 8 12 14" stroke="#ff4433" stroke-width="2"/><rect x="710" y="372" width="56" height="48" rx="6" stroke="#a4a9b1" stroke-width="2.5" fill="#a4a9b1" fill-opacity="0.06"/>
+<!-- reject gate -->
+<path d="M880 420L940 380" stroke="#ff4433" stroke-width="4"/>
+<text x="950" y="375" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="500" letter-spacing="2" fill="#ff4433" text-anchor="start">REJECT</text>
+<!-- camera and view cone -->
+<path d="M592 250L556 368H682L648 250Z" fill="#4c8dff" fill-opacity="0.08" stroke="#4c8dff" stroke-width="1.5" stroke-dasharray="5 7"/>
+<rect x="584" y="196" width="72" height="44" rx="8" stroke="#f5f6f7" stroke-width="2.5"/>
+<rect x="600" y="240" width="40" height="12" rx="3" stroke="#f5f6f7" stroke-width="2.5"/>
+<!-- edge box -->
+<rect x="430" y="176" width="64" height="64" rx="6" stroke="#ff4433" stroke-width="2.5"/>
+<rect x="449.2" y="195.2" width="25.6" height="25.6" rx="3" fill="#ff4433" fill-opacity="0.25" stroke="#ff4433" stroke-width="1.5"/>
+<path d="M446 166V176M446 240V250M420 192H430M494 192H504M462 166V176M462 240V250M420 208H430M494 208H504M478 166V176M478 240V250M420 224H430M494 224H504" stroke="#ff4433" stroke-width="2"/>
+<path d="M584 218H508" stroke="#ff4433" stroke-width="3"/>
+<text x="546" y="206" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="500" letter-spacing="2" fill="#ff4433" text-anchor="middle">12 MS</text>
+<text x="462" y="290" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="500" letter-spacing="2" fill="#a4a9b1" text-anchor="middle">EDGE</text>
+<!-- cloud -->
+<path transform="translate(923 140.5) scale(1.1)" d="M35 90 H115 A28 28 0 0 0 112 34 A40 40 0 0 0 36 30 A30 30 0 0 0 35 90 Z" stroke="#a4a9b1" stroke-width="2.2727272727272725" />
+<path d="M656 210C760 140 860 140 940 180" stroke="#a4a9b1" stroke-width="2" stroke-dasharray="3 9"/>
+<text x="800" y="132" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="500" letter-spacing="2" fill="#a4a9b1" text-anchor="middle">120 MS ±40</text>
+<text x="1000" y="270" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="500" letter-spacing="2" fill="#a4a9b1" text-anchor="middle">CLOUD</text>
+</g>
+<rect x="60" y="58" width="36" height="3" rx="1.5" fill="#ff4433"/>
+<text x="110" y="65" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="15" font-weight="700" letter-spacing="3" fill="#ff4433" text-anchor="start">EDGE AI</text>
+<text x="1140" y="590" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="500" letter-spacing="3" fill="#6b7078" text-anchor="end">NIKARED.COM</text>
+</svg>

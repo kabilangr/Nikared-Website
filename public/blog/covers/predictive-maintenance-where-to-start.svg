@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<defs>
+  <pattern id="dots" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="#ffffff" fill-opacity="0.07"/></pattern>
+  <radialGradient id="gr"><stop offset="0" stop-color="#ff4433" stop-opacity="0.28"/><stop offset="1" stop-color="#ff4433" stop-opacity="0"/></radialGradient>
+  <radialGradient id="gb"><stop offset="0" stop-color="#4c8dff" stop-opacity="0.22"/><stop offset="1" stop-color="#4c8dff" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1200" height="630" fill="#131417"/>
+<rect width="1200" height="630" fill="url(#dots)"/>
+<circle cx="1000" cy="340" r="420" fill="url(#gr)"/>
+<circle cx="180" cy="340" r="420" fill="url(#gb)"/>
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<!-- motor -->
+<rect x="96" y="276" width="140" height="128" rx="18" stroke="#f5f6f7" stroke-width="2.5"/>
+<path d="M114 292V388" stroke="#3a3c42" stroke-width="3"/><path d="M140 292V388" stroke="#3a3c42" stroke-width="3"/><path d="M166 292V388" stroke="#3a3c42" stroke-width="3"/><path d="M192 292V388" stroke="#3a3c42" stroke-width="3"/><path d="M218 292V388" stroke="#3a3c42" stroke-width="3"/>
+<path d="M236 340H282" stroke="#f5f6f7" stroke-width="8"/>
+<rect x="148" y="250" width="34" height="26" rx="4" fill="#ff4433" fill-opacity="0.2" stroke="#ff4433" stroke-width="2.5"/>
+<path d="M150 236Q165 222 180 236M140 224Q165 200 190 224" stroke="#ff4433" stroke-width="2"/>
+<text x="166" y="446" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="500" letter-spacing="2" fill="#a4a9b1" text-anchor="middle">MOTOR 07</text>
+<!-- baseline band -->
+<rect x="310" y="300" width="830" height="80" fill="#4c8dff" fill-opacity="0.08"/>
+<path d="M310 300H1140M310 380H1140" stroke="#4c8dff" stroke-width="1.5" stroke-dasharray="6 8"/>
+<text x="310" y="286" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="500" letter-spacing="2" fill="#4c8dff" text-anchor="start">LEARNED BASELINE</text>
+<polyline points="310,351.1 313,338.2 316,329.5 319,329.0 322,332.2 325,331.3 328,324.4 331,318.0 334,319.9 337,330.3 340,341.6 343,346.1 346,344.4 349,343.7 352,349.6 355,359.2 358,363.9 361,358.8 364,348.0 367,340.5 370,340.0 373,341.9 376,338.5 379,328.4 382,318.5 385,316.9 388,324.1 391,332.7 394,335.5 397,333.2 400,333.3 403,341.2 406,353.5 409,361.4 412,359.8 415,352.6 418,348.2 421,350.0 424,353.0 427,349.4 430,337.9 433,325.8 436,321.3 439,325.0 442,329.9 445,329.2 448,324.2 451,322.7 454,330.2 457,343.2 460,352.7 463,353.7 466,349.8 469,349.2 472,354.7 475,360.7 478,359.1 481,348.7 484,336.7 487,331.1 490,332.7 493,334.4 496,330.0 499,321.3 502,316.6 505,321.5 508,332.8 511,341.6 514,343.0 517,340.9 520,343.1 523,352.1 526,361.6 529,363.4 532,356.0 535,346.3 538,342.1 541,343.8 544,344.3 547,337.5 550,325.7 553,317.6 556,319.1 559,327.0 562,333.0 565,332.5 568,329.7 571,332.6 574,343.3 577,355.5 580,360.5 583,356.6 586,350.5 589,349.6 592,353.6 595,355.2 598,348.4 601,335.5 604,325.3 607,323.9 610,328.3 613,330.5 616,326.5 619,321.0 622,322.2 625,332.4 628,345.0 631,351.5 634,350.1 637,347.4 640,350.2 643,357.9 646,362.5 649,357.8 652,346.2 655,336.3 658,334.0 661,336.3 664,335.3 667,327.7 670,318.6 673,316.6 676,324.0 679,334.7 682,340.3 685,339.3 688,338.3 691,343.8 694,354.8 697,363.0 700,361.7 703,353.2 706,345.8 709,344.9 712,347.4 715,345.3 718,335.5 721,323.5 724,318.1 727,322.0 730,329.2 733,331.9 736,328.9 739,327.1 742,333.2 745,345.8 748,356.4 751,358.3 754,353.3 757,349.6 760,352.1 763,357.0 766,356.1 769,346.4 772,333.4 775,326.2 778,327.3 781,331.0 784,329.8 787,323.3 790,318.8 793,323.1 796,334.9 799,345.7 802,349.0 805,346.5 808,346.2 811,352.6 814,361.4 817,363.8 820,356.3 823,344.3 826,337.1 829,337.4 832,339.1 835,334.4 838,323.2 841,313.8 844,314.6 847,324.7 850,334.8 853,337.3 856,334.6 859,336.1" stroke="#a4a9b1" stroke-width="2.5"/>
+<polyline points="860,338.7 863,352.2 866,365.9 869,369.5 872,361.7 875,351.7 878,349.2 881,353.3 884,353.6 887,342.2 890,323.4 893,310.2 896,311.0 899,320.3 902,325.4 905,320.7 908,314.4 911,319.5 914,338.9 917,360.5 920,369.9 923,364.9 926,358.1 929,361.7 932,373.6 935,378.5 938,365.0 941,339.1 944,318.9 947,315.7 950,322.3 953,321.4 956,306.3 959,289.6 962,290.5 965,313.3 968,341.5 971,355.2 974,352.0 977,349.2 980,363.3 983,389.9 986,406.3 989,395.9 992,366.5 995,342.8 998,339.5 1001,345.6 1004,337.6 1007,307.1 1010,273.1 1013,263.0 1016,283.5 1019,312.7 1022,324.4 1025,316.8 1028,314.5 1031,339.9 1034,385.7 1037,419.8 1040,418.7 1043,392.5 1046,373.3 1049,379.2 1052,393.3 1055,382.9 1058,337.2 1061,282.8 1064,257.3 1067,269.9 1070,292.3 1073,291.4 1076,267.5 1079,255.7 1082,286.2 1085,348.9 1088,401.0 1091,411.4 1094,393.2 1097,387.4 1100,414.9 1103,450.6 1106,449.5 1109,396.8 1112,327.3 1115,289.6 1118,295.0 1121,306.8 1124,283.9 1127,230.4 1130,194.3 1133,216.9 1136,285.8 1139,346.7" stroke="#ff4433" stroke-width="2.5"/>
+<!-- alert -->
+<circle cx="1003" cy="235" r="10" fill="#ff4433"/>
+<circle cx="1003" cy="235" r="24" stroke="#ff4433" stroke-width="2" stroke-opacity="0.5"/>
+<circle cx="1003" cy="235" r="40" stroke="#ff4433" stroke-width="1.5" stroke-opacity="0.25"/>
+<text x="1003" y="170" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="14" font-weight="700" letter-spacing="2" fill="#ff4433" text-anchor="middle">ANOMALY</text>
+<text x="310" y="520" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="500" letter-spacing="2" fill="#a4a9b1" text-anchor="start">RMS · KURTOSIS · FFT PEAKS</text>
+</g>
+<rect x="60" y="58" width="36" height="3" rx="1.5" fill="#ff4433"/>
+<text x="110" y="65" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="15" font-weight="700" letter-spacing="3" fill="#ff4433" text-anchor="start">EDGE AI</text>
+<text x="1140" y="590" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="500" letter-spacing="3" fill="#6b7078" text-anchor="end">NIKARED.COM</text>
+</svg>

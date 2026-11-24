@@ -19,12 +19,14 @@ export type Post = {
   /** ISO date (YYYY-MM-DD). */
   date: string;
   updated?: string;
-  category: "Industrial Software" | "Edge AI" | "XR & Spatial";
+  category: "Industrial Software" | "Edge AI" | "XR & Spatial" | "Product Engineering";
   /** Derived from word count at ~220 wpm. */
   readingMinutes: number;
   /** Service slug this post relates to, for cross-linking. */
   service: string;
   tags: string[];
+  /** Describes the cover illustration at public/blog/covers/<slug>.svg. */
+  coverAlt: string;
   body: Block[];
 };
 
@@ -40,6 +42,8 @@ const RAW_POSTS: PostInput[] = [
     category: "Edge AI",
     service: "edge-ai",
     tags: ["edge AI", "computer vision", "quality control", "manufacturing"],
+    coverAlt:
+      "Illustration of a conveyor with a camera inspecting parts, an edge computer beside the line answering in 12 milliseconds, and a distant cloud with a slower, variable round trip.",
     body: [
       { type: "p", text: "Automated visual inspection is one of the most practical uses of machine learning in manufacturing. A camera watches every part, a model decides whether it is good, and a reject mechanism removes the bad ones. The first architectural question on almost every project is where that model should run: on hardware next to the line, or on servers in the cloud." },
       { type: "p", text: "Both are valid. The right answer depends on a handful of constraints that are easy to measure before any code is written. This article walks through them in the order we usually assess them." },
@@ -87,6 +91,8 @@ const RAW_POSTS: PostInput[] = [
     category: "Industrial Software",
     service: "industrial-software",
     tags: ["SCADA", "legacy modernization", "OPC UA", "industrial software"],
+    coverAlt:
+      "Diagram of SCADA functions being migrated one at a time onto a unified namespace: reports, trends, and alarms done, overview in progress, control and setpoints still on the legacy system above a row of PLCs.",
     body: [
       { type: "p", text: "Many plants run on SCADA systems that were installed fifteen or twenty years ago. They still work, which is exactly the problem. Replacing them feels risky, the original integrator may no longer exist, the operating system is out of support, and every month the gap between what the system can do and what the business needs gets wider." },
       { type: "p", text: "A full rip-and-replace project is rarely the right answer. It needs a long shutdown, a perfect understanding of how the old system behaves, and a lot of faith. The approach below lets you modernize in small, reversible steps while production keeps running." },
@@ -138,6 +144,8 @@ const RAW_POSTS: PostInput[] = [
     category: "Edge AI",
     service: "edge-ai",
     tags: ["predictive maintenance", "condition monitoring", "anomaly detection", "vibration analysis"],
+    coverAlt:
+      "A motor with a vibration sensor and its signal: the waveform stays inside a learned baseline band, then grows past it and triggers an anomaly alert.",
     body: [
       { type: "p", text: "Predictive maintenance promises to fix equipment just before it fails: no wasted preventive work, no surprise breakdowns. The common obstacle is data. Most plants do not have years of labelled failure history for each machine, and a model cannot learn to predict a failure it has never seen." },
       { type: "p", text: "The good news is that you do not need failure data to get value. You need to know what normal looks like. This article describes the path we recommend for teams starting from little or no historical data." },
@@ -188,6 +196,8 @@ const RAW_POSTS: PostInput[] = [
     category: "XR & Spatial",
     service: "xr-spatial-computing",
     tags: ["digital twin", "spatial computing", "simulation", "industrial XR"],
+    coverAlt:
+      "Isometric wireframe of a plant floor with machines and a conveyor, one pump highlighted with a live vibration reading.",
     body: [
       { type: "p", text: "The term digital twin covers everything from a 3D model with a few live numbers attached to a physics simulation of an entire plant. That range is part of why so many projects stall. Teams set out to build a complete virtual copy of the facility, spend months on modelling, and end up with an impressive visual that nobody uses every day." },
       { type: "p", text: "A twin that pays off is scoped around a decision, not around the asset." },
@@ -236,6 +246,8 @@ const RAW_POSTS: PostInput[] = [
     category: "Edge AI",
     service: "edge-ai",
     tags: ["quantization", "model optimization", "TensorRT", "OpenVINO", "edge AI"],
+    coverAlt:
+      "A grid of finely shaded FP32 weights converted by calibration into a coarser INT8 grid on an edge chip, four bytes per weight reduced to one.",
     body: [
       { type: "p", text: "A model that runs comfortably on a training GPU can be far too slow or too large for the hardware that fits in an industrial enclosure. Edge devices have limited memory, limited power, and often no active cooling. Getting a model to run at line speed on them is an engineering task in its own right, and quantization is usually the biggest lever." },
       { type: "h2", text: "What quantization does" },
@@ -282,6 +294,8 @@ const RAW_POSTS: PostInput[] = [
     category: "XR & Spatial",
     service: "xr-spatial-computing",
     tags: ["augmented reality", "work instructions", "maintenance", "training"],
+    coverAlt:
+      "A machine panel with a highlighted bolt, mirrored on a tablet showing an AR instruction: step 3 of 7, torque 24 newton metres in a cross pattern.",
     body: [
       { type: "p", text: "Augmented reality work instructions put guidance directly on the equipment: arrows on the bolt to loosen, a highlight on the valve to close, a torque value next to the fastener. Done well, they shorten training and reduce errors on complex or infrequent tasks. Done badly, they become a headset that sits in a cupboard." },
       { type: "p", text: "The difference is rarely the technology. It is how well the instructions fit the job, the environment, and the people doing it." },
@@ -322,7 +336,106 @@ const RAW_POSTS: PostInput[] = [
       { type: "p", text: "Before rollout, measure how long the procedure takes and how often errors or rework occur. Measure again after technicians have used AR instructions for a few weeks. These numbers are what justify extending AR to the next set of procedures." },
     ],
   },
+  {
+    slug: "on-device-llm-in-a-private-finance-app",
+    title: "Putting a Language Model on the Phone: Lessons from Building Valam",
+    description:
+      "What it takes to ship an AI assistant that runs entirely on the phone: a narrow job, no arithmetic in the model, prompt-injection tests, and privacy the build enforces.",
+    date: "2026-11-24",
+    category: "Product Engineering",
+    service: "product-engineering",
+    tags: ["on-device AI", "LLM", "mobile apps", "privacy", "Flutter"],
+    coverAlt:
+      "A phone running a chat with an on-device model, a hardware-sealed 256-bit key beside it, and the path to a cloud server crossed out.",
+    body: [
+      { type: "p", text: "Valam is a personal finance app we build and run ourselves. Its coach, Mathi, answers questions such as how much went on food this month, or which loan to pay off first. The product decision behind it was simple: nobody should have to upload their bank statements to a server to get help with them. So Mathi runs a compact, fine-tuned language model on the phone itself, and Valam has no backend holding user data by default." },
+      { type: "p", text: "Building it that way meant giving up shortcuts that cloud AI products rely on. These are the lessons we would pass on to any team building an on-device assistant over sensitive data." },
+      { type: "h2", text: "Decide what the model is for, and what it is not for" },
+      { type: "p", text: "A general chatbot on a phone is a poor experience. Small models are noticeably weaker than large hosted ones at open-ended conversation. A narrow assistant is a different story. Mathi only needs to understand questions about the user's own money, turn them into requests the app can answer, and explain the result in plain language. A topic guard keeps it there: questions outside personal finance get a polite redirect, not an improvised answer." },
+      { type: "p", text: "Narrowing the job is what makes a small model viable. It also makes the product testable, because the list of things the assistant should do is finite and can be written down." },
+      { type: "h2", text: "Never let the model do the arithmetic" },
+      { type: "p", text: "Language models are good at language and unreliable at numbers. In a finance app a wrong total is not a minor glitch; it ends the user's trust. In Valam every figure comes from a deterministic finance engine written in Dart: balances, loan payoff plans, card interest, forecasts, and 31 detectors that flag problems such as unusual spending. The model decides what to ask the engine and how to phrase the answer. It never calculates." },
+      { type: "callout", title: "The rule we follow", text: "Every number the coach says is checked against the finance engine before it is shown. If the sentence and the engine disagree, the engine wins and the sentence is not displayed." },
+      { type: "p", text: "The split also keeps the important logic testable. The engine is covered by more than 2,600 automated tests, which would be impossible to write meaningfully against free-form model output." },
+      { type: "h2", text: "Treat the user's own data as untrusted input" },
+      { type: "p", text: "Bank statements contain text the user never wrote: merchant names, transfer notes, and payment references. Any of it can end up in the model's context. For an assistant that reads statements, prompt injection is not a theoretical risk; it is a test category. Valam's test suite includes prompt-injection attacks against the coach, and the topic guard and the number check act as extra layers, so one cleverly worded transaction note cannot change what the assistant does." },
+      { type: "h2", text: "Plan for the phone, not the benchmark" },
+      { type: "ul", items: [
+        "Download size: the model is fetched separately from the app, which keeps the store install small.",
+        "Memory: phones in the market span a wide range of RAM. Test on the low end of what you intend to support, not on this year's flagship.",
+        "Battery and heat: long generations warm the phone. Short, structured answers are better for the user and for the battery.",
+        "Perceived speed: show progress immediately and keep answers brief. A wait with visible feedback feels shorter than a blank screen.",
+      ] },
+      { type: "h2", text: "Make privacy a property of the build, not a promise" },
+      { type: "p", text: "\"Your data never leaves the phone\" is easy to write in a privacy policy and easy to break with one analytics library. Valam has no account and no analytics, and network access is limited to model downloads and opt-in Plus features. The build enforces this: it fails if any other code tries to connect. That turns a policy statement into something a reviewer can verify." },
+      { type: "p", text: "Storage follows the same principle. A random 256-bit master key is sealed by the iPhone Secure Enclave or the Android Keystore and released only after Face ID, a fingerprint, or the phone PIN. The database, attachments, and the chat history with the coach are encrypted, and keys are wiped whenever the app locks. Backups are sealed with a key derived from the user's password using Argon2id, so a backup file is useless on its own." },
+      { type: "h2", text: "What we would tell another team" },
+      { type: "ol", items: [
+        "Give the model one narrow job and write down what is out of scope.",
+        "Keep calculations and business rules in ordinary, tested code. Let the model talk, not compute.",
+        "Test prompt injection with the same seriousness as any other security issue.",
+        "Benchmark on the slowest phone you plan to support.",
+        "Enforce privacy claims in the build so they cannot regress silently.",
+      ] },
+      { type: "p", text: "On-device AI is not the right choice for every product. For an assistant that sees someone's whole financial life, it removes the biggest reason people hesitate to use one at all. The same approach shapes the mobile and AI products we build for clients." },
+    ],
+  },
+  {
+    slug: "payments-that-reconcile",
+    title: "Payments That Reconcile: Webhooks, Idempotency, and Cash at the Desk",
+    description:
+      "Lessons from building rent collection for Viduthi: record online payments exactly once, handle concurrent payments safely, and make the daily cash report balance.",
+    date: "2026-11-24",
+    category: "Product Engineering",
+    service: "product-engineering",
+    tags: ["payments", "webhooks", "idempotency", "SaaS", "Razorpay"],
+    coverAlt:
+      "UPI, card, and cash payments flowing through an idempotency check that rejects a duplicate webhook, into a daily cash report marked balanced.",
+    body: [
+      { type: "p", text: "Viduthi helps hostel and PG owners run their properties: a live bed board, resident KYC, invoices, and rent collection. Residents pay by UPI, card, or net banking through Razorpay payment links, and many still pay in cash or by UPI at the front desk. At the end of each day the owner wants one answer: does the money in the report match the money that actually came in?" },
+      { type: "p", text: "Getting that answer right has less to do with the payment gateway than with how the system records what happened. These are the patterns that matter, whatever gateway you use." },
+      { type: "h2", text: "The redirect is not the payment" },
+      { type: "p", text: "When someone finishes paying, their browser is usually sent back to a success page, and it is tempting to record the payment there. Do not rely on it. The payer may close the tab, lose signal, or never be redirected, while the money has already moved. The reliable signal is the gateway's server-to-server webhook, verified by its signature and, where needed, confirmed by fetching the payment from the gateway's API." },
+      { type: "h2", text: "Expect every webhook more than once" },
+      { type: "p", text: "Gateways retry webhooks until they receive a success response, and a slow response on your side looks like a failure to them. The same event can arrive twice, minutes apart, and related events can arrive out of order. Recording has to be idempotent: processing the same event a second time must change nothing." },
+      { type: "ul", items: [
+        "Store the gateway's payment ID under a unique constraint, so a second insert for the same payment fails cleanly instead of creating a duplicate receipt.",
+        "Record inside one database transaction: update the invoice, write the receipt, and adjust the resident's balance together, or not at all.",
+        "Acknowledge the webhook only after the transaction commits, and acknowledge duplicates too, so the retries stop.",
+        "Keep the raw events. When a number looks wrong a week later, they are how you prove what happened.",
+      ] },
+      { type: "callout", title: "Choosing the idempotency key", text: "Use an identifier the outside world assigns and never changes, such as the gateway's payment ID. A key your own code generates on each attempt defeats the purpose." },
+      { type: "h2", text: "Lock the invoice, not the whole system" },
+      { type: "p", text: "Concurrency appears where you least expect it. A resident pays by UPI at the desk while a payment link sent yesterday is completed on their phone, or two staff members record the same cash payment from two devices. Taking a row lock on the invoice before applying a payment serializes those cases for that one invoice without slowing anything else down. The second payment then sees the updated balance and can be handled deliberately, as an advance, a refund, or a flag for staff, instead of being silently applied twice." },
+      { type: "h2", text: "Write the billing rules down, then test the rounding" },
+      { type: "p", text: "Hostel billing has more edge cases than it first appears: residents who join mid-month, partial months when someone leaves, deposits, and shared electricity. Viduthi splits electricity by the number of days each resident actually stayed, which is fair and also a classic source of one-paisa errors. The remedies are unglamorous and effective:" },
+      { type: "ul", items: [
+        "Store money as integers in the smallest unit, paise, never as floating point.",
+        "Decide where rounding happens and who absorbs the remainder, and write that rule down.",
+        "Test proration and splits against real calendars, including months with 28, 29, 30, and 31 days.",
+        "Make sure the shares of any split always add up to exactly the bill.",
+      ] },
+      { type: "h2", text: "Desk payments take the same path as online ones" },
+      { type: "p", text: "Desk payments are where many systems drift. Online payments go through careful code, while cash is typed into a separate screen with different rules. In Viduthi, cash and UPI collected at the desk land in the same records as gateway payments, with the same receipt, the same invoice update, and the same audit trail. Only the recorded source differs." },
+      { type: "h2", text: "Make the daily report the reconciliation point" },
+      { type: "p", text: "Build the daily cash report from the payment records themselves, not from a separate running total, so it cannot disagree with the receipts. Break it down by source: gateway, UPI at the desk, and cash. Each line can then be checked against something outside the system: the gateway settlement, the bank statement, and the cash drawer. When they match, the books are right. When they do not, the breakdown shows where to look." },
+      { type: "h2", text: "A checklist for your own payment flow" },
+      { type: "ol", items: [
+        "Record payments from verified webhooks, never from the redirect alone.",
+        "Make recording idempotent on the gateway's payment ID.",
+        "Apply each payment in one transaction, with a lock on the invoice.",
+        "Use integer amounts and written rounding rules, tested against real calendars.",
+        "Send desk payments through the same code path as online ones.",
+        "Build reports from the payment records so they reconcile by construction.",
+      ] },
+    ],
+  },
 ];
+
+/** Cover art generated by scripts/blog-covers.mjs. SVG for the page, PNG for social cards. */
+export function postCover(slug: string) {
+  return { svg: `/blog/covers/${slug}.svg`, png: `/blog/covers/${slug}.png`, width: 1200, height: 630 };
+}
 
 export function wordCount(blocks: Block[]) {
   return blocks

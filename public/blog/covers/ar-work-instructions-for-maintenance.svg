@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<defs>
+  <pattern id="dots" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="#ffffff" fill-opacity="0.07"/></pattern>
+  <radialGradient id="gr"><stop offset="0" stop-color="#ff4433" stop-opacity="0.28"/><stop offset="1" stop-color="#ff4433" stop-opacity="0"/></radialGradient>
+  <radialGradient id="gb"><stop offset="0" stop-color="#4c8dff" stop-opacity="0.22"/><stop offset="1" stop-color="#4c8dff" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1200" height="630" fill="#131417"/>
+<rect width="1200" height="630" fill="url(#dots)"/>
+<circle cx="860" cy="300" r="420" fill="url(#gr)"/>
+<circle cx="260" cy="420" r="420" fill="url(#gb)"/>
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<!-- machine panel -->
+<rect x="140" y="160" width="560" height="350" rx="18" stroke="#3a3c42" stroke-width="3" fill="#1b1c20" fill-opacity="0.6"/>
+<rect x="250" y="270" width="140" height="130" rx="10" stroke="#3a3c42" stroke-width="2.5"/>
+<circle cx="210" cy="230" r="16" stroke="#a4a9b1" stroke-width="2.5"/><path d="M203 230h14M210 223v14" stroke="#a4a9b1" stroke-width="2"/><circle cx="420" cy="230" r="16" stroke="#ff4433" stroke-width="2.5"/><path d="M413 230h14M420 223v14" stroke="#ff4433" stroke-width="2"/><circle cx="210" cy="440" r="16" stroke="#a4a9b1" stroke-width="2.5"/><path d="M203 440h14M210 433v14" stroke="#a4a9b1" stroke-width="2"/><circle cx="420" cy="440" r="16" stroke="#a4a9b1" stroke-width="2.5"/><path d="M413 440h14M420 433v14" stroke="#a4a9b1" stroke-width="2"/>
+<circle cx="560" cy="300" r="56" stroke="#a4a9b1" stroke-width="2.5"/>
+<path d="M560 244v112M504 300h112" stroke="#a4a9b1" stroke-width="2"/>
+<path d="M140 470H40" stroke="#3a3c42" stroke-width="10"/>
+<!-- tablet -->
+<rect x="610" y="150" width="500" height="370" rx="30" fill="#131417" fill-opacity="0.92" stroke="#f5f6f7" stroke-width="3"/>
+<rect x="632" y="172" width="456" height="326" rx="14" stroke="#3a3c42" stroke-width="1.5"/>
+<path d="M436 230C520 150 600 150 690 238" stroke="#ff4433" stroke-width="2" stroke-dasharray="4 7"/>
+<!-- zoomed bolt on screen -->
+<circle cx="790" cy="300" r="44" stroke="#ff4433" stroke-width="3" fill="#ff4433" fill-opacity="0.1"/>
+<path d="M774 300h32M790 284v32" stroke="#ff4433" stroke-width="3"/>
+<path d="M722 268A74 74 0 0 1 846 236" stroke="#ff4433" stroke-width="3"/>
+<path d="M832 222l16 14-20 8" stroke="#ff4433" stroke-width="3"/>
+<text x="902" y="268" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="12" font-weight="500" letter-spacing="2" fill="#a4a9b1" text-anchor="start">TORQUE</text>
+<text x="902" y="296" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="22" font-weight="700" letter-spacing="2" fill="#f5f6f7" text-anchor="start">24 NM</text>
+<text x="902" y="322" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="12" font-weight="500" letter-spacing="2" fill="#a4a9b1" text-anchor="start">CROSS PATTERN</text>
+<rect x="656" y="404" width="408" height="70" rx="12" fill="#1b1c20" stroke="#3a3c42" stroke-width="1.5"/>
+<text x="678" y="446" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="14" font-weight="700" letter-spacing="2" fill="#f5f6f7" text-anchor="start">STEP 3 OF 7</text>
+<rect x="868" y="434" width="174" height="8" rx="4" fill="#3a3c42"/>
+<rect x="868" y="434" width="75" height="8" rx="4" fill="#ff4433"/>
+</g>
+<rect x="60" y="58" width="36" height="3" rx="1.5" fill="#ff4433"/>
+<text x="110" y="65" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="15" font-weight="700" letter-spacing="3" fill="#ff4433" text-anchor="start">XR &amp; SPATIAL</text>
+<text x="1140" y="590" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="500" letter-spacing="3" fill="#6b7078" text-anchor="end">NIKARED.COM</text>
+</svg>

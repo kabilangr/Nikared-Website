@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import ScrollReveal from "./ScrollReveal";
-import { formatDate, type Post } from "@/lib/content/blog";
+import { formatDate, postCover, type Post } from "@/lib/content/blog";
 
 /** Visible breadcrumb trail. Pair with breadcrumbSchema() for JSON-LD. */
 export function Breadcrumbs({ crumbs }: { crumbs: { name: string; path: string }[] }) {
@@ -90,6 +90,7 @@ export function SectionHeading({ children, accent }: { children: ReactNode; acce
 export function PostCard({ post }: { post: Post }) {
   return (
     <article className="kinetic-card-low hoverable post-card">
+      <img className="post-card-cover" src={postCover(post.slug).svg} alt="" width={1200} height={630} loading="lazy" />
       <div className="post-meta label-sm">
         <span>{post.category}</span>
         <span aria-hidden>·</span>

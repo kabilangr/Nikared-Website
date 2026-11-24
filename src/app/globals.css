@@ -1044,6 +1044,23 @@ input::placeholder, textarea::placeholder {
 .link-card .tech-link { margin-top: auto; padding-top: 1rem; }
 .industry-card { padding: var(--spacing-12); }
 
+.industry-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+.industry-steps li {
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 1fr);
+    gap: 1rem;
+    align-items: baseline;
+    padding: 1.25rem 1.75rem;
+}
+.industry-step-num { font-size: 1.125rem; }
+
 .chip-list {
     list-style: none;
     display: flex;
@@ -1113,7 +1130,30 @@ input::placeholder, textarea::placeholder {
     margin-bottom: 0.875rem;
 }
 .post-card-more { margin-top: auto; }
-.post-featured { position: relative; }
+.post-featured {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: var(--spacing-10);
+    align-items: center;
+}
+
+/* Cover art is drawn on a fixed dark canvas, so it reads the same in both themes. */
+.post-card-cover,
+.post-featured-cover,
+.post-cover img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1200 / 630;
+    object-fit: cover;
+    background: #131417;
+    border: 1px solid var(--ghost-border);
+}
+.post-card-cover { border-radius: var(--radius-sm); margin-bottom: 1.5rem; }
+.post-featured-cover { border-radius: var(--radius-sm); }
+.post-cover { max-width: 1000px; margin: 0 auto var(--spacing-12); }
+.post-cover img { border-radius: var(--radius-md); }
 .stretched-link { color: inherit; text-decoration: none; }
 .stretched-link::after { content: ""; position: absolute; inset: 0; z-index: 1; }
 .stretched-link:focus-visible { outline: none; }
@@ -1178,6 +1218,7 @@ input::placeholder, textarea::placeholder {
 
 @media (max-width: 900px) {
     .card-grid-2 { grid-template-columns: 1fr; }
+    .post-featured { grid-template-columns: 1fr; gap: 1.5rem; }
     .post-title { font-size: 2.5rem; }
     .prose h2 { font-size: 1.625rem; }
 }

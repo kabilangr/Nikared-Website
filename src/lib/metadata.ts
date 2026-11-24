@@ -21,14 +21,18 @@ export function pageMetadata({
   path,
   keywords,
   article,
+  image,
 }: {
   title: string;
   description: string;
   path: string;
   keywords?: string[];
   article?: { publishedTime: string; modifiedTime?: string; tags?: string[]; section?: string };
+  /** Page-specific social image; falls back to the site logo. */
+  image?: { url: string; width: number; height: number; alt: string };
 }): Metadata {
   const url = absUrl(path);
+  const ogImage = image ?? OG_IMAGE;
   const fullTitle = `${title} | ${SITE.name}`;
 
   return {
@@ -46,7 +50,7 @@ export function pageMetadata({
           url,
           title: fullTitle,
           description,
-          images: [OG_IMAGE],
+          images: [ogImage],
           publishedTime: article.publishedTime,
           modifiedTime: article.modifiedTime ?? article.publishedTime,
           authors: [SITE.name],
@@ -60,13 +64,13 @@ export function pageMetadata({
           url,
           title: fullTitle,
           description,
-          images: [OG_IMAGE],
+          images: [ogImage],
         },
     twitter: {
       card: "summary_large_image",
       title: fullTitle,
       description,
-      images: [OG_IMAGE.url],
+      images: [ogImage.url],
     },
   };
 }

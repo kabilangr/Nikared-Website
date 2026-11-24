@@ -7,7 +7,8 @@ import JsonLd from "@/components/JsonLd";
 import { Breadcrumbs, CtaCard, PostCard } from "@/components/PageBits";
 import { pageMetadata } from "@/lib/metadata";
 import { blogPostingSchema, breadcrumbSchema } from "@/lib/structured-data";
-import { POSTS, formatDate, getAllPosts, getPost, wordCount, type Block } from "@/lib/content/blog";
+import { POSTS, formatDate, getAllPosts, getPost, postCover, wordCount, type Block } from "@/lib/content/blog";
+import { SITE_URL } from "@/lib/site";
 import { getService } from "@/lib/content/services";
 
 export const dynamicParams = false;
@@ -22,12 +23,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const p = getPost(slug);
   if (!p) return {};
+  const cover = postCover(p.slug);
   return pageMetadata({
     title: p.title,
     description: p.description,
     path: `/blog/${p.slug}`,
     keywords: p.tags,
     article: { publishedTime: p.date, modifiedTime: p.updated, tags: p.tags, section: p.category },
+    image: { url: `${SITE_URL}${cover.png}`, width: cover.width, height: cover.height, alt: p.coverAlt },
   });
 }
 
@@ -66,6 +69,7 @@ export default async function PostPage({ params }: Props) {
     { name: post.title, path: `/blog/${post.slug}` },
   ];
   const service = getService(post.service);
+  const cover = postCover(post.slug);
   const related = getAllPosts()
     .filter((p) => p.slug !== post.slug)
     .sort((a, b) => Number(b.service === post.service) - Number(a.service === post.service))
@@ -73,7 +77,7 @@ export default async function PostPage({ params }: Props) {
 
   return (
     <main style={{ paddingBottom: "100px" }}>
-      <JsonLd data={[blogPostingSchema({ ...post, wordCount: wordCount(post.body) }), breadcrumbSchema(crumbs)]} />
+      <JsonLd data={[blogPostingSchema({ ...post, wordCount: wordCount(post.body), image: cover.png }), breadcrumbSchema(crumbs)]} />
       <Header />
 
       <article className="container subpage-hero">
@@ -90,6 +94,10 @@ export default async function PostPage({ params }: Props) {
           <p className="body-md lead-text">{post.description}</p>
           <p className="label-sm" style={{ marginTop: "1.5rem", color: "var(--on-surface-variant)" }}>By the Nika Red engineering team</p>
         </div>
+
+        <figure className="post-cover">
+          <img src={cover.svg} alt={post.coverAlt} width={cover.width} height={cover.height} fetchPriority="high" />
+        </figure>
 
         <div className="prose">
           {post.body.map(renderBlock)}

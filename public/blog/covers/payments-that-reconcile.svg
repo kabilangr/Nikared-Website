@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<defs>
+  <pattern id="dots" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="#ffffff" fill-opacity="0.07"/></pattern>
+  <radialGradient id="gr"><stop offset="0" stop-color="#ff4433" stop-opacity="0.28"/><stop offset="1" stop-color="#ff4433" stop-opacity="0"/></radialGradient>
+  <radialGradient id="gb"><stop offset="0" stop-color="#4c8dff" stop-opacity="0.22"/><stop offset="1" stop-color="#4c8dff" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1200" height="630" fill="#131417"/>
+<rect width="1200" height="630" fill="url(#dots)"/>
+<circle cx="920" cy="300" r="420" fill="url(#gr)"/>
+<circle cx="220" cy="320" r="420" fill="url(#gb)"/>
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<rect x="110" y="172" width="150" height="56" rx="28" stroke="#4c8dff" stroke-width="2.5" fill="#4c8dff" fill-opacity="0.08"/>
+<text x="185" y="205" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="15" font-weight="700" letter-spacing="2" fill="#f5f6f7" text-anchor="middle">UPI</text>
+<path d="M260 200C380 200 420 315 516 315" stroke="#4c8dff" stroke-width="2.5"/><rect x="110" y="287" width="150" height="56" rx="28" stroke="#4c8dff" stroke-width="2.5" fill="#4c8dff" fill-opacity="0.08"/>
+<text x="185" y="320" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="15" font-weight="700" letter-spacing="2" fill="#f5f6f7" text-anchor="middle">CARD</text>
+<path d="M260 315C380 315 420 315 516 315" stroke="#4c8dff" stroke-width="2.5"/><rect x="110" y="402" width="150" height="56" rx="28" stroke="#a4a9b1" stroke-width="2.5" fill="#a4a9b1" fill-opacity="0.08"/>
+<text x="185" y="435" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="15" font-weight="700" letter-spacing="2" fill="#f5f6f7" text-anchor="middle">CASH</text>
+<path d="M260 430C380 430 420 315 516 315" stroke="#a4a9b1" stroke-width="2.5"/>
+<!-- duplicate webhook -->
+<path d="M260 330C360 350 420 345 470 336" stroke="#ff4433" stroke-width="2" stroke-dasharray="4 7"/>
+<circle cx="470" cy="336" r="13" fill="#131417" stroke="#ff4433" stroke-width="2"/>
+<path d="M464 330l12 12M476 330l-12 12" stroke="#ff4433" stroke-width="2"/>
+<text x="320" y="372" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="12" font-weight="500" letter-spacing="2" fill="#ff4433" text-anchor="middle">DUPLICATE</text>
+<!-- idempotency gate -->
+<rect x="520" y="275" width="80" height="80" rx="14" transform="rotate(45 560 315)" stroke="#f5f6f7" stroke-width="2.5" fill="#1b1c20"/>
+<path d="M545 308h30M545 322h30" stroke="#f5f6f7" stroke-width="3"/>
+<text x="560" y="410" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="500" letter-spacing="2" fill="#f5f6f7" text-anchor="middle">IDEMPOTENT</text>
+<text x="560" y="430" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="12" font-weight="500" letter-spacing="2" fill="#a4a9b1" text-anchor="middle">BY PAYMENT ID</text>
+<path d="M618 315H730" stroke="#f5f6f7" stroke-width="2.5"/>
+<path d="M716 305l14 10-14 10" stroke="#f5f6f7" stroke-width="2.5"/>
+<!-- ledger -->
+<rect x="740" y="150" width="370" height="370" rx="18" fill="#1b1c20" fill-opacity="0.85" stroke="#f5f6f7" stroke-width="2.5"/>
+<text x="770" y="190" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="700" letter-spacing="2" fill="#f5f6f7" text-anchor="start">DAILY CASH REPORT</text>
+<rect x="770" y="214" width="110" height="8" rx="4" fill="#a4a9b1" fill-opacity="0.5"/>
+<rect x="990" y="214" width="50" height="8" rx="4" fill="#f5f6f7" fill-opacity="0.7"/>
+<path d="M1058 212l6 6 10-11" stroke="#4c8dff" stroke-width="2.5"/>
+<path d="M770 240H1080" stroke="#3a3c42" stroke-width="1"/><rect x="770" y="262" width="92" height="8" rx="4" fill="#a4a9b1" fill-opacity="0.5"/>
+<rect x="970" y="262" width="70" height="8" rx="4" fill="#f5f6f7" fill-opacity="0.7"/>
+<path d="M1058 260l6 6 10-11" stroke="#4c8dff" stroke-width="2.5"/>
+<path d="M770 288H1080" stroke="#3a3c42" stroke-width="1"/><rect x="770" y="310" width="74" height="8" rx="4" fill="#a4a9b1" fill-opacity="0.5"/>
+<rect x="990" y="310" width="50" height="8" rx="4" fill="#f5f6f7" fill-opacity="0.7"/>
+<path d="M1058 308l6 6 10-11" stroke="#4c8dff" stroke-width="2.5"/>
+<path d="M770 336H1080" stroke="#3a3c42" stroke-width="1"/><rect x="770" y="358" width="110" height="8" rx="4" fill="#a4a9b1" fill-opacity="0.5"/>
+<rect x="970" y="358" width="70" height="8" rx="4" fill="#f5f6f7" fill-opacity="0.7"/>
+<path d="M1058 356l6 6 10-11" stroke="#4c8dff" stroke-width="2.5"/>
+<path d="M770 384H1080" stroke="#3a3c42" stroke-width="1"/><rect x="770" y="406" width="92" height="8" rx="4" fill="#a4a9b1" fill-opacity="0.5"/>
+<rect x="990" y="406" width="50" height="8" rx="4" fill="#f5f6f7" fill-opacity="0.7"/>
+<path d="M1058 404l6 6 10-11" stroke="#4c8dff" stroke-width="2.5"/>
+<path d="M770 432H1080" stroke="#3a3c42" stroke-width="1"/>
+<rect x="760" y="456" width="330" height="46" rx="10" fill="#ff4433" fill-opacity="0.12" stroke="#ff4433" stroke-width="2"/>
+<text x="778" y="485" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="14" font-weight="700" letter-spacing="2" fill="#ff4433" text-anchor="start">BALANCED</text>
+<rect x="990" y="476" width="80" height="9" rx="4.5" fill="#ff4433"/>
+</g>
+<rect x="60" y="58" width="36" height="3" rx="1.5" fill="#ff4433"/>
+<text x="110" y="65" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="15" font-weight="700" letter-spacing="3" fill="#ff4433" text-anchor="start">PRODUCT ENGINEERING</text>
+<text x="1140" y="590" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="500" letter-spacing="3" fill="#6b7078" text-anchor="end">NIKARED.COM</text>
+</svg>

@@ -7,12 +7,12 @@ import JsonLd from "@/components/JsonLd";
 import { CtaCard, PageHero, PostCard } from "@/components/PageBits";
 import { pageMetadata } from "@/lib/metadata";
 import { blogSchema, breadcrumbSchema } from "@/lib/structured-data";
-import { formatDate, getAllPosts } from "@/lib/content/blog";
+import { formatDate, getAllPosts, postCover } from "@/lib/content/blog";
 
 const base = pageMetadata({
   title: "Engineering Blog",
   description:
-    "Practical articles on industrial software, SCADA modernization, edge AI, predictive maintenance, digital twins, and XR from the engineers at Nika Red.",
+    "Practical articles on SCADA modernization, edge AI, predictive maintenance, digital twins, AR, on-device AI, and payments from the engineers at Nika Red.",
   path: "/blog",
 });
 
@@ -44,7 +44,7 @@ export default function Blog() {
           title="Engineering"
           accent="blog"
           crumbs={crumbs}
-          intro="What we have learned building software for factories, warehouses, and infrastructure. Practical guidance on industrial integration, edge AI, and spatial computing, written by the people who do the work."
+          intro="What we have learned building software for factories, warehouses, and infrastructure, and from shipping our own apps. Practical guidance on industrial integration, edge AI, spatial computing, and product engineering, written by the people who do the work."
         >
           <p className="label-sm mt-8">
             <a href="/blog/feed.xml" className="tech-link">Subscribe via RSS</a>
@@ -54,6 +54,8 @@ export default function Blog() {
         {featured && (
           <ScrollReveal>
             <article className="kinetic-card tech-accent hoverable post-featured">
+              <img className="post-featured-cover" src={postCover(featured.slug).svg} alt={featured.coverAlt} width={1200} height={630} />
+              <div className="post-featured-body">
               <div className="post-meta label-sm">
                 <span>Latest</span>
                 <span aria-hidden>·</span>
@@ -61,11 +63,12 @@ export default function Blog() {
                 <span aria-hidden>·</span>
                 <time dateTime={featured.date}>{formatDate(featured.date)}</time>
               </div>
-              <h2 className="display-lg section-heading-lg mb-8" style={{ fontSize: "2.5rem", lineHeight: 1.1 }}>
+              <h2 className="display-lg section-heading-lg mb-8" style={{ fontSize: "2.25rem", lineHeight: 1.1 }}>
                 <Link href={`/blog/${featured.slug}`} className="stretched-link">{featured.title}</Link>
               </h2>
-              <p className="body-md mb-8" style={{ fontSize: "1.125rem", maxWidth: "70ch" }}>{featured.description}</p>
+              <p className="body-md mb-8" style={{ fontSize: "1.0625rem" }}>{featured.description}</p>
               <span className="tech-link label-md">Read article · {featured.readingMinutes} min</span>
+              </div>
             </article>
           </ScrollReveal>
         )}

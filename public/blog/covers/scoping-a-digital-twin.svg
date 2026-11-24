@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<defs>
+  <pattern id="dots" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="#ffffff" fill-opacity="0.07"/></pattern>
+  <radialGradient id="gr"><stop offset="0" stop-color="#ff4433" stop-opacity="0.28"/><stop offset="1" stop-color="#ff4433" stop-opacity="0"/></radialGradient>
+  <radialGradient id="gb"><stop offset="0" stop-color="#4c8dff" stop-opacity="0.22"/><stop offset="1" stop-color="#4c8dff" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1200" height="630" fill="#131417"/>
+<rect width="1200" height="630" fill="url(#dots)"/>
+<circle cx="900" cy="380" r="420" fill="url(#gr)"/>
+<circle cx="360" cy="200" r="420" fill="url(#gb)"/>
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M560.0,150.0L295.0,303.0M589.4,167.0L324.4,320.0M618.9,184.0L353.9,337.0M648.3,201.0L383.3,354.0M677.8,218.0L412.8,371.0M707.2,235.0L442.2,388.0M736.7,252.0L471.7,405.0M766.1,269.0L501.1,422.0M795.6,286.0L530.6,439.0M825.0,303.0L560.0,456.0M854.4,320.0L589.4,473.0M883.9,337.0L618.9,490.0M913.3,354.0L648.3,507.0M560.0,150.0L913.3,354.0M530.6,167.0L883.9,371.0M501.1,184.0L854.4,388.0M471.7,201.0L825.0,405.0M442.2,218.0L795.6,422.0M412.8,235.0L766.1,439.0M383.3,252.0L736.7,456.0M353.9,269.0L707.2,473.0M324.4,286.0L677.8,490.0M295.0,303.0L648.3,507.0" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1"/>
+<polygon points="501.1,218.0 560.0,252.0 560.0,170.4 501.1,136.4" fill="#6b7078" fill-opacity="0.072" stroke="#6b7078" stroke-width="2"/>
+<polygon points="618.9,218.0 560.0,252.0 560.0,170.4 618.9,136.4" fill="#6b7078" fill-opacity="0.041999999999999996" stroke="#6b7078" stroke-width="2"/>
+<polygon points="560.0,102.4 618.9,136.4 560.0,170.4 501.1,136.4" fill="#6b7078" fill-opacity="0.12" stroke="#6b7078" stroke-width="2"/>
+<polygon points="618.9,286.0 677.8,320.0 677.8,265.6 618.9,231.6" fill="#6b7078" fill-opacity="0.072" stroke="#6b7078" stroke-width="2"/>
+<polygon points="736.7,286.0 677.8,320.0 677.8,265.6 736.7,231.6" fill="#6b7078" fill-opacity="0.041999999999999996" stroke="#6b7078" stroke-width="2"/>
+<polygon points="677.8,197.6 736.7,231.6 677.8,265.6 618.9,231.6" fill="#6b7078" fill-opacity="0.12" stroke="#6b7078" stroke-width="2"/>
+<polygon points="412.8,269.0 589.4,371.0 589.4,354.0 412.8,252.0" fill="#4c8dff" fill-opacity="0.108" stroke="#4c8dff" stroke-width="2"/>
+<polygon points="618.9,354.0 589.4,371.0 589.4,354.0 618.9,337.0" fill="#4c8dff" fill-opacity="0.063" stroke="#4c8dff" stroke-width="2"/>
+<polygon points="442.2,235.0 618.9,337.0 589.4,354.0 412.8,252.0" fill="#4c8dff" fill-opacity="0.18" stroke="#4c8dff" stroke-width="2"/>
+<polygon points="707.2,371.0 766.1,405.0 766.1,303.0 707.2,269.0" fill="#6b7078" fill-opacity="0.072" stroke="#6b7078" stroke-width="2"/>
+<polygon points="854.4,354.0 766.1,405.0 766.1,303.0 854.4,252.0" fill="#6b7078" fill-opacity="0.041999999999999996" stroke="#6b7078" stroke-width="2"/>
+<polygon points="795.6,218.0 854.4,252.0 766.1,303.0 707.2,269.0" fill="#6b7078" fill-opacity="0.12" stroke="#6b7078" stroke-width="2"/>
+<polygon points="401.0,343.8 448.1,371.0 448.1,330.2 401.0,303.0" fill="#6b7078" fill-opacity="0.072" stroke="#6b7078" stroke-width="2"/>
+<polygon points="483.4,350.6 448.1,371.0 448.1,330.2 483.4,309.8" fill="#6b7078" fill-opacity="0.041999999999999996" stroke="#6b7078" stroke-width="2"/>
+<polygon points="436.3,282.6 483.4,309.8 448.1,330.2 401.0,303.0" fill="#6b7078" fill-opacity="0.12" stroke="#6b7078" stroke-width="2"/>
+<polygon points="574.7,413.5 633.6,447.5 633.6,379.5 574.7,345.5" fill="#ff4433" fill-opacity="0.132" stroke="#ff4433" stroke-width="2"/>
+<polygon points="692.5,413.5 633.6,447.5 633.6,379.5 692.5,345.5" fill="#ff4433" fill-opacity="0.077" stroke="#ff4433" stroke-width="2"/>
+<polygon points="633.6,311.5 692.5,345.5 633.6,379.5 574.7,345.5" fill="#ff4433" fill-opacity="0.22" stroke="#ff4433" stroke-width="2"/>
+<path d="M633.6 345.5V150H703.6" stroke="#ff4433" stroke-width="2"/>
+<circle cx="633.6" cy="345.5" r="6" fill="#ff4433"/>
+<rect x="703.6" y="108" width="210" height="84" rx="10" fill="#1b1c20" stroke="#ff4433" stroke-width="2"/>
+<text x="721.6121593216773" y="140" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="14" font-weight="700" letter-spacing="2" fill="#f5f6f7" text-anchor="start">PUMP 03</text>
+<text x="721.6121593216773" y="170" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="500" letter-spacing="2" fill="#ff4433" text-anchor="start">4.2 MM/S  LIVE</text>
+</g>
+<rect x="60" y="58" width="36" height="3" rx="1.5" fill="#ff4433"/>
+<text x="110" y="65" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="15" font-weight="700" letter-spacing="3" fill="#ff4433" text-anchor="start">XR &amp; SPATIAL</text>
+<text x="1140" y="590" font-family="Menlo, 'SF Mono', Consolas, 'DejaVu Sans Mono', monospace" font-size="13" font-weight="500" letter-spacing="3" fill="#6b7078" text-anchor="end">NIKARED.COM</text>
+</svg>
