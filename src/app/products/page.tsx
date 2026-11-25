@@ -12,9 +12,9 @@ import { PRODUCTS } from "@/lib/content/products";
 export const metadata = pageMetadata({
   title: "Products",
   description:
-    "Products built and run by Nika Red: Valam, a private personal finance app with an on-device AI coach, and Viduthi, a verified hostel and PG platform.",
+    "Products built by Nika Red: Valam, a private finance app with an on-device AI coach, Viduthi, a verified hostel platform, and Alavi, a data meter coming soon.",
   path: "/products",
-  keywords: ["Valam", "Viduthi", "personal finance app India", "hostel management software", "PG management software"],
+  keywords: ["Valam", "Viduthi", "Alavi", "personal finance app India", "hostel management software", "PG management software", "data usage app Android", "Android firewall app"],
 });
 
 const crumbs = [
@@ -40,7 +40,7 @@ export default function Products() {
           title="Our"
           accent="products"
           crumbs={crumbs}
-          intro="Alongside client work, we build and operate products of our own. They keep us honest about what it takes to ship: app store reviews, payments that reconcile, privacy rules, and real users with real problems. Both are named in Tamil and built first for India."
+          intro="Alongside client work, we build and operate products of our own. They keep us honest about what it takes to ship: app store reviews, payments that reconcile, privacy rules, and real users with real problems. Each is named in Tamil and built first for India. Valam and Viduthi are live, and Alavi is on its way to Google Play."
         />
 
         <div className="flex-col gap-12">
@@ -55,7 +55,7 @@ export default function Products() {
           <div className="kinetic-card-low" style={{ marginTop: "var(--spacing-20)" }}>
             <p className="label-sm text-primary mb-4">What our products mean for clients</p>
             <p className="body-md" style={{ fontSize: "1.0625rem", maxWidth: "75ch" }}>
-              The privacy architecture behind Valam and the payment, KYC, and real-time availability work behind Viduthi are the same skills we bring to client projects.{" "}
+              The privacy architecture behind Valam, the payment, KYC, and real-time availability work behind Viduthi, and the low-level Android networking behind Alavi are the same skills we bring to client projects.{" "}
               <Link href="/services/product-engineering" className="tech-link">See Product Engineering</Link>.
             </p>
           </div>

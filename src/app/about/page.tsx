@@ -40,6 +40,18 @@ const PRODUCTS = [
       "Consent and data requests designed for India's DPDP Act, 2023",
     ],
   },
+  {
+    name: "Alavi",
+    href: "/products/alavi",
+    post: undefined as string | undefined,
+    kind: "Data meter and firewall, coming soon",
+    body: "An Android app that shows how much mobile data and Wi-Fi each app uses, per SIM and per day, and blocks the apps that waste it with a firewall that never leaves the phone.",
+    facts: [
+      "No internet permission, so nothing it measures can leave the phone",
+      "Only blocked apps are routed through the local VPN; every other app bypasses it",
+      "Blocked connections are refused at once instead of left to time out",
+    ],
+  },
 ];
 
 const PRINCIPLES = [
@@ -79,7 +91,7 @@ export default function About() {
             <span className="text-primary italic">built for the physical world</span>
           </h1>
           <p className="body-md mb-8 hero-intro-text" style={{ fontSize: "1.25rem", maxWidth: "80%", borderLeft: "4px solid var(--primary)", paddingLeft: "1rem" }}>
-            Nika Red designs and builds software that has to work outside the office: on production lines, at remote sites, and on the phones people carry every day. We do it for manufacturers, logistics operators, infrastructure owners, and equipment makers, and we do it for ourselves, with two products we ship and run from Chennai.
+            Nika Red designs and builds software that has to work outside the office: on production lines, at remote sites, and on the phones people carry every day. We do it for manufacturers, logistics operators, infrastructure owners, and equipment makers, and we do it for ourselves, with two products we ship and run from Chennai and a third on the way.
           </p>
         </div>
 
@@ -195,7 +207,7 @@ export default function About() {
               Building products we have to support ourselves keeps us honest about what works. Every lesson about app stores, payments, privacy law, and support queues comes back into client work.
             </p>
           </div>
-          <div className="card-grid-2">
+          <div className="card-grid-3">
             {PRODUCTS.map((p) => (
               <div key={p.name} className="kinetic-card tech-accent hoverable" style={{ display: "flex", flexDirection: "column" }}>
                 <p className="label-sm mb-4">{p.kind}</p>
@@ -206,7 +218,7 @@ export default function About() {
                 </ul>
                 <p className="label-md" style={{ marginTop: "auto", display: "flex", gap: "1.5rem", flexWrap: "wrap" }}>
                   <Link href={p.href} className="tech-link">About {p.name} →</Link>
-                  <Link href={p.post} className="tech-link">Engineering notes →</Link>
+                  {p.post && <Link href={p.post} className="tech-link">Engineering notes →</Link>}
                 </p>
               </div>
             ))}

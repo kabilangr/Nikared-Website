@@ -12,7 +12,10 @@ export type Product = {
   /** Native-script name shown beside the wordmark. */
   nativeName: string;
   meaning: string;
-  url: string;
+  /** "coming-soon" hides outbound links and shows a launch badge instead. */
+  status: "live" | "coming-soon";
+  /** Product website. Omit for products that have not launched yet. */
+  url?: string;
   category: string;
   tagline: string;
   /** Meta description (aim for 140 to 160 characters). */
@@ -35,7 +38,7 @@ export type Product = {
   schema: {
     applicationCategory: string;
     operatingSystem: string;
-    offers: { price?: string; lowPrice?: string; priceCurrency: string };
+    offers?: { price?: string; lowPrice?: string; priceCurrency: string };
   };
 };
 
@@ -45,6 +48,7 @@ export const PRODUCTS: Product[] = [
     name: "Valam",
     nativeName: "வளம்",
     meaning: "Tamil for prosperity",
+    status: "live",
     url: "https://valam.io/",
     category: "Personal finance app",
     tagline: "Private by design. Your money, understood.",
@@ -105,6 +109,7 @@ export const PRODUCTS: Product[] = [
     name: "Viduthi",
     nativeName: "விடுதி",
     meaning: "Tamil for hostel",
+    status: "live",
     url: "https://viduthi.in/",
     category: "Hostel and PG platform",
     tagline: "Find a hostel you can trust. Run it without the paperwork.",
@@ -159,8 +164,71 @@ export const PRODUCTS: Product[] = [
       offers: { lowPrice: "499", priceCurrency: "INR" },
     },
   },
+  {
+    slug: "alavi",
+    name: "Alavi",
+    nativeName: "அளவி",
+    meaning: "Tamil for meter, the instrument that measures",
+    status: "coming-soon",
+    category: "Data usage meter and firewall",
+    tagline: "Measure your data. Block the apps that waste it.",
+    description:
+      "Alavi shows how much mobile data and Wi-Fi every Android app uses, per SIM and per day, and blocks the apps that waste it. Nothing leaves your phone. Coming soon.",
+    summary:
+      "An Android app that shows where your mobile data and Wi-Fi go, app by app and SIM by SIM, with an on-device firewall to cut off the apps that waste it.",
+    intro: [
+      "Data plans in India are counted in gigabytes per day, and most people find out an app has been eating theirs only when the pack runs out. Alavi shows exactly where mobile data and Wi-Fi go, for every app including background and system apps, and on dual-SIM phones it splits usage by SIM card.",
+      "When you find an app that wastes data, you can block it on mobile data, Wi-Fi, or one SIM, cut it off after a daily limit, schedule it off at night, or let it connect only while it is open. Alavi does not even request Android's internet permission, so nothing it measures can leave the phone. It is launching soon on Google Play.",
+    ],
+    audience: [
+      "Anyone on a daily or monthly data pack who keeps running out early",
+      "Dual-SIM users who want to know which SIM is carrying the load",
+      "Parents and students who want social apps off at night",
+      "People who run a hotspot or metered Wi-Fi and need to keep usage in check",
+    ],
+    features: [
+      { icon: "data_usage", title: "Usage for every app", body: "Mobile data and Wi-Fi for each app, including background and system apps, for today, yesterday, the last 7 days, this month, or your billing cycle." },
+      { icon: "sim_card", title: "Per-SIM numbers", body: "Usage split by SIM card on dual-SIM phones, with a daily chart for the current cycle and history to compare against earlier ones." },
+      { icon: "speed", title: "Stay within your plan", body: "Set a daily or monthly plan for each SIM, see how much is left per day, and get warnings at 50, 80, and 100 percent." },
+      { icon: "block", title: "Block any app", body: "Cut an app off on mobile data, Wi-Fi, or both, or only on one SIM. Blocked apps fail at once instead of hanging on a timeout." },
+      { icon: "hourglass_bottom", title: "Limits and schedules", body: "Block an app automatically after it uses a set amount per day or per cycle, or at set times, such as social apps at night." },
+      { icon: "visibility_off", title: "Background only", body: "Let an app use data while it is on screen and block it the moment you leave, so it cannot sync in the background." },
+      { icon: "notification_important", title: "Spike alerts", body: "Get told when an app suddenly uses far more data than it usually does, before it drains the rest of your pack." },
+      { icon: "widgets", title: "Tile and widget", body: "A Quick Settings tile to switch blocking on and off, and a home screen widget with today's usage against your plan." },
+    ],
+    engineering: [
+      { title: "No internet permission", body: "Alavi does not request Android's internet permission, so it cannot send anything off the phone. There is no account, no analytics, no crash reporting, and no server. Android backup is turned off, so usage history is not copied to the cloud either." },
+      { title: "A firewall that never leaves the phone", body: "Blocking uses Android's VPN service to build a local firewall. Only the apps you block are routed into it. Every other app bypasses it entirely, and no traffic is read, logged, or forwarded anywhere." },
+      { title: "Fail fast, not slow", body: "Silently dropping packets makes a blocked app wait 30 seconds or more on cached content. Alavi answers blocked TCP connections with a reset and UDP with an ICMP unreachable reply, so the app shows no connection immediately." },
+      { title: "Honest per-SIM estimates", body: "Android 10 and later do not report which SIM carried each byte. Alavi rebuilds a timeline of which SIM held mobile data and splits usage from it, and labels the result as an estimate in the app." },
+      { title: "Tested where it matters", body: "Packet replies, firewall policy, rule editing, billing-cycle math, and SIM attribution are plain Kotlin, covered by more than 110 unit tests that run on the JVM." },
+      { title: "Fully native Android", body: "Kotlin and Jetpack Compose with Material 3, Room for history, WorkManager for background checks, and Hilt for dependency injection. Usage history is kept for about two years so cycles can be compared." },
+    ],
+    stack: ["Kotlin", "Jetpack Compose", "Material 3", "Android VpnService", "NetworkStatsManager", "Room", "WorkManager", "DataStore", "Hilt", "Coroutines"],
+    platforms: [
+      { label: "Android 8.0 and later (Google Play)", status: "Coming soon" },
+    ],
+    pricing: "No account, no ads, and no tracking. Pricing will be confirmed at launch.",
+    logo: "/products/alavi-icon.png",
+    logoAlt: "Alavi app icon",
+    hero: { src: "/products/alavi-home.jpg", alt: "Alavi home screen showing mobile data, Wi-Fi, a data plan for the current cycle, and the firewall switched on", width: 414, height: 736, kind: "phone" },
+    gallery: [
+      { src: "/products/alavi-plan.jpg", alt: "Alavi plan card and mobile data used per SIM, marked as estimated", width: 414, height: 736 },
+      { src: "/products/alavi-block.jpg", alt: "Alavi app detail screen with switches to block mobile data, block Wi-Fi, or block only in the background", width: 414, height: 736 },
+    ],
+    accent: "#3d5fa8",
+    schema: {
+      applicationCategory: "UtilitiesApplication",
+      operatingSystem: "Android",
+    },
+  },
 ];
 
 export function getProduct(slug: string) {
   return PRODUCTS.find((p) => p.slug === slug);
+}
+
+/** Product site hostname, such as "valam.io". */
+export function productHost(p: Product) {
+  return p.url ? p.url.replace(/^https:\/\/|\/$/g, "") : undefined;
 }

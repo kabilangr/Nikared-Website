@@ -30,7 +30,7 @@ const HOME_FAQS = [
   {
     question: "What products has Nika Red built?",
     answer:
-      "Valam is a private personal finance app for Android with an AI coach that runs on the phone. Viduthi is a platform for finding verified hostels and PGs in India, with management software for hostel owners. Both are designed, built, and operated by Nika Red.",
+      "Valam is a private personal finance app for Android with an AI coach that runs on the phone. Viduthi is a platform for finding verified hostels and PGs in India, with management software for hostel owners. Both are designed, built, and operated by Nika Red. A third, Alavi, is a data usage meter and firewall for Android that is coming soon to Google Play.",
   },
   {
     question: "How quickly will you respond to a project inquiry?",
@@ -88,7 +88,7 @@ export default function Home() {
               <h2 id="our-products" className="display-lg section-heading-lg" style={{ fontSize: "2.75rem" }}>Proof of work: products we <span className="text-primary italic">build and run</span></h2>
               <Link href="/products" className="tech-link label-md">All products →</Link>
             </div>
-            <div className="card-grid-2">
+            <div className="card-grid-3">
               {PRODUCTS.map((p) => (
                 <Link key={p.slug} href={`/products/${p.slug}`} className="kinetic-card-low hoverable link-card">
                   <ProductMark product={p} size={52} />

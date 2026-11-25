@@ -242,24 +242,27 @@ export function softwareApplicationSchema(p: {
   slug: string;
   name: string;
   description: string;
-  url: string;
+  url?: string;
   logo: string;
-  schema: { applicationCategory: string; operatingSystem: string; offers: { price?: string; lowPrice?: string; priceCurrency: string } };
+  schema: { applicationCategory: string; operatingSystem: string; offers?: { price?: string; lowPrice?: string; priceCurrency: string } };
 }) {
-  const offers = p.schema.offers.lowPrice
-    ? { "@type": "AggregateOffer", lowPrice: p.schema.offers.lowPrice, priceCurrency: p.schema.offers.priceCurrency }
-    : { "@type": "Offer", price: p.schema.offers.price, priceCurrency: p.schema.offers.priceCurrency };
+  const o = p.schema.offers;
+  const offers = !o
+    ? undefined
+    : o.lowPrice
+      ? { "@type": "AggregateOffer", lowPrice: o.lowPrice, priceCurrency: o.priceCurrency }
+      : { "@type": "Offer", price: o.price, priceCurrency: o.priceCurrency };
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     "@id": `${absUrl(`/products/${p.slug}`)}#app`,
     name: p.name,
     description: p.description,
-    url: p.url,
+    url: p.url ?? absUrl(`/products/${p.slug}`),
     image: `${SITE_URL}${p.logo}`,
     applicationCategory: p.schema.applicationCategory,
     operatingSystem: p.schema.operatingSystem,
-    offers,
+    ...(offers && { offers }),
     creator: { "@type": "Organization", "@id": ORG_ID, name: SITE.name, url: SITE.url },
     publisher: { "@type": "Organization", "@id": ORG_ID, name: SITE.name, url: SITE.url },
   };

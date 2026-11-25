@@ -1,5 +1,21 @@
 import Link from "next/link";
-import type { Product } from "@/lib/content/products";
+import { productHost, type Product } from "@/lib/content/products";
+
+/** Phone frame sized to the screenshot's own aspect ratio. */
+export function PhoneShot({ src, alt, width, height, priority = false }: { src: string; alt: string; width: number; height: number; priority?: boolean }) {
+  return (
+    <div className="phone-frame" style={{ aspectRatio: `${width} / ${height}` }}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={src} alt={alt} width={width} height={height} loading={priority ? "eager" : "lazy"} />
+    </div>
+  );
+}
+
+/** "Coming soon" pill shown next to products that have not launched. */
+export function SoonBadge({ product }: { product: Product }) {
+  if (product.status !== "coming-soon") return null;
+  return <span className="platform-status is-soon">Coming soon</span>;
+}
 
 /** Product visual: a phone frame for app screenshots, or a rounded illustration. */
 export function ProductVisual({ product, priority = false }: { product: Product; priority?: boolean }) {
@@ -7,10 +23,7 @@ export function ProductVisual({ product, priority = false }: { product: Product;
   if (hero.kind === "phone") {
     return (
       <div className="product-visual">
-        <div className="phone-frame">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={hero.src} alt={hero.alt} width={hero.width} height={hero.height} loading={priority ? "eager" : "lazy"} />
-        </div>
+        <PhoneShot {...hero} priority={priority} />
       </div>
     );
   }
@@ -32,6 +45,9 @@ export function ProductMark({ product, size = 56 }: { product: Product; size?: n
           {product.name} <span className="product-native" lang="ta">{product.nativeName}</span>
         </p>
         <p className="label-sm">{product.category}</p>
+        {product.status === "coming-soon" && (
+          <p className="product-mark-badge"><SoonBadge product={product} /></p>
+        )}
       </div>
     </div>
   );
@@ -68,7 +84,11 @@ export function ProductFeature({ product, reverse = false, headingLevel = 2 }: {
         </ul>
         <div className="flex gap-4 flex-wrap product-actions">
           <Link href={`/products/${product.slug}`} className="btn-primary label-md" style={{ textDecoration: "none" }}>About {product.name}</Link>
-          <a href={product.url} target="_blank" rel="noopener" className="btn-secondary label-md" style={{ textDecoration: "none" }}>Visit {product.url.replace(/^https:\/\/|\/$/g, "")} ↗</a>
+          {product.url ? (
+            <a href={product.url} target="_blank" rel="noopener" className="btn-secondary label-md" style={{ textDecoration: "none" }}>Visit {productHost(product)} ↗</a>
+          ) : (
+            <Link href="/contact" className="btn-secondary label-md" style={{ textDecoration: "none" }}>Ask about early access</Link>
+          )}
         </div>
       </div>
       <ProductVisual product={product} />

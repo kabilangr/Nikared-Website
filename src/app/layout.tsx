@@ -52,6 +52,7 @@ export const metadata: Metadata = {
     "SaaS development",
     "Valam",
     "Viduthi",
+    "Alavi",
     "Chennai",
     "India",
   ],
