@@ -51,7 +51,7 @@ Style rule for site copy: no em dashes.
 
 ## Contact form
 
-`UplinkForm` writes submissions to the `contacts` collection in Firestore when Firebase is configured. Set these in `.env.local` (and as build environment variables for deploys):
+`UplinkForm` writes submissions to the `contacts` collection in Firestore when Firebase is configured. Set these in `.env.local` for local builds, and as repository secrets with the same names (Settings > Secrets and variables > Actions) for deploys. The deploy workflow passes them into the build:
 
 ```
 NEXT_PUBLIC_FIREBASE_API_KEY=
@@ -62,7 +62,7 @@ NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=
 NEXT_PUBLIC_FIREBASE_APP_ID=
 ```
 
-Without them, the form falls back to opening the visitor's email app addressed to contact@nikared.com. The deploy workflow does not set these variables today, so the live site uses this fallback.
+Without them, the form falls back to opening the visitor's email app addressed to contact@nikared.com. The same fallback applies to the live site if the repository secrets are not set.
 
 ## Deployment
 
