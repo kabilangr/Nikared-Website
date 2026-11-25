@@ -50,3 +50,10 @@ next-env.d.ts
 # editors
 .vscode/
 .idea/
+
+# macOS metadata (custom folder icon, AppleDouble files on external drives)
+Icon?
+._*
+
+# local editor workspace
+*.code-workspace

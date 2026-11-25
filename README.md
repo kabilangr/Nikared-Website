@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nika Red website
 
-## Getting Started
+Source for [nikared.com](https://nikared.com), the website of Nika Red, an engineering studio in Chennai. The site covers our services, industries, products (Valam, Viduthi, Alavi), blog, and contact form.
 
-First, run the development server:
+Built with Next.js 16 (App Router), React 19, and TypeScript. It is exported as a static site and hosted on GitHub Pages.
+
+> This Next.js version has breaking changes from older releases. Check the guides in `node_modules/next/dist/docs/` before changing framework-level code.
+
+## Getting started
+
+Requires Node.js 20 or later.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+| Command         | What it does                                       |
+| --------------- | -------------------------------------------------- |
+| `npm run dev`   | Start the dev server                               |
+| `npm run build` | Build the static export into `out/`                |
+| `npm run lint`  | Run ESLint                                         |
+| `node scripts/blog-covers.mjs` | Regenerate blog cover art (SVG and PNG) |
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project layout
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
+  app/              Routes: home, about, services, industries, products, blog, contact, privacy, terms
+                    plus sitemap.ts, robots.ts, manifest.ts, and the blog RSS feed
+  components/       Shared UI (Header, Footer, ThemeToggle, UplinkForm, NeuralCanvas, page building blocks)
+  lib/
+    site.ts         Site-wide constants: domain, company details, contact email
+    metadata.ts     Page metadata helpers
+    structured-data.ts  JSON-LD schema builders
+    content/        Page content as typed data: services, industries, products, blog posts
+public/             Static assets: logos, icons, product screenshots, blog covers, CNAME
+scripts/            blog-covers.mjs, the cover art generator
+DESIGN.md           Design system notes: colors, typography, layout rules
+```
 
-## Learn More
+## Editing content
 
-To learn more about Next.js, take a look at the following resources:
+Most copy lives in `src/lib/content/`, not in the page files.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Services, industries, products:** edit the matching file in `src/lib/content/`. Dynamic `[slug]` routes pick up new entries automatically, and so does the sitemap.
+- **Blog posts:** add an entry to `src/lib/content/blog.ts`. Each post needs a cover at `public/blog/covers/<slug>.svg` and `.png`. Add a cover function for the slug in `scripts/blog-covers.mjs`, then run the script.
+- **Company details** (email, address, domain): `src/lib/site.ts`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Style rule for site copy: no em dashes.
 
-## Deploy on Vercel
+## Contact form
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`UplinkForm` writes submissions to the `contacts` collection in Firestore when Firebase is configured. Set these in `.env.local` (and as build environment variables for deploys):
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+NEXT_PUBLIC_FIREBASE_API_KEY=
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=
+NEXT_PUBLIC_FIREBASE_APP_ID=
+```
+
+Without them, the form falls back to opening the visitor's email app addressed to contact@nikared.com. The deploy workflow does not set these variables today, so the live site uses this fallback.
+
+## Deployment
+
+Pushing to `main` runs `.github/workflows/nextjs.yml`, which builds the site and deploys `out/` to GitHub Pages. The custom domain comes from `public/CNAME`.
+
+`next.config.ts` sets `output: "export"`, `trailingSlash: true` (so `/x` and `/x/` both resolve on Pages), and unoptimized images. Server-only features such as API routes, middleware, and runtime image optimization are not available.
